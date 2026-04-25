@@ -375,58 +375,63 @@ tailwind.config = {
  
       <!-- Formulario -->
       <form id="form" class="lg:col-span-7 reveal border border-white/8 bg-ink2 p-5 md:p-6" style="transition-delay:.1s"
-            action="https://formspree.io/f/XXXXXXXX" method="POST">
-        <div class="mb-4">
-          <span class="font-mono text-[9px] text-gold tracking-widest uppercase">Solicitud de cotizacion</span>
-          <h3 class="text-xl font-bold text-snow mt-2">Formulario rapido</h3>
-        </div>
+      action="https://formspree.io/f/XXXXXXXX" method="POST">
+  
+  <div class="mb-4">
+    <span class="font-mono text-[9px] text-gold tracking-widest uppercase">Solicitud de cotización</span>
+    <h3 class="text-xl font-bold text-snow mt-2">Formulario rápido</h3>
+  </div>
 
-        <div class="grid sm:grid-cols-2 gap-3">
-          <div>
-            <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Nombre</label>
-            <input name="nombre" type="text" required placeholder="Juan González"
-                   class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
-          </div>
-          <div>
-            <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Telefono</label>
-            <input name="telefono" type="tel" placeholder="+56 9 XXXX XXXX"
-                   class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
-          </div>
-          <div>
-            <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Correo</label>
-            <input name="email" type="email" required placeholder="correo@empresa.cl"
-                   class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
-          </div>
-          <div>
-            <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Servicio</label>
-            <select name="servicio" class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-zinc2 transition-colors appearance-none cursor-pointer">
-              <option>Levantamiento Topográfico GNSS</option>
-              <option>Subdivisión Rural (SAG)</option>
-              <option>Subdivisión Urbana (DOM)</option>
-              <option>Ambos servicios</option>
-              <option>Consulta general</option>
-            </select>
-          </div>
-          <div class="sm:col-span-2">
-            <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Superficie y ubicacion</label>
-            <input name="ubicacion" type="text" placeholder="Ej: 3 ha - sector Quillon, Nuble"
-                   class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
-          </div>
-          <div class="sm:col-span-2">
-            <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Descripcion</label>
-            <textarea name="mensaje" rows="3" required placeholder="Cuentenos brevemente que necesita..."
-                      class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors resize-none"></textarea>
-          </div>
-        </div>
+  <div class="grid sm:grid-cols-2 gap-3">
+    <div>
+      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Nombre</label>
+      <input name="Nombre Cliente" type="text" required placeholder="Juan González"
+             class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+    </div>
 
-        <button id="sbtn" type="submit"
-                class="w-full mt-3 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase py-3.5 transition-colors duration-200">
-          Enviar solicitud de cotización →
-        </button>
-      </form>
+    <div>
+      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Teléfono</label>
+      <input name="Telefono" type="tel" placeholder="+56 9 XXXX XXXX"
+             class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+    </div>
+
+    <div>
+      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Correo</label>
+      <input name="email" type="email" required placeholder="correo@empresa.cl"
+             class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+    </div>
+
+    <div>
+      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Servicio solicitado</label>
+      <select name="Servicio" class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-zinc2 transition-colors appearance-none cursor-pointer">
+        <option value="Levantamiento Topográfico GNSS">Levantamiento Topográfico GNSS</option>
+        <option value="Subdivisión Rural (SAG)">Subdivisión Rural (SAG)</option>
+        <option value="Subdivisión Urbana (DOM)">Subdivisión Urbana (DOM)</option>
+        <option value="Ambos servicios">Ambos servicios</option>
+        <option value="Consulta general">Consulta general</option>
+      </select>
+    </div>
+
+    <div class="sm:col-span-2">
+      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Superficie y ubicación</label>
+      <input name="Ubicacion y Tamaño" type="text" placeholder="Ej: 3 ha - sector Quillón, Ñuble"
+             class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+    </div>
+
+    <div class="sm:col-span-2">
+      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Descripción del proyecto</label>
+      <textarea name="Mensaje" rows="3" required placeholder="Cuéntenos brevemente qué necesita..."
+                class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors resize-none"></textarea>
     </div>
   </div>
-</section>
+
+  <input type="hidden" name="_subject" value="Nueva Cotización desde Topoñuble.cl">
+
+  <button id="sbtn" type="submit"
+          class="w-full mt-3 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase py-3.5 transition-colors duration-200">
+    Enviar solicitud de cotización →
+  </button>
+</form>
  
  
 <!-- ═══ FOOTER ═══ -->
