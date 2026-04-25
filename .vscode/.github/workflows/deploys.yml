@@ -1,0 +1,25 @@
+name: Despliegue Topoñuble
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  web-deploy:
+    name: Subir cambios al Hosting
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Obtener código desde GitHub
+      uses: actions/checkout@v3
+
+    - name: 🚀 Subir por FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: public_html/
+        exclude: |
+          **/.git*
+          **/node_modules/**
+          **/package*.json
