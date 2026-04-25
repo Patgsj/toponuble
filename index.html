@@ -374,8 +374,8 @@ tailwind.config = {
       </div>
  
       <!-- Formulario -->
-      <form id="form" class="lg:col-span-7 reveal border border-white/8 bg-ink2 p-5 md:p-6" style="transition-delay:.1s"
-      action="https://formspree.io/f/XXXXXXXX" method="POST">
+<form id="form" class="lg:col-span-7 reveal border border-white/8 bg-ink2 p-5 md:p-6" style="transition-delay:.1s"
+      action="send.php" method="POST">
   
   <div class="mb-4">
     <span class="font-mono text-[9px] text-gold tracking-widest uppercase">Solicitud de cotización</span>
@@ -385,13 +385,13 @@ tailwind.config = {
   <div class="grid sm:grid-cols-2 gap-3">
     <div>
       <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Nombre</label>
-      <input name="Nombre Cliente" type="text" required placeholder="Juan González"
+      <input name="nombre" type="text" required placeholder="Juan González"
              class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
     </div>
 
     <div>
       <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Teléfono</label>
-      <input name="Telefono" type="tel" placeholder="+56 9 XXXX XXXX"
+      <input name="telefono" type="tel" placeholder="+56 9 XXXX XXXX"
              class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
     </div>
 
@@ -403,7 +403,7 @@ tailwind.config = {
 
     <div>
       <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Servicio solicitado</label>
-      <select name="Servicio" class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-zinc2 transition-colors appearance-none cursor-pointer">
+      <select name="servicio" class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-zinc2 transition-colors appearance-none cursor-pointer">
         <option value="Levantamiento Topográfico GNSS">Levantamiento Topográfico GNSS</option>
         <option value="Subdivisión Rural (SAG)">Subdivisión Rural (SAG)</option>
         <option value="Subdivisión Urbana (DOM)">Subdivisión Urbana (DOM)</option>
@@ -414,18 +414,16 @@ tailwind.config = {
 
     <div class="sm:col-span-2">
       <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Superficie y ubicación</label>
-      <input name="Ubicacion y Tamaño" type="text" placeholder="Ej: 3 ha - sector Quillón, Ñuble"
+      <input name="ubicacion" type="text" placeholder="Ej: 3 ha - sector Quillón, Ñuble"
              class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
     </div>
 
     <div class="sm:col-span-2">
       <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Descripción del proyecto</label>
-      <textarea name="Mensaje" rows="3" required placeholder="Cuéntenos brevemente qué necesita..."
+      <textarea name="mensaje" rows="3" required placeholder="Cuéntenos brevemente qué necesita..."
                 class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors resize-none"></textarea>
     </div>
   </div>
-
-  <input type="hidden" name="_subject" value="Nueva Cotización desde Topoñuble.cl">
 
   <button id="sbtn" type="submit"
           class="w-full mt-3 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase py-3.5 transition-colors duration-200">
