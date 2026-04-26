@@ -557,6 +557,7 @@ tailwind.config = {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Escribir a WhatsApp directo"
+              onclick="trackWhatsAppConversion()"
               class="inline-block border border-[#F5C500]/30 text-[#F5C500] hover:bg-[#F5C500] hover:text-[#0A0A0A] px-6 py-4 text-[11px] font-black tracking-widest uppercase transition-all"
             >
               WhatsApp Directo
@@ -688,8 +689,12 @@ const trackEvent=(eventName,params={})=>{
   }
 };
 
-function trackWhatsAppConversion(){
-  gtag('event', 'conversion', {'send_to': 'AW-18107428909/ID_DE_EVENTO'});
+function trackWhatsAppConversion() {
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18107428909/KslRCLDVlaMcEK3gpbpD',
+      'value': 1.0,
+      'currency': 'CLP'
+  });
 }
 form.addEventListener('submit',async e=>{
   e.preventDefault();
