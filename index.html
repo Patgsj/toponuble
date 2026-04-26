@@ -3,10 +3,18 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Topógrafo en Chillán · Medición GNSS · Subdivisión de Terrenos · TopoÑuble</title>
+<title>Topógrafo Ñuble Urgente | Subdivisión de terrenos | Levantamientos GNSS | TopoÑuble</title>
 <link rel="icon" href="./img/favicon.png" type="image/x-icon">
-<meta name="description" content="Levantamiento topográfico con GPS GNSS y subdivisión de terrenos en la Región de Ñuble. Precisión ±3mm. Planos para CBR, DOM y SAG. Cotiza gratis."/>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"TopoÑuble","telephone":"+56998765432","address":{"@type":"PostalAddress","addressLocality":"Chillán","addressRegion":"Región de Ñuble","addressCountry":"CL"},"geo":{"@type":"GeoCoordinates","latitude":-36.6063,"longitude":-72.1034},"areaServed":"Región de Ñuble"}</script>
+<meta name="description" content="Topógrafo Ñuble para atención urgente: Precisión GNSS, entrega en 48h y trámites SAG/DOM. Subdivisión de terrenos y levantamientos GNSS en San Carlos, Chillán, Quillón, Coihueco, Pinto y San Fabián."/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"TopoÑuble","email":"patricio@toponuble.cl","address":{"@type":"PostalAddress","addressLocality":"San Carlos","addressRegion":"Región de Ñuble","addressCountry":"CL"},"areaServed":[{"@type":"City","name":"San Carlos"},{"@type":"City","name":"Chillán"},{"@type":"City","name":"Quillón"},{"@type":"City","name":"Coihueco"},{"@type":"City","name":"Pinto"},{"@type":"City","name":"San Fabián"}],"serviceType":["Topografía","Levantamientos GNSS","Subdivisión de terrenos","Subdivisiones SAG","Subdivisiones DOM"]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-CONVERSION_ID');
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
@@ -76,8 +84,8 @@ tailwind.config = {
 <header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
  
-<a href="#" class="flex items-center group">
-  <img src="./img/logotopoñuble.svg" alt="Logo TopoÑuble" class="h-8 w-auto">
+<a href="#inicio" class="flex items-center group">
+  <img src="./img/logotopoñuble.svg" alt="TopoÑuble, topógrafo en la Región de Ñuble" class="h-8 w-auto">
 </a>
  
     <ul class="hidden md:flex items-center gap-8 text-[10px] font-medium tracking-widest uppercase text-zinc1">
@@ -88,12 +96,12 @@ tailwind.config = {
       <li><a href="#contacto"  class="nav-link hover:text-gold transition-colors">Contacto</a></li>
     </ul>
  
-    <a href="https://wa.me/56998765432?text=Hola%2C+necesito+cotización+de+topografía" target="_blank"
+    <a href="https://wa.me/56998765432?text=Hola%2C+necesito+cotización+de+topografía" target="_blank" aria-label="Cotizar topografía por WhatsApp"
        class="hidden sm:inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[10px] font-black tracking-widest uppercase px-5 py-2.5 transition-colors duration-200">
       Cotizar →
     </a>
  
-    <button id="mb" class="md:hidden p-2 text-zinc2">
+    <button id="mb" aria-label="Abrir menú de navegación" class="md:hidden p-2 text-zinc2">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
       </svg>
@@ -107,7 +115,7 @@ tailwind.config = {
       <li><a href="#nosotros"  class="nav-link hover:text-gold transition-colors">Nosotros</a></li>
       <li><a href="#cobertura" class="nav-link hover:text-gold transition-colors">Cobertura</a></li>
       <li><a href="#contacto"  class="nav-link hover:text-gold transition-colors">Contacto</a></li>
-      <li><a href="https://wa.me/56998765432?text=Hola%2C+necesito+cotización" target="_blank"
+      <li><a href="https://wa.me/56998765432?text=Hola%2C+necesito+cotización" target="_blank" aria-label="Cotizar por WhatsApp"
              class="inline-block bg-gold text-ink font-black px-5 py-2.5 text-[12px] tracking-widest uppercase mt-1">Cotizar →</a></li>
     </ul>
   </div>
@@ -142,21 +150,21 @@ tailwind.config = {
     </div>
  
     <h1 class="text-[clamp(2.8rem,8vw,5.5rem)] font-black leading-[1.04] tracking-tight mb-6 text-snow">
-      Medición de<br>terrenos con<br>
-      <em class="not-italic text-gold">precisión real</em>
+      Regularice y subdivida <br>su terreno<br>
+      <em class="not-italic text-gold">con precisión GNSS</em>
     </h1>
  
     <p class="text-zinc2 text-[17px] max-w-lg mx-auto leading-relaxed mb-10 font-light">
-      Levantamiento topográfico con GPS GNSS y subdivisión de terrenos en la Región de Ñuble. Planos listos para CBR, DOM y SAG.
+      Especialistas en <strong>topografía</strong> para la Región de Ñuble. Asegure la aprobación de sus planos ante el SAG y DOM con informes técnicos de alta precisión.
     </p>
  
     <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-      <a href="https://wa.me/56998765432?text=Hola%2C+necesito+cotización+de+topografía" target="_blank"
+      <a id="hero-cta-cotizar" href="https://wa.me/56998765432?text=Hola%2C+necesito+cotización+de+topografía" target="_blank" aria-label="Cotizar topografía urgente por WhatsApp"
          class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gold hover:bg-gold2 text-ink text-[13px] font-black tracking-widest uppercase px-8 py-4 transition-colors duration-200">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
         Cotizar por WhatsApp
       </a>
-      <a href="#servicios"
+      <a href="#servicios" aria-label="Ver servicios de topografía"
          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/15 hover:border-gold/40 hover:text-gold text-zinc2 text-[13px] font-semibold tracking-widest uppercase px-8 py-4 transition-all duration-200">
         Ver servicios
       </a>
@@ -204,7 +212,7 @@ tailwind.config = {
         </p>
         <div class="pt-5 border-t border-white/8 flex items-center justify-between gap-3">
           <span class="font-mono text-[10px] text-white/25 tracking-widest"></span>
-          <a href="#contacto" class="text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors">Cotizar</a>
+          <a href="#contacto" aria-label="Cotizar levantamiento GNSS" class="text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors">Cotizar</a>
         </div>
       </article>
  
@@ -226,7 +234,7 @@ tailwind.config = {
         </p>
         <div class="pt-5 border-t border-white/8 flex items-center justify-between gap-3">
           <span class="font-mono text-[10px] text-white/25 tracking-widest"></span>
-          <a href="#contacto" class="text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors">Cotizar</a>
+          <a href="#contacto" aria-label="Cotizar subdivisión de terrenos" class="text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors">Cotizar</a>
         </div>
       </article>
     </div>
@@ -234,7 +242,7 @@ tailwind.config = {
     <!-- CTA strip -->
     <div class="reveal mt-5 border border-gold/20 bg-gradient-to-r from-gold/10 to-transparent px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-3" style="transition-delay:.15s">
       <p class="text-zinc2 text-[13px]"></p>
-      <a href="#contacto"
+      <a href="#contacto" aria-label="Solicitar cotización de topografía"
          class="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200">
         Solicitar cotización →
       </a>
@@ -267,21 +275,21 @@ tailwind.config = {
         <div class="border border-white/6 bg-ink2 hover:border-gold/20 p-6 flex gap-5 items-start transition-colors">
           <span class="font-mono text-[22px] font-bold text-gold/25 leading-none flex-shrink-0 w-8">01</span>
           <div>
-            <h4 class="font-bold text-snow mb-1.5 text-[15px]">Topógrafos titulados</h4>
+            <h3 class="font-bold text-snow mb-1.5 text-[15px]">Topógrafos titulados</h3>
             <p class="text-zinc1 text-[13px] leading-relaxed">Profesionales con título universitario y registro vigente en el Ministerio de Bienes Nacionales.</p>
           </div>
         </div>
         <div class="border border-white/6 bg-ink2 hover:border-gold/20 p-6 flex gap-5 items-start transition-colors">
           <span class="font-mono text-[22px] font-bold text-gold/25 leading-none flex-shrink-0 w-8">02</span>
           <div>
-            <h4 class="font-bold text-snow mb-1.5 text-[15px]">Plazos cumplidos</h4>
+            <h3 class="font-bold text-snow mb-1.5 text-[15px]">Plazos cumplidos</h3>
             <p class="text-zinc1 text-[13px] leading-relaxed">Informe preliminar en 48h. Planos finales en el plazo acordado, siempre.</p>
           </div>
         </div>
         <div class="border border-white/6 bg-ink2 hover:border-gold/20 p-6 flex gap-5 items-start transition-colors">
           <span class="font-mono text-[22px] font-bold text-gold/25 leading-none flex-shrink-0 w-8">03</span>
           <div>
-            <h4 class="font-bold text-snow mb-1.5 text-[15px]">Acompañamos el trámite</h4>
+            <h3 class="font-bold text-snow mb-1.5 text-[15px]">Acompañamos el trámite</h3>
             <p class="text-zinc1 text-[13px] leading-relaxed">Apoyamos ante CBR, DOM y SAG hasta la inscripción final. No desaparecemos al entregar el plano.</p>
           </div>
         </div>
@@ -318,7 +326,7 @@ tailwind.config = {
       <div class="reveal flex justify-center w-full" style="transition-delay:.1s">
         <div id="mapa-wrap" class="relative w-full max-w-[44rem] h-[30rem] md:h-[37rem] lg:h-[44rem] border border-gold/10 flex items-center justify-center" style="background:rgba(20,20,20,.8)">
           <div class="absolute inset-0" style="background-image:linear-gradient(rgba(245,197,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(245,197,0,.03) 1px,transparent 1px);background-size:20px 20px"></div>
-          <object id="mapa-nuble" data="img/Mapa%20%C3%B1uble.svg" type="image/svg+xml" class="relative z-10 w-[92%] h-[30rem] md:w-[88%] md:h-[37rem] lg:w-[38rem] lg:h-[44rem]"></object>
+          <object id="mapa-nuble" data="img/Mapa%20%C3%B1uble.svg" type="image/svg+xml" aria-label="Mapa interactivo de comunas de la Región de Ñuble" class="relative z-10 w-[92%] h-[30rem] md:w-[88%] md:h-[37rem] lg:w-[38rem] lg:h-[44rem]"></object>
           <div id="map-tooltip" class="map-tooltip">Comuna</div>
           <!-- etiqueta esquina -->
           <div class="absolute bottom-3 right-3">
@@ -365,13 +373,13 @@ tailwind.config = {
           </iframe>
         </div>
 
-        <a href="https://maps.app.goo.gl/NWSiZ7nootVe1eHJA" target="_blank"
+        <a href="https://maps.app.goo.gl/NWSiZ7nootVe1eHJA" target="_blank" aria-label="Abrir ubicación de TopoÑuble en Google Maps"
            class="mt-3 inline-flex items-center justify-center gap-2 border border-gold/35 text-gold hover:bg-gold hover:text-ink text-[11px] font-black tracking-widest uppercase px-4 py-3 transition-all duration-200">
           Abrir en Google Maps
         </a>
       </div>
 
-      <form id="form" class="lg:col-span-7 reveal border border-white/8 bg-ink2 p-5 md:p-6" style="transition-delay:.1s"
+      <form id="lead-form-toponuble" class="lg:col-span-7 reveal border border-white/8 bg-ink2 p-5 md:p-6" style="transition-delay:.1s"
       action="send.php" method="POST">
   
   <div class="mb-4">
@@ -429,7 +437,7 @@ tailwind.config = {
     </div>
   </div>
 
-  <button id="sbtn" type="submit"
+  <button id="lead-form-submit" type="submit" aria-label="Enviar formulario de cotización"
           class="w-full mt-4 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase py-4 transition-all duration-200 shadow-lg active:scale-[0.98]">
     Enviar solicitud de cotización →
   </button>
@@ -446,14 +454,14 @@ tailwind.config = {
         <a href="#inicio" class="mb-6 block">
           <img 
             src="./img/logotopoñuble.svg" 
-            alt="Logo TopoÑuble" 
+            alt="Logo de TopoÑuble, servicios de topografía en Ñuble" 
             class="h-8 w-auto"
           >
         </a>
 
         <p class="text-[#A1A1AA] text-[14px] leading-relaxed mb-6 text-left max-w-sm">
           Topografía profesional en la Región de Ñuble. Levantamientos GNSS y subdivisiones 
-          con respaldo técnico y normativo vigente.
+          de terrenos con respaldo técnico y normativo vigente en San Carlos, Chillán, Quillón, Coihueco, Pinto y San Fabián.
         </p>
 
         <div class="border-l-2 border-[#F5C500]/50 pl-4 text-left">
@@ -533,8 +541,10 @@ tailwind.config = {
           </div>
 
           <a 
+            id="footer-whatsapp-btn"
             href="https://wa.me/56998765432" 
             target="_blank"
+            aria-label="Escribir a WhatsApp directo"
             class="inline-block border border-[#F5C500]/30 text-[#F5C500] hover:bg-[#F5C500] hover:text-[#0A0A0A] px-6 py-4 text-[11px] font-black tracking-widest uppercase transition-all"
           >
             WhatsApp Directo
@@ -561,7 +571,7 @@ tailwind.config = {
 </footer>
  
 <!-- ═══ WHATSAPP FLOTANTE ═══ -->
-<a href="https://wa.me/56998765432?text=Hola%2C+necesito+cotización+de+topografía" target="_blank"
+<a id="floating-whatsapp-btn" href="https://wa.me/56998765432?text=Hola%2C+necesito+cotización+de+topografía" target="_blank" aria-label="Abrir WhatsApp para cotizar topografía"
    class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center rounded-full shadow-lg transition-all duration-200 hover:scale-110">
   <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </a>
@@ -614,8 +624,13 @@ const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.tar
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
  
 // Formulario
-const form=document.getElementById('form');
-const btn=document.getElementById('sbtn');
+const form=document.getElementById('lead-form-toponuble');
+const btn=document.getElementById('lead-form-submit');
+const trackEvent=(eventName,params={})=>{
+  if(typeof window.gtag==='function'){
+    window.gtag('event',eventName,params);
+  }
+};
 form.addEventListener('submit',async e=>{
   e.preventDefault();
   btn.textContent='Enviando...';
@@ -623,6 +638,14 @@ form.addEventListener('submit',async e=>{
   try{
     const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
     if(r.ok){
+      trackEvent('generate_lead',{
+        event_category:'lead',
+        event_label:'formulario_cotizacion',
+        lead_type:'form_submission',
+        form_id:'lead-form-toponuble',
+        value:1,
+        currency:'CLP'
+      });
       btn.textContent='Solicitud enviada ✓';
       btn.classList.replace('bg-gold','bg-green-500');
       btn.classList.replace('hover:bg-gold2','hover:bg-green-600');
@@ -636,6 +659,19 @@ form.addEventListener('submit',async e=>{
     btn.textContent='Error — escriba por WhatsApp';
     btn.disabled=false;
   }
+});
+
+const whatsappButtons=['footer-whatsapp-btn','floating-whatsapp-btn'];
+whatsappButtons.forEach(id=>{
+  const el=document.getElementById(id);
+  if(!el)return;
+  el.addEventListener('click',()=>{
+    trackEvent('click_whatsapp',{
+      event_category:'contact',
+      event_label:id,
+      contact_method:'whatsapp'
+    });
+  });
 });
 
 // Mapa Ñuble interactivo
