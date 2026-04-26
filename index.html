@@ -336,10 +336,9 @@ tailwind.config = {
 </section>
  
  
-<!-- ═══ CONTACTO ═══ -->
 <section id="contacto" class="py-20 px-6 sgrid bg-ink">
   <div class="max-w-6xl mx-auto">
- 
+
     <div class="text-center mb-10 reveal">
       <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— Contacto</span>
       <h2 class="text-3xl md:text-4xl font-black text-snow mb-3 leading-tight">Conversemos su proyecto</h2>
@@ -347,10 +346,9 @@ tailwind.config = {
         Cuéntenos su terreno y le respondemos con cotización en menos de 24 horas hábiles.
       </p>
     </div>
- 
+
     <div class="grid lg:grid-cols-12 gap-5 items-stretch">
- 
-      <!-- Mapa ubicación -->
+
       <div class="lg:col-span-5 reveal border border-white/8 bg-ink2 p-5 md:p-6 flex flex-col">
         <div class="mb-4">
           <span class="font-mono text-[9px] text-gold tracking-widest uppercase">Ubicación referencial</span>
@@ -372,9 +370,8 @@ tailwind.config = {
           Abrir en Google Maps
         </a>
       </div>
- 
-      <!-- Formulario -->
-<form id="form" class="lg:col-span-7 reveal border border-white/8 bg-ink2 p-5 md:p-6" style="transition-delay:.1s"
+
+      <form id="form" class="lg:col-span-7 reveal border border-white/8 bg-ink2 p-5 md:p-6" style="transition-delay:.1s"
       action="send.php" method="POST">
   
   <div class="mb-4">
@@ -384,100 +381,184 @@ tailwind.config = {
 
   <div class="grid sm:grid-cols-2 gap-3">
     <div>
-      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Nombre</label>
-      <input name="nombre" type="text" required placeholder="Juan González"
+      <label for="nombre" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Nombre Completo</label>
+      <input id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="Juan González"
              class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
     </div>
 
     <div>
-      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Teléfono</label>
-      <input name="telefono" type="tel" placeholder="+56 9 XXXX XXXX"
+      <label for="telefono" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Teléfono de contacto</label>
+      <input id="telefono" name="telefono" type="tel" required autocomplete="tel" placeholder="+56 9 XXXX XXXX"
              class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
     </div>
 
     <div>
-      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Correo</label>
-      <input name="email" type="email" required placeholder="correo@empresa.cl"
+      <label for="email" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Correo Electrónico</label>
+      <input id="email" name="email" type="email" required autocomplete="email" placeholder="correo@empresa.cl"
              class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
     </div>
 
     <div>
-      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Servicio solicitado</label>
-      <select name="servicio" class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-zinc2 transition-colors appearance-none cursor-pointer">
-        <option value="Levantamiento Topográfico GNSS">Levantamiento Topográfico GNSS</option>
-        <option value="Subdivisión Rural (SAG)">Subdivisión Rural (SAG)</option>
-        <option value="Subdivisión Urbana (DOM)">Subdivisión Urbana (DOM)</option>
-        <option value="Ambos servicios">Ambos servicios</option>
-        <option value="Consulta general">Consulta general</option>
-      </select>
+      <label for="servicio" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Servicio solicitado</label>
+      <div class="relative">
+        <select id="servicio" name="servicio" required
+                class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow transition-colors appearance-none cursor-pointer">
+          <option value="" disabled selected>Seleccione un servicio</option>
+          <option value="Levantamiento Topográfico GNSS">Levantamiento Topográfico GNSS</option>
+          <option value="Subdivisión Rural (SAG)">Subdivisión Rural (SAG)</option>
+          <option value="Subdivisión Urbana (DOM)">Subdivisión Urbana (DOM)</option>
+          <option value="Ambos servicios">Ambos servicios</option>
+          <option value="Consulta general">Consulta general</option>
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gold">
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+        </div>
+      </div>
     </div>
 
     <div class="sm:col-span-2">
-      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Superficie y ubicación</label>
-      <input name="ubicacion" type="text" placeholder="Ej: 3 ha - sector Quillón, Ñuble"
+      <label for="ubicacion" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Superficie y ubicación del terreno</label>
+      <input id="ubicacion" name="ubicacion" type="text" placeholder="Ej: 3 ha - sector Quillón, Ñuble"
              class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
     </div>
 
     <div class="sm:col-span-2">
-      <label class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Descripción del proyecto</label>
-      <textarea name="mensaje" rows="3" required placeholder="Cuéntenos brevemente qué necesita..."
+      <label for="mensaje" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Descripción breve del requerimiento</label>
+      <textarea id="mensaje" name="mensaje" rows="3" required placeholder="Cuéntenos brevemente qué necesita..."
                 class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors resize-none"></textarea>
     </div>
   </div>
 
   <button id="sbtn" type="submit"
-          class="w-full mt-3 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase py-3.5 transition-colors duration-200">
+          class="w-full mt-4 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase py-4 transition-all duration-200 shadow-lg active:scale-[0.98]">
     Enviar solicitud de cotización →
   </button>
 </form>
- 
- 
-<!-- ═══ FOOTER ═══ -->
-<footer class="py-12 px-6 border-t border-white/8 bg-ink2">
-  <div class="max-w-6xl mx-auto">
-    <div class="grid md:grid-cols-12 gap-8 items-start">
-      <div class="md:col-span-5">
-        <a href="#" class="flex items-center group">
-          <img src="./img/logotopoñuble.svg" alt="Logo TopoÑuble" class="h-6 w-auto">
+</div> </div> </section> <footer class="w-full bg-[#0A0A0A] py-20 border-t border-white/5 relative overflow-hidden">
+
+  <div class="absolute inset-0 sgrid opacity-20 pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+
+      <div class="flex flex-col items-start">
+        <a href="#inicio" class="mb-6 block">
+          <img 
+            src="./img/logotopoñuble.svg" 
+            alt="Logo TopoÑuble" 
+            class="h-8 w-auto"
+          >
         </a>
-        <p class="text-[13px] text-zinc1 leading-relaxed mt-3 max-w-sm">
-          Topografia profesional en la Region de Nuble. Levantamientos GNSS y subdivisiones con respaldo tecnico y normativo.
+
+        <p class="text-[#A1A1AA] text-[14px] leading-relaxed mb-6 text-left max-w-sm">
+          Topografía profesional en la Región de Ñuble. Levantamientos GNSS y subdivisiones 
+          con respaldo técnico y normativo vigente.
         </p>
-        <p class="font-mono text-[9px] text-white/25 mt-4 tracking-widest uppercase">San Carlos, Chile · 2026</p>
-      </div>
 
-      <div class="md:col-span-3">
-        <p class="font-mono text-[9px] text-white/30 uppercase tracking-widest mb-3">Navegacion</p>
-        <div class="space-y-2.5">
-          <a href="#inicio" class="block text-[13px] text-zinc2 hover:text-gold transition-colors">Inicio</a>
-          <a href="#servicios" class="block text-[13px] text-zinc2 hover:text-gold transition-colors">Servicios</a>
-          <a href="#nosotros" class="block text-[13px] text-zinc2 hover:text-gold transition-colors">Nosotros</a>
-          <a href="#cobertura" class="block text-[13px] text-zinc2 hover:text-gold transition-colors">Cobertura</a>
-          <a href="#contacto" class="block text-[13px] text-zinc2 hover:text-gold transition-colors">Contacto</a>
+        <div class="border-l-2 border-[#F5C500]/50 pl-4 text-left">
+          <p class="font-mono text-[10px] text-[#F5C500] tracking-widest uppercase">
+            San Carlos, Ñuble · Chile
+          </p>
+
+          <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase">
+            Establecido 2026
+          </p>
         </div>
       </div>
 
-      <div class="md:col-span-4">
-        <p class="font-mono text-[9px] text-white/30 uppercase tracking-widest mb-3">Contacto directo</p>
-        <div class="space-y-2 text-[13px]">
-          <a href="tel:+56998765432" class="block text-zinc2 hover:text-gold transition-colors">+56 9 9876 5432</a>
-          <a href="mailto:contacto@toponuble.cl" class="block text-zinc2 hover:text-gold transition-colors">contacto@toponuble.cl</a>
-          <p class="text-zinc2">Lun-Vie 8:30-18:00 · Sab 9:00-13:00</p>
-        </div>
-        <a href="https://wa.me/56998765432?text=Hola%2C+necesito+cotización+de+topografía" target="_blank"
-           class="inline-flex items-center gap-2 mt-4 border border-gold/40 text-gold hover:bg-gold hover:text-ink px-4 py-2.5 text-[11px] font-black tracking-widest uppercase transition-all duration-200">
-          WhatsApp directo
-        </a>
+      <div class="text-left">
+        <h4 class="font-mono text-[10px] text-white/40 uppercase tracking-[0.3em] mb-8">
+          Navegación
+        </h4>
+
+        <ul class="space-y-4 text-[13px] text-[#D4D4D8]">
+          <li>
+            <a href="#inicio" class="hover:text-[#F5C500] transition-colors block">
+              Inicio
+            </a>
+          </li>
+
+          <li>
+            <a href="#servicios" class="hover:text-[#F5C500] transition-colors block">
+              Servicios
+            </a>
+          </li>
+
+          <li>
+            <a href="#nosotros" class="hover:text-[#F5C500] transition-colors block">
+              Nosotros
+            </a>
+          </li>
+
+          <li>
+            <a href="#contacto" class="hover:text-[#F5C500] transition-colors block">
+              Contacto
+            </a>
+          </li>
+        </ul>
       </div>
+
+      <div class="text-left">
+        <h4 class="font-mono text-[10px] text-white/40 uppercase tracking-[0.3em] mb-8">
+          Contacto Directo
+        </h4>
+
+        <div class="space-y-6">
+
+          <div>
+            <p class="text-[9px] font-mono text-white/20 uppercase tracking-widest mb-1">
+              WhatsApp
+            </p>
+
+            <a 
+              href="tel:+56998765432" 
+              class="text-[#F4F4F5] hover:text-[#F5C500] transition-colors text-[16px] font-medium"
+            >
+              +56 9 9876 5432
+            </a>
+          </div>
+
+          <div>
+            <p class="text-[9px] font-mono text-white/20 uppercase tracking-widest mb-1">
+              Email
+            </p>
+
+            <a 
+              href="mailto:patricio@toponuble.cl" 
+              class="text-[#F4F4F5] hover:text-[#F5C500] transition-colors text-[16px] font-medium break-all"
+            >
+              patricio@toponuble.cl
+            </a>
+          </div>
+
+          <a 
+            href="https://wa.me/56998765432" 
+            target="_blank"
+            class="inline-block border border-[#F5C500]/30 text-[#F5C500] hover:bg-[#F5C500] hover:text-[#0A0A0A] px-6 py-4 text-[11px] font-black tracking-widest uppercase transition-all"
+          >
+            WhatsApp Directo
+          </a>
+
+        </div>
+      </div>
+
     </div>
 
-    <div class="mt-8 pt-5 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase">&copy; 2026 TopoNuble. Todos los derechos reservados.</p>
-      <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Levantamiento GNSS · Subdivision SAG/DOM</p>
+    <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+
+      <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase text-center md:text-left">
+        © 2026 TopoÑuble. Todos los derechos reservados.
+      </p>
+
+      <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase text-center md:text-right">
+        Levantamiento GNSS · Subdivisión SAG/DOM
+      </p>
+
     </div>
+
   </div>
 </footer>
- 
  
 <!-- ═══ WHATSAPP FLOTANTE ═══ -->
 <a href="https://wa.me/56998765432?text=Hola%2C+necesito+cotización+de+topografía" target="_blank"
