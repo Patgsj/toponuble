@@ -626,6 +626,50 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 // Formulario
 const form=document.getElementById('lead-form-toponuble');
 const btn=document.getElementById('lead-form-submit');
+const BTN_ORIGINAL_TEXT='ENVIAR SOLICITUD DE COTIZACIÓN →';
+const BTN_SENDING_TEXT='ENVIANDO...';
+const BTN_SUCCESS_TEXT='SOLICITUD ENVIADA ✓';
+const BTN_ERROR_TEXT='ERROR AL ENVIAR';
+let btnResetTimeout=null;
+
+const clearBtnResetTimeout=()=>{
+  if(btnResetTimeout){
+    clearTimeout(btnResetTimeout);
+    btnResetTimeout=null;
+  }
+};
+
+const resetSubmitButtonState=()=>{
+  clearBtnResetTimeout();
+  btn.textContent=BTN_ORIGINAL_TEXT;
+  btn.disabled=false;
+  btn.classList.remove('bg-green-500','hover:bg-green-600','bg-red-600','hover:bg-red-700','opacity-70','cursor-not-allowed');
+  if(!btn.classList.contains('bg-gold')) btn.classList.add('bg-gold');
+  if(!btn.classList.contains('hover:bg-gold2')) btn.classList.add('hover:bg-gold2');
+  btn.style.color='';
+};
+
+const setSubmitButtonSendingState=()=>{
+  clearBtnResetTimeout();
+  btn.textContent=BTN_SENDING_TEXT;
+  btn.disabled=true;
+  btn.classList.add('opacity-70','cursor-not-allowed');
+};
+
+const setSubmitButtonSuccessState=()=>{
+  btn.textContent=BTN_SUCCESS_TEXT;
+  btn.classList.remove('bg-gold','hover:bg-gold2','bg-red-600','hover:bg-red-700','opacity-70','cursor-not-allowed');
+  btn.classList.add('bg-green-500','hover:bg-green-600');
+  btn.style.color='#fff';
+};
+
+const setSubmitButtonErrorState=()=>{
+  btn.textContent=BTN_ERROR_TEXT;
+  btn.classList.remove('bg-gold','hover:bg-gold2','bg-green-500','hover:bg-green-600','opacity-70','cursor-not-allowed');
+  btn.classList.add('bg-red-600','hover:bg-red-700');
+  btn.style.color='#fff';
+};
+
 const trackEvent=(eventName,params={})=>{
   if(typeof window.gtag==='function'){
     window.gtag('event',eventName,params);
@@ -633,8 +677,7 @@ const trackEvent=(eventName,params={})=>{
 };
 form.addEventListener('submit',async e=>{
   e.preventDefault();
-  btn.textContent='Enviando...';
-  btn.disabled=true;
+  setSubmitButtonSendingState();
   try{
     const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
     if(r.ok){
@@ -646,18 +689,16 @@ form.addEventListener('submit',async e=>{
         value:1,
         currency:'CLP'
       });
-      btn.textContent='Solicitud enviada ✓';
-      btn.classList.replace('bg-gold','bg-green-500');
-      btn.classList.replace('hover:bg-gold2','hover:bg-green-600');
-      btn.style.color='#fff';
+      setSubmitButtonSuccessState();
       form.reset();
+      btnResetTimeout=setTimeout(()=>resetSubmitButtonState(),4000);
     } else {
-      btn.textContent='Error — escriba por WhatsApp';
-      btn.disabled=false;
+      setSubmitButtonErrorState();
+      btnResetTimeout=setTimeout(()=>resetSubmitButtonState(),3000);
     }
   } catch {
-    btn.textContent='Error — escriba por WhatsApp';
-    btn.disabled=false;
+    setSubmitButtonErrorState();
+    btnResetTimeout=setTimeout(()=>resetSubmitButtonState(),3000);
   }
 });
 
