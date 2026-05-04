@@ -679,73 +679,141 @@ tailwind.config = {
 
 
 <!-- ═══ CONTACTO ═══ -->
-<section id="contacto" class="py-24 px-6 sgrid bg-ink">
+<section id="contacto" class="py-24 px-6 sgrid bg-ink2">
   <div class="max-w-7xl mx-auto">
 
-    <div class="text-center mb-12 reveal">
-      <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 05 / Contacto</span>
-      <h2 class="text-3xl md:text-[2.6rem] font-black text-snow mb-3 leading-tight">Conversemos tu proyecto en Ñuble</h2>
-      <p class="text-zinc1 max-w-lg mx-auto text-[13px] leading-relaxed">
-        Cuéntanos tu terreno rural en Chillán o la Región de Ñuble y te orientamos con una evaluación inicial en menos de 24 horas hábiles.
-      </p>
+    <!-- Header -->
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14 reveal">
+      <div>
+        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 05 / Contacto</span>
+        <h2 class="text-3xl md:text-[2.6rem] font-black text-snow leading-tight">Conversemos tu<br>proyecto en Ñuble</h2>
+      </div>
+      <div class="lg:max-w-xs lg:pb-1 reveal" style="transition-delay:.1s">
+        <p class="text-zinc1 text-[14px] leading-relaxed mb-4">
+          Cuéntanos tu terreno rural en Chillán o la Región de Ñuble y te orientamos con una evaluación inicial.
+        </p>
+        <div class="inline-flex items-center gap-2 border border-gold/25 bg-gold/5 text-gold text-[10px] font-mono tracking-widest px-3 py-1.5 uppercase">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+          Respuesta en &lt; 24h hábiles
+        </div>
+      </div>
     </div>
 
     <div class="grid lg:grid-cols-12 gap-5 items-stretch">
 
-      <!-- Mapa ubicación -->
-      <div class="lg:col-span-5 reveal border border-white/8 bg-ink2 p-5 md:p-6 flex flex-col">
-        <div class="mb-4">
-          <span class="font-mono text-[9px] text-gold tracking-widest uppercase">Ubicación referencial</span>
+      <!-- ── PANEL IZQUIERDO: Contacto + Mapa ── -->
+      <div class="lg:col-span-5 reveal flex flex-col gap-4 h-full">
+
+        <!-- Cards de contacto directo -->
+        <div class="border border-white/8 bg-ink p-5">
+          <p class="font-mono text-[9px] text-gold tracking-widest uppercase mb-4">Contacto directo</p>
+          <div class="grid grid-cols-2 gap-3">
+            <a href="https://api.whatsapp.com/send?phone=56966640562" target="_blank" rel="noopener noreferrer"
+               class="group border border-white/8 bg-ink2 hover:border-gold/30 hover:bg-ink3 p-4 transition-all flex flex-col gap-2.5">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-[#25D366] flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+                </svg>
+                <span class="font-mono text-[8px] text-zinc1 tracking-widest uppercase group-hover:text-gold transition-colors">WhatsApp</span>
+              </div>
+              <span class="text-[13px] text-snow font-medium leading-snug">+56 9 9876 5432</span>
+            </a>
+            <a href="mailto:patricio@toponuble.cl"
+               class="group border border-white/8 bg-ink2 hover:border-gold/30 hover:bg-ink3 p-4 transition-all flex flex-col gap-2.5">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-gold/50 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <span class="font-mono text-[8px] text-zinc1 tracking-widest uppercase group-hover:text-gold transition-colors">Email</span>
+              </div>
+              <span class="text-[12px] text-snow font-medium break-all leading-snug">patricio@toponuble.cl</span>
+            </a>
+          </div>
         </div>
-        <div class="relative w-full h-[20rem] md:h-[24rem] border border-gold/20 bg-ink overflow-hidden flex-1">
-          <iframe
-            title="Ubicación TopoÑuble en mapa satelital"
-            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1848.8749473100386!2d-71.92496598099783!3d-36.46584542286525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sparcelas%20el%20rosario%20san%20carlos%20%C3%B1uble!5e1!3m2!1ses!2scl!4v1776188891976!5m2!1ses!2scl"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            class="absolute inset-0 w-full h-full border-0">
-          </iframe>
+
+        <!-- Mapa de ubicación -->
+        <div class="border border-white/8 bg-ink p-5 flex flex-col flex-1">
+          <div class="flex items-center gap-2 mb-4">
+            <svg class="w-3.5 h-3.5 text-gold/50 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span class="font-mono text-[9px] text-gold tracking-widest uppercase">Ubicación referencial</span>
+          </div>
+
+          <!-- Frame del mapa con esquinas decorativas -->
+          <div class="relative flex-1 min-h-[14rem]">
+            <!-- esquinas gold -->
+            <div class="absolute top-0 left-0 w-7 h-px bg-gold/60 z-10 pointer-events-none"></div>
+            <div class="absolute top-0 left-0 w-px h-7 bg-gold/60 z-10 pointer-events-none"></div>
+            <div class="absolute top-0 right-0 w-7 h-px bg-gold/60 z-10 pointer-events-none"></div>
+            <div class="absolute top-0 right-0 w-px h-7 bg-gold/60 z-10 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-7 h-px bg-gold/60 z-10 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-px h-7 bg-gold/60 z-10 pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 w-7 h-px bg-gold/60 z-10 pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 w-px h-7 bg-gold/60 z-10 pointer-events-none"></div>
+            <!-- viñeta para integrar al fondo oscuro -->
+            <div class="absolute inset-0 z-[1] pointer-events-none" style="box-shadow:inset 0 0 32px rgba(10,10,10,.55)"></div>
+            <iframe
+              title="Ubicación TopoÑuble en mapa satelital"
+              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d1848.8749473100386!2d-71.92496598099783!3d-36.46584542286525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sparcelas%20el%20rosario%20san%20carlos%20%C3%B1uble!5e1!3m2!1ses!2scl!4v1776188891976!5m2!1ses!2scl"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="absolute inset-0 w-full h-full border-0 grayscale brightness-75 contrast-110">
+            </iframe>
+          </div>
+
+          <a href="https://maps.app.goo.gl/NWSiZ7nootVe1eHJA" target="_blank" aria-label="Abrir ubicación de TopoÑuble en Google Maps"
+             class="mt-3 inline-flex items-center justify-center gap-2 border border-gold/35 text-gold hover:bg-gold hover:text-ink text-[11px] font-black tracking-widest uppercase px-4 py-3 transition-all duration-200">
+            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+            Abrir en Google Maps
+          </a>
         </div>
-        <a href="https://maps.app.goo.gl/NWSiZ7nootVe1eHJA" target="_blank" aria-label="Abrir ubicación de TopoÑuble en Google Maps"
-           class="mt-3 inline-flex items-center justify-center gap-2 border border-gold/35 text-gold hover:bg-gold hover:text-ink text-[11px] font-black tracking-widest uppercase px-4 py-3 transition-all duration-200">
-          Abrir en Google Maps
-        </a>
       </div>
 
-      <!-- Formulario -->
-      <form id="lead-form-toponuble" class="lg:col-span-7 reveal border border-white/8 bg-ink2 p-5 md:p-6" style="transition-delay:.1s"
+      <!-- ── FORMULARIO ── -->
+      <form id="lead-form-toponuble" class="lg:col-span-7 reveal border border-white/8 bg-ink p-6 md:p-8 flex flex-col" style="transition-delay:.12s"
             action="send.php" method="POST">
 
-        <div class="mb-5">
-          <span class="font-mono text-[9px] text-gold tracking-widest uppercase">Solicitud de cotización</span>
-          <h3 class="text-xl font-bold text-snow mt-2">Formulario rápido</h3>
+        <!-- Cabecera del form -->
+        <div class="mb-7 pb-6 border-b border-white/6">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <span class="font-mono text-[9px] text-gold tracking-widest uppercase">Solicitud de cotización</span>
+            <div class="flex-shrink-0 inline-flex items-center gap-1.5 border border-gold/20 bg-gold/5 text-gold text-[9px] font-mono tracking-widest px-2.5 py-1 uppercase">
+              <span class="w-1 h-1 rounded-full bg-gold animate-pulse"></span>
+              &lt; 24h hábiles
+            </div>
+          </div>
+          <h3 class="text-[1.5rem] font-bold text-snow mb-1.5">Cuéntanos tu proyecto</h3>
+          <p class="text-zinc1 text-[13px]">Completa el formulario y te contactamos con una evaluación sin costo.</p>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-3">
+        <!-- Bloque 01: datos personales -->
+        <p class="font-mono text-[9px] text-white/20 tracking-[0.25em] uppercase mb-3">01 · Datos de contacto</p>
+        <div class="grid sm:grid-cols-2 gap-3 mb-6">
           <div>
-            <label for="nombre" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Nombre Completo</label>
+            <label for="nombre" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Nombre completo *</label>
             <input id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="Juan González"
-                   class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+                   class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow placeholder-white/20 transition-colors"/>
           </div>
-
           <div>
-            <label for="telefono" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Teléfono de contacto</label>
+            <label for="telefono" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Teléfono *</label>
             <input id="telefono" name="telefono" type="tel" required autocomplete="tel" placeholder="+56 9 XXXX XXXX"
-                   class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+                   class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow placeholder-white/20 transition-colors"/>
           </div>
-
           <div>
-            <label for="email" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Correo Electrónico</label>
+            <label for="email" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Correo electrónico *</label>
             <input id="email" name="email" type="email" required autocomplete="email" placeholder="correo@empresa.cl"
-                   class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+                   class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow placeholder-white/20 transition-colors"/>
           </div>
-
           <div>
-            <label for="servicio" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Servicio solicitado</label>
+            <label for="servicio" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Servicio *</label>
             <div class="relative">
               <select id="servicio" name="servicio" required
-                      class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow transition-colors appearance-none cursor-pointer">
+                      class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow transition-colors appearance-none cursor-pointer">
                 <option value="" disabled selected>Seleccione un servicio</option>
                 <option value="Levantamiento Topográfico GNSS">Levantamiento Topográfico GNSS</option>
                 <option value="Subdivisión Rural (SAG)">Subdivisión Rural (SAG)</option>
@@ -753,29 +821,42 @@ tailwind.config = {
                 <option value="Ambos servicios">Ambos servicios</option>
                 <option value="Consulta general">Consulta general</option>
               </select>
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gold">
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gold">
                 <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="sm:col-span-2">
-            <label for="ubicacion" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Superficie y ubicación del terreno</label>
+        <!-- Bloque 02: detalles del proyecto -->
+        <p class="font-mono text-[9px] text-white/20 tracking-[0.25em] uppercase mb-3">02 · Detalles del proyecto</p>
+        <div class="space-y-3 flex-1">
+          <div>
+            <label for="ubicacion" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Superficie y ubicación del terreno</label>
             <input id="ubicacion" name="ubicacion" type="text" placeholder="Ej: 3 ha - sector Quillón, Ñuble"
-                   class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+                   class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow placeholder-white/20 transition-colors"/>
           </div>
-
-          <div class="sm:col-span-2">
-            <label for="mensaje" class="block font-mono text-[9px] text-white/30 uppercase tracking-widest mb-1.5">Descripción breve del requerimiento</label>
-            <textarea id="mensaje" name="mensaje" rows="3" required placeholder="Cuéntenos brevemente qué necesita..."
-                      class="w-full bg-ink border border-white/8 focus:border-gold outline-none px-3.5 py-2.5 text-[13px] text-snow placeholder-white/20 transition-colors resize-none"></textarea>
+          <div>
+            <label for="mensaje" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Descripción del requerimiento *</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntenos brevemente qué necesita..."
+                      class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow placeholder-white/20 transition-colors resize-none"></textarea>
           </div>
         </div>
 
-        <button id="lead-form-submit" type="submit" aria-label="Enviar formulario de cotización"
-                class="w-full mt-4 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase py-4 transition-all duration-200 shadow-lg active:scale-[0.98]">
-          Enviar solicitud de cotización →
-        </button>
+        <!-- Submit -->
+        <div class="mt-6 pt-5 border-t border-white/6">
+          <button id="lead-form-submit" type="submit" aria-label="Enviar formulario de cotización"
+                  class="w-full bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase py-4 transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2.5">
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+            </svg>
+            Enviar solicitud de cotización
+          </button>
+          <p class="text-center font-mono text-[9px] text-white/18 tracking-widest uppercase mt-3">
+            Tus datos son confidenciales · Respuesta en &lt; 24h hábiles
+          </p>
+        </div>
+
       </form>
     </div>
   </div>
