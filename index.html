@@ -473,46 +473,208 @@ tailwind.config = {
 
 
 <!-- ═══ COBERTURA ═══ -->
-<section id="cobertura" class="py-24 px-6 bg-ink2 sgrid">
-  <div class="max-w-7xl mx-auto">
-    <div class="grid md:grid-cols-2 gap-14 items-center">
+<section id="cobertura" class="pb-0 pt-0 bg-ink relative overflow-hidden">
+
+  <!-- Background: topografía image muy sutil -->
+  <div class="absolute inset-0 bg-cover bg-center pointer-events-none" style="background-image:url('img/FONDO_TOPOGRAFIA.jpg');opacity:.05"></div>
+
+  <!-- Grid overlay -->
+  <div class="absolute inset-0 sgrid"></div>
+
+  <!-- Gran texto ÑUBLE difuminado de fondo -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+    <span class="font-black text-snow leading-none tracking-[-0.04em]" style="font-size:clamp(7rem,22vw,20rem);opacity:.025">ÑUBLE</span>
+  </div>
+
+  <!-- ── HEADER ── -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-14">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
 
       <div class="reveal">
         <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 04 / Cobertura</span>
-        <h2 class="text-[2.5rem] md:text-5xl font-black text-snow mb-5 leading-tight">Toda la Región<br>de Ñuble</h2>
-        <div class="w-10 h-[2px] bg-gold mb-7"></div>
-        <p class="text-zinc1 text-[14px] leading-relaxed mb-8 max-w-md">
-          Sabemos que subdividir un terreno puede ser confuso. Por eso trabajamos con un proceso claro: revisamos tu caso, levantamos la información técnica, preparamos los antecedentes y te acompañamos para que tomes mejores decisiones.
+        <h2 class="text-[clamp(2.4rem,6vw,4.5rem)] font-black text-snow leading-[1.02]">
+          Toda la Región<br>de <em class="not-italic text-gold">Ñuble</em>
+        </h2>
+      </div>
+
+      <div class="reveal lg:max-w-xs lg:pb-1" style="transition-delay:.1s">
+        <p class="text-zinc1 text-[14px] leading-relaxed mb-7">
+          Cubrimos las 21 comunas de la Región de Ñuble con levantamientos GNSS de alta precisión y orientación técnica para subdivisiones rurales y parcelaciones.
         </p>
-        <div class="grid grid-cols-2 gap-y-3 gap-x-8">
-          <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-3 h-px bg-gold flex-shrink-0"></span>Chillán · Chillán Viejo</p>
-          <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-3 h-px bg-gold flex-shrink-0"></span>San Carlos · Ñiquén</p>
-          <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-3 h-px bg-gold flex-shrink-0"></span>Bulnes · El Carmen</p>
-          <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-3 h-px bg-gold flex-shrink-0"></span>Yungay · San Fabián</p>
-          <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-3 h-px bg-gold flex-shrink-0"></span>Coihueco · Pinto</p>
-          <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-3 h-px bg-gold flex-shrink-0"></span>Quillón · Pemuco</p>
-          <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-3 h-px bg-gold flex-shrink-0"></span>Cobquecura · Quirihue</p>
-          <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-3 h-px bg-gold flex-shrink-0"></span>Ninhue · Trehuaco</p>
+        <div class="flex items-center gap-6">
+          <div>
+            <span class="font-black text-[2.4rem] text-gold leading-none">21</span>
+            <span class="font-mono text-[9px] text-zinc1 block uppercase tracking-widest mt-0.5">Comunas</span>
+          </div>
+          <div class="w-px h-10 bg-white/8"></div>
+          <div>
+            <span class="font-black text-[2.4rem] text-gold leading-none">&lt;24h</span>
+            <span class="font-mono text-[9px] text-zinc1 block uppercase tracking-widest mt-0.5">Evaluación</span>
+          </div>
+          <div class="w-px h-10 bg-white/8"></div>
+          <div>
+            <span class="font-black text-[2.4rem] text-gold leading-none">GNSS</span>
+            <span class="font-mono text-[9px] text-zinc1 block uppercase tracking-widest mt-0.5">Alta precisión</span>
+          </div>
         </div>
       </div>
 
-      <!-- Mapa interactivo -->
-      <div class="reveal flex justify-center w-full" style="transition-delay:.1s">
-        <div id="mapa-wrap" class="relative w-full max-w-[44rem] h-[30rem] md:h-[37rem] lg:h-[44rem] border border-gold/10 flex items-center justify-center" style="background:rgba(20,20,20,.8)">
-          <div class="absolute inset-0" style="background-image:linear-gradient(rgba(245,197,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(245,197,0,.03) 1px,transparent 1px);background-size:20px 20px"></div>
-          <object id="mapa-nuble" data="img/Mapa%20%C3%B1uble.svg" type="image/svg+xml" aria-label="Mapa interactivo de comunas de la Región de Ñuble" class="relative z-10 w-[92%] h-[30rem] md:w-[88%] md:h-[37rem] lg:w-[38rem] lg:h-[44rem]"></object>
-          <div id="map-tooltip" class="map-tooltip">Comuna</div>
-          <div class="absolute bottom-3 right-3">
-            <span class="font-mono text-[8px] text-gold/25 tracking-widest uppercase">Región de Ñuble</span>
-          </div>
-          <div class="absolute top-0 left-0 w-5 h-px bg-gold/40"></div>
-          <div class="absolute top-0 left-0 w-px h-5 bg-gold/40"></div>
-          <div class="absolute bottom-0 right-0 w-5 h-px bg-gold/40"></div>
-          <div class="absolute bottom-0 right-0 w-px h-5 bg-gold/40"></div>
-        </div>
-      </div>
     </div>
   </div>
+
+  <!-- ── MAPA + LISTAS DE COMUNAS ── -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-[180px_1fr_180px] gap-6 items-center">
+
+      <!-- Columna izquierda de comunas (solo desktop) -->
+      <div class="hidden lg:flex flex-col reveal">
+        <p class="font-mono text-[8px] text-gold/40 tracking-[0.25em] uppercase mb-5">Zona norte / centro</p>
+        <div class="space-y-0">
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Chillán</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Chillán Viejo</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">San Carlos</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Ñiquén</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Coihueco</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Pinto</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">San Fabián</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">El Carmen</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa central, grande -->
+      <div class="reveal" style="transition-delay:.08s">
+        <div class="relative">
+          <!-- Glow ambient detrás del mapa -->
+          <div class="absolute -inset-6 pointer-events-none" style="background:radial-gradient(ellipse,rgba(245,197,0,.09) 0%,transparent 65%)"></div>
+
+          <div id="mapa-wrap" class="relative h-[28rem] md:h-[40rem] lg:h-[54rem] border border-gold/15 flex items-center justify-center overflow-hidden" style="background:rgba(10,10,10,.94)">
+
+            <!-- Micro grid interior -->
+            <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(245,197,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(245,197,0,.025) 1px,transparent 1px);background-size:18px 18px"></div>
+
+            <!-- Glow central sutil -->
+            <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 45%,rgba(245,197,0,.05) 0%,transparent 60%)"></div>
+
+            <!-- El mapa SVG interactivo -->
+            <object id="mapa-nuble" data="img/Mapa%20%C3%B1uble.svg" type="image/svg+xml" aria-label="Mapa interactivo de comunas de la Región de Ñuble"
+              class="relative z-10 w-[88%] h-[26rem] md:w-[85%] md:h-[38rem] lg:w-full lg:h-[52rem]"></object>
+
+            <div id="map-tooltip" class="map-tooltip">Comuna</div>
+
+            <!-- Esquinas decorativas -->
+            <div class="absolute top-0 left-0 w-10 h-px bg-gold/60"></div>
+            <div class="absolute top-0 left-0 w-px h-10 bg-gold/60"></div>
+            <div class="absolute top-0 right-0 w-10 h-px bg-gold/60"></div>
+            <div class="absolute top-0 right-0 w-px h-10 bg-gold/60"></div>
+            <div class="absolute bottom-0 left-0 w-10 h-px bg-gold/60"></div>
+            <div class="absolute bottom-0 left-0 w-px h-10 bg-gold/60"></div>
+            <div class="absolute bottom-0 right-0 w-10 h-px bg-gold/60"></div>
+            <div class="absolute bottom-0 right-0 w-px h-10 bg-gold/60"></div>
+
+            <!-- Etiqueta inferior centrada -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
+              <span class="w-4 h-px bg-gold/30"></span>
+              <span class="font-mono text-[8px] text-gold/35 tracking-[0.3em] uppercase whitespace-nowrap">Región de Ñuble · Chile</span>
+              <span class="w-4 h-px bg-gold/30"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha de comunas (solo desktop) -->
+      <div class="hidden lg:flex flex-col reveal" style="transition-delay:.16s">
+        <p class="font-mono text-[8px] text-gold/40 tracking-[0.25em] uppercase mb-5">Zona sur / costa</p>
+        <div class="space-y-0">
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Bulnes</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Yungay</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Pemuco</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Quillón</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Quirihue</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Cobquecura</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Ninhue</span>
+          </div>
+          <div class="flex items-center gap-2.5 py-2.5 group">
+            <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
+            <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors">Trehuaco</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Comunas en mobile: grid debajo del mapa -->
+  <div class="lg:hidden relative z-10 max-w-7xl mx-auto px-6 mt-10 reveal">
+    <div class="grid grid-cols-2 gap-y-2.5 gap-x-6">
+      <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-2 h-px bg-gold flex-shrink-0"></span>Chillán · Chillán Viejo</p>
+      <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-2 h-px bg-gold flex-shrink-0"></span>San Carlos · Ñiquén</p>
+      <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-2 h-px bg-gold flex-shrink-0"></span>Bulnes · El Carmen</p>
+      <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-2 h-px bg-gold flex-shrink-0"></span>Yungay · San Fabián</p>
+      <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-2 h-px bg-gold flex-shrink-0"></span>Coihueco · Pinto</p>
+      <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-2 h-px bg-gold flex-shrink-0"></span>Quillón · Pemuco</p>
+      <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-2 h-px bg-gold flex-shrink-0"></span>Cobquecura · Quirihue</p>
+      <p class="flex items-center gap-2 text-[13px] text-zinc2"><span class="w-2 h-px bg-gold flex-shrink-0"></span>Ninhue · Trehuaco</p>
+    </div>
+  </div>
+
+  <!-- ── FRANJA CTA INFERIOR ── -->
+  <div class="relative z-10 mt-16 border-t border-white/6" style="background:rgba(20,20,20,.7)">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-1">¿Tu terreno está en Ñuble?</p>
+        <p class="text-zinc1 text-[13px]">Evaluamos tu caso sin importar la ubicación dentro de la Región.</p>
+      </div>
+      <a href="#contacto" aria-label="Solicitar evaluación de terreno en Ñuble"
+         class="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3.5 transition-colors duration-200">
+        Consultar disponibilidad →
+      </a>
+    </div>
+  </div>
+
 </section>
 
 
