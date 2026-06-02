@@ -1400,47 +1400,41 @@ if(mapaObj && mapaWrap && mapTooltip){
   });
 }
 
-// FAQ accordion — animación fluida sin saltos
+// FAQ accordion — animación fluida
 document.querySelectorAll('#faq-list details').forEach(details => {
   const summary = details.querySelector('summary');
-  const content = details.querySelector('div');
+  const content = summary.nextElementSibling;
   content.style.overflow = 'hidden';
 
   summary.addEventListener('click', e => {
     e.preventDefault();
 
     if (details.open) {
-      // Sin transición: fijar altura real
       content.style.transition = 'none';
       content.style.height = content.scrollHeight + 'px';
-      // Siguiente frame: activar transición y animar a 0
-      requestAnimationFrame(() => {
-        content.style.transition = 'height 340ms cubic-bezier(0.4,0,0.2,1)';
-        content.style.height = '0px';
-      });
+      void content.offsetHeight; // forzar reflow síncrono
+      content.style.transition = 'height 320ms cubic-bezier(0.4,0,0.2,1)';
+      content.style.height = '0px';
       content.addEventListener('transitionend', function onEnd(ev) {
         if (ev.propertyName !== 'height') return;
         content.removeEventListener('transitionend', onEnd);
         details.removeAttribute('open');
-        content.style.height = '';
         content.style.transition = '';
+        content.style.height = '';
       });
     } else {
       details.setAttribute('open', '');
       const h = content.scrollHeight;
-      // Sin transición: fijar punto de partida en 0
       content.style.transition = 'none';
       content.style.height = '0px';
-      // Siguiente frame: activar transición y animar a altura real
-      requestAnimationFrame(() => {
-        content.style.transition = 'height 340ms cubic-bezier(0.4,0,0.2,1)';
-        content.style.height = h + 'px';
-      });
+      void content.offsetHeight; // forzar reflow síncrono
+      content.style.transition = 'height 320ms cubic-bezier(0.4,0,0.2,1)';
+      content.style.height = h + 'px';
       content.addEventListener('transitionend', function onEnd(ev) {
         if (ev.propertyName !== 'height') return;
         content.removeEventListener('transitionend', onEnd);
-        content.style.height = '';
         content.style.transition = '';
+        content.style.height = '';
       });
     }
   });
