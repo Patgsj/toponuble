@@ -1404,36 +1404,43 @@ if(mapaObj && mapaWrap && mapTooltip){
 document.querySelectorAll('#faq-list details').forEach(details => {
   const summary = details.querySelector('summary');
   const content = details.querySelector('div');
-
   content.style.overflow = 'hidden';
-  content.style.transition = 'height 340ms cubic-bezier(0.4,0,0.2,1)';
 
   summary.addEventListener('click', e => {
     e.preventDefault();
 
     if (details.open) {
-      // Fijar altura actual antes de animar a 0
+      // Sin transición: fijar altura real
+      content.style.transition = 'none';
       content.style.height = content.scrollHeight + 'px';
-      requestAnimationFrame(() => requestAnimationFrame(() => {
+      // Siguiente frame: activar transición y animar a 0
+      requestAnimationFrame(() => {
+        content.style.transition = 'height 340ms cubic-bezier(0.4,0,0.2,1)';
         content.style.height = '0px';
-      }));
+      });
       content.addEventListener('transitionend', function onEnd(ev) {
         if (ev.propertyName !== 'height') return;
         content.removeEventListener('transitionend', onEnd);
         details.removeAttribute('open');
         content.style.height = '';
+        content.style.transition = '';
       });
     } else {
       details.setAttribute('open', '');
       const h = content.scrollHeight;
+      // Sin transición: fijar punto de partida en 0
+      content.style.transition = 'none';
       content.style.height = '0px';
-      requestAnimationFrame(() => requestAnimationFrame(() => {
+      // Siguiente frame: activar transición y animar a altura real
+      requestAnimationFrame(() => {
+        content.style.transition = 'height 340ms cubic-bezier(0.4,0,0.2,1)';
         content.style.height = h + 'px';
-      }));
+      });
       content.addEventListener('transitionend', function onEnd(ev) {
         if (ev.propertyName !== 'height') return;
         content.removeEventListener('transitionend', onEnd);
         content.style.height = '';
+        content.style.transition = '';
       });
     }
   });
