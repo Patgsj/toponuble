@@ -1399,6 +1399,31 @@ if(mapaObj && mapaWrap && mapTooltip){
     });
   });
 }
+
+// FAQ accordion — animación fluida
+document.querySelectorAll('#faq-list details').forEach(details => {
+  const summary = details.querySelector('summary');
+  const content = details.querySelector('div');
+  content.style.overflow = 'hidden';
+
+  summary.addEventListener('click', e => {
+    e.preventDefault();
+    if (details.open) {
+      const anim = content.animate(
+        { height: [content.scrollHeight + 'px', '0px'] },
+        { duration: 340, easing: 'cubic-bezier(0.4,0,0.2,1)' }
+      );
+      anim.onfinish = () => { details.removeAttribute('open'); content.style.height = ''; };
+    } else {
+      details.setAttribute('open', '');
+      const h = content.scrollHeight;
+      content.animate(
+        { height: ['0px', h + 'px'] },
+        { duration: 340, easing: 'cubic-bezier(0.4,0,0.2,1)' }
+      );
+    }
+  });
+});
 </script>
 </body>
 </html>
