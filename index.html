@@ -626,7 +626,7 @@ tailwind.config = {
   </div>
 
   <!-- ── HEADER ── -->
-  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-14">
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-14">
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
 
       <div class="reveal">
@@ -818,7 +818,7 @@ tailwind.config = {
 
 
 <!-- ═══ FAQ ═══ -->
-<section id="faq" class="py-24 px-6 bg-ink2 sgrid">
+<section id="faq" class="py-28 px-6 bg-ink2 sgrid">
   <div class="max-w-4xl mx-auto">
 
     <div class="text-center mb-14 reveal">
@@ -929,7 +929,7 @@ tailwind.config = {
 
 
 <!-- ═══ CONTACTO ═══ -->
-<section id="contacto" class="py-24 px-6 sgrid bg-ink2">
+<section id="contacto" class="py-28 px-6 sgrid bg-ink2">
   <div class="max-w-7xl mx-auto">
 
     <!-- Header -->
@@ -1242,7 +1242,7 @@ window.addEventListener('load',updateActiveNav);
 updateActiveNav();
 
 // Scroll reveal
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:0.08});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:0,rootMargin:'0px 0px -12% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 // Formulario
