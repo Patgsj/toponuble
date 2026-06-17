@@ -1160,7 +1160,7 @@ tailwind.config = {
 
         <!-- Footer meta -->
         <div class="flex items-center justify-between border-t border-white/6 pt-5">
-          <span class="font-mono text-[9px] text-white/30 tracking-widest uppercase"><span data-pub="2026-06-17T10:00:00"></span> · 8 min</span>
+          <span class="font-mono text-[9px] text-white/30 tracking-widest uppercase"><span data-pub="2026-06-17T10:00:00"></span></span>
           <span class="font-mono text-[10px] text-gold tracking-widest uppercase group-hover:translate-x-1 transition-transform duration-200">Leer →</span>
         </div>
       </a>
@@ -1467,19 +1467,22 @@ tailwind.config = {
 
 <!-- ═══ SCRIPTS ═══ -->
 <script>
-// Tiempo relativo en cards de blog
+// Tiempo relativo dinámico en cards de blog
 (function(){
   function relTime(dateStr){
     var diff=Math.floor((Date.now()-new Date(dateStr).getTime())/1000);
-    if(diff<60) return 'hace '+diff+' min';
-    if(diff<3600){var h=Math.floor(diff/60);return 'hace '+(h===1?'1 minuto':h+' minutos');}
-    if(diff<86400){var h=Math.floor(diff/3600);return 'hace '+(h===1?'1 hora':h+' horas');}
-    var d=Math.floor(diff/86400);
-    return 'hace '+(d===1?'1 día':d+' días');
+    if(diff<60) return 'hace '+(diff<1?1:diff)+' seg';
+    if(diff<3600){var m=Math.floor(diff/60);return 'hace '+m+(m===1?' minuto':' minutos');}
+    if(diff<86400){var h=Math.floor(diff/3600);return 'hace '+h+(h===1?' hora':' horas');}
+    var d=Math.floor(diff/86400);return 'hace '+d+(d===1?' día':' días');
   }
-  document.querySelectorAll('[data-pub]').forEach(function(el){
-    el.textContent=relTime(el.getAttribute('data-pub'));
-  });
+  function update(){
+    document.querySelectorAll('[data-pub]').forEach(function(el){
+      el.textContent=relTime(el.getAttribute('data-pub'));
+    });
+  }
+  update();
+  setInterval(update,30000);
 })();
 
 // Llegada desde otra página con #hash → corrige offset de la nav fija
