@@ -187,7 +187,7 @@ tailwind.config = {
     <!-- Badge + fecha -->
     <div class="flex flex-wrap items-center gap-3 mb-6 reveal" style="transition-delay:.05s">
       <span class="inline-flex items-center border border-gold/30 bg-gold/8 text-gold text-[9px] font-mono tracking-widest px-3 py-1.5 uppercase">Normativa SAG</span>
-      <span class="font-mono text-[9px] text-white/40 tracking-widest uppercase">17 Jun 2026 · 5 min</span>
+      <span class="font-mono text-[9px] text-white/40 tracking-widest uppercase"><span data-pub="2026-06-17T10:00:00"></span></span>
     </div>
 
     <!-- Título -->
@@ -448,6 +448,24 @@ tailwind.config = {
 </a>
 
 <script>
+// Tiempo relativo dinámico
+(function(){
+  function relTime(dateStr){
+    var diff=Math.floor((Date.now()-new Date(dateStr).getTime())/1000);
+    if(diff<60) return 'hace '+(diff<1?1:diff)+' seg';
+    if(diff<3600){var m=Math.floor(diff/60);return 'hace '+m+(m===1?' minuto':' minutos');}
+    if(diff<86400){var h=Math.floor(diff/3600);return 'hace '+h+(h===1?' hora':' horas');}
+    var d=Math.floor(diff/86400);return 'hace '+d+(d===1?' día':' días');
+  }
+  function update(){
+    document.querySelectorAll('[data-pub]').forEach(function(el){
+      el.textContent=relTime(el.getAttribute('data-pub'));
+    });
+  }
+  update();
+  setInterval(update,30000);
+})();
+
 // Nav scroll
 window.addEventListener('scroll',()=>{
   const n=document.getElementById('nav');
