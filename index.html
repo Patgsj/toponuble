@@ -259,6 +259,7 @@ tailwind.config = {
     <ul class="hidden md:flex items-center gap-7 text-[10px] font-medium tracking-widest uppercase text-zinc1">
       <li><a href="#inicio"    class="nav-link hover:text-gold transition-colors">Inicio</a></li>
       <li><a href="#servicios" class="nav-link hover:text-gold transition-colors">Servicios</a></li>
+      <li><a href="#valores"   class="nav-link hover:text-gold transition-colors">Valores</a></li>
       <li><a href="#proceso"   class="nav-link hover:text-gold transition-colors">Proceso</a></li>
       <li><a href="#nosotros"  class="nav-link hover:text-gold transition-colors">Nosotros</a></li>
       <li><a href="#cobertura" class="nav-link hover:text-gold transition-colors">Cobertura</a></li>
@@ -282,6 +283,7 @@ tailwind.config = {
     <ul class="flex flex-col gap-5 text-[12px] font-medium tracking-widest uppercase text-zinc2">
       <li><a href="#inicio"    class="nav-link hover:text-gold transition-colors">Inicio</a></li>
       <li><a href="#servicios" class="nav-link hover:text-gold transition-colors">Servicios</a></li>
+      <li><a href="#valores"   class="nav-link hover:text-gold transition-colors">Valores</a></li>
       <li><a href="#proceso"   class="nav-link hover:text-gold transition-colors">Proceso</a></li>
       <li><a href="#nosotros"  class="nav-link hover:text-gold transition-colors">Nosotros</a></li>
       <li><a href="#cobertura" class="nav-link hover:text-gold transition-colors">Cobertura</a></li>
@@ -423,7 +425,7 @@ tailwind.config = {
               <path stroke-linecap="round" d="M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/>
             </svg>
           </div>
-          <span class="font-mono text-[9px] text-gold/50 tracking-widest">01</span>
+          <span class="font-mono text-base text-gold/50 tracking-widest">01</span>
         </div>
         <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">SAG Rural</p>
         <h3 class="text-[1.3rem] font-bold text-snow mb-4 leading-snug">Subdivisión rural SAG para terrenos rurales</h3>
@@ -447,7 +449,7 @@ tailwind.config = {
               <path stroke-linecap="round" d="M3 12h18M12 3v18"/>
             </svg>
           </div>
-          <span class="font-mono text-[9px] text-gold/50 tracking-widest">02</span>
+          <span class="font-mono text-base text-gold/50 tracking-widest">02</span>
         </div>
         <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">GNSS</p>
         <h3 class="text-[1.3rem] font-bold text-snow mb-4 leading-snug">Levantamiento topográfico GNSS con respaldo técnico</h3>
@@ -471,7 +473,7 @@ tailwind.config = {
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 21V12h6v9"/>
             </svg>
           </div>
-          <span class="font-mono text-[9px] text-gold/50 tracking-widest">03</span>
+          <span class="font-mono text-base text-gold/50 tracking-widest">03</span>
         </div>
         <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">DOM Urbana</p>
         <h3 class="text-[1.3rem] font-bold text-snow mb-4 leading-snug">Subdivisión urbana DOM en sectores urbanizados</h3>
@@ -499,12 +501,191 @@ tailwind.config = {
 </section>
 
 
+<!-- ═══ VALORES ═══ -->
+<section id="valores" class="reveal-sec py-28 px-6 bg-ink2 sgrid">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Header — mismo patrón que Servicios -->
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 reveal">
+      <div>
+        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 02 / Valores SAG</span>
+        <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Valores referenciales<br class="hidden md:block"> Subdivisión Rural SAG</h2>
+      </div>
+      <p class="text-zinc1 text-[14px] max-w-sm leading-relaxed lg:text-right lg:pb-1">
+        Referencia de costos según la cantidad de lotes resultantes del proyecto.
+      </p>
+    </div>
+
+    <!-- Carrusel -->
+    <div class="reveal" style="transition-delay:.05s">
+
+      <div class="overflow-hidden" id="val-carousel">
+        <div class="flex" id="val-track">
+
+          <!-- Card 1 · 2 a 4 lotes -->
+          <article class="w-full flex-shrink-0">
+            <div class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
+              <div class="flex items-start justify-between mb-8">
+                <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="8" height="8" rx=".5"/><rect x="13" y="4" width="8" height="8" rx=".5"/>
+                    <path stroke-linecap="round" d="M3 17h8M13 17h8"/>
+                  </svg>
+                </div>
+                <span class="font-mono text-base text-gold/50 tracking-widest">01</span>
+              </div>
+              <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Tramo · SAG Rural</p>
+              <h3 class="text-[1.3rem] font-bold text-snow mb-6 leading-snug">2 a 4 lotes</h3>
+              <div class="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 md:items-center flex-1">
+                <div>
+                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Servicio Topográfico</p>
+                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Nuestro cobro directo por el trabajo</p>
+                  <p class="text-gold font-black text-[2.4rem] leading-none">$300.000</p>
+                  <p class="font-mono text-sm text-gold/80 tracking-widest uppercase mt-2 font-semibold">por lote</p>
+                </div>
+                <span class="font-mono text-5xl text-white/50 font-light self-center text-center">+</span>
+                <div class="border-t border-white/6 pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/6 md:pl-6">
+                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Tercero Autorizado SAG</p>
+                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Cobro externo obligatorio por normativa</p>
+                  <p class="text-snow font-black text-[2.4rem] leading-none">$450.000</p>
+                  <p class="font-mono text-sm text-white/70 tracking-widest uppercase mt-2 font-semibold">valor fijo adicional</p>
+                </div>
+              </div>
+              <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
+                <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 01</span>
+                <a href="#contacto" aria-label="Cotizar tramo 2 a 4 lotes" class="inline-flex items-center gap-1.5 text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors group">
+                  Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 · 5 a 8 lotes -->
+          <article class="w-full flex-shrink-0">
+            <div class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
+              <div class="flex items-start justify-between mb-8">
+                <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="7" height="7" rx=".5"/><rect x="14" y="3" width="7" height="7" rx=".5"/>
+                    <rect x="3" y="14" width="7" height="7" rx=".5"/><rect x="14" y="14" width="7" height="7" rx=".5"/>
+                  </svg>
+                </div>
+                <span class="font-mono text-base text-gold/50 tracking-widest">02</span>
+              </div>
+              <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Tramo · SAG Rural</p>
+              <h3 class="text-[1.3rem] font-bold text-snow mb-6 leading-snug">5 a 8 lotes</h3>
+              <div class="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 md:items-center flex-1">
+                <div>
+                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Servicio Topográfico</p>
+                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Nuestro cobro directo por el trabajo</p>
+                  <p class="text-gold font-black text-[2.4rem] leading-none">$240.000</p>
+                  <p class="font-mono text-sm text-gold/80 tracking-widest uppercase mt-2 font-semibold">por lote</p>
+                </div>
+                <span class="font-mono text-5xl text-white/50 font-light self-center text-center">+</span>
+                <div class="border-t border-white/6 pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/6 md:pl-6">
+                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Tercero Autorizado SAG</p>
+                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Cobro externo obligatorio por normativa</p>
+                  <p class="text-snow font-black text-[2.4rem] leading-none">$500.000</p>
+                  <p class="font-mono text-sm text-white/70 tracking-widest uppercase mt-2 font-semibold">valor fijo adicional</p>
+                </div>
+              </div>
+              <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
+                <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 02</span>
+                <a href="#contacto" aria-label="Cotizar tramo 5 a 8 lotes" class="inline-flex items-center gap-1.5 text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors group">
+                  Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 · 9 lotes o más -->
+          <article class="w-full flex-shrink-0">
+            <div class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
+              <div class="flex items-start justify-between mb-8">
+                <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="5" height="5" rx=".5"/><rect x="10" y="3" width="5" height="5" rx=".5"/><rect x="17" y="3" width="5" height="5" rx=".5"/>
+                    <rect x="3" y="10" width="5" height="5" rx=".5"/><rect x="10" y="10" width="5" height="5" rx=".5"/><rect x="17" y="10" width="5" height="5" rx=".5"/>
+                    <rect x="3" y="17" width="5" height="5" rx=".5"/>
+                    <path stroke-linecap="round" d="M10 19.5h7"/>
+                  </svg>
+                </div>
+                <span class="font-mono text-base text-gold/50 tracking-widest">03</span>
+              </div>
+              <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Tramo · SAG Rural</p>
+              <h3 class="text-[1.3rem] font-bold text-snow mb-6 leading-snug">9 lotes o más</h3>
+              <div class="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 md:items-center flex-1">
+                <div>
+                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Servicio Topográfico</p>
+                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Nuestro cobro directo por el trabajo</p>
+                  <p class="text-gold font-black text-[2.4rem] leading-none">$180.000</p>
+                  <p class="font-mono text-sm text-gold/80 tracking-widest uppercase mt-2 font-semibold">por lote</p>
+                </div>
+                <span class="font-mono text-5xl text-white/50 font-light self-center text-center">+</span>
+                <div class="border-t border-white/6 pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/6 md:pl-6">
+                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Tercero Autorizado SAG</p>
+                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Cobro externo obligatorio por normativa</p>
+                  <p class="text-snow font-black text-[2.4rem] leading-none">$500.000</p>
+                  <p class="font-mono text-sm text-white/70 tracking-widest uppercase mt-2 font-semibold">valor fijo adicional</p>
+                </div>
+              </div>
+              <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
+                <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 03</span>
+                <a href="#contacto" aria-label="Cotizar tramo 9 lotes o más" class="inline-flex items-center gap-1.5 text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors group">
+                  Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Controles: prev · dots · next -->
+      <div class="flex items-center justify-between mt-px border-t border-white/5 pt-4">
+        <button id="val-prev" aria-label="Tramo anterior"
+          class="w-9 h-9 border border-white/10 bg-ink flex items-center justify-center text-zinc2 hover:text-gold hover:border-gold/30 transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+
+        <div class="flex items-center gap-2">
+          <button class="val-dot h-px transition-all duration-300" style="width:2rem;background:#F5C500" data-val-idx="0" aria-label="Tramo 1"></button>
+          <button class="val-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.2)" data-val-idx="1" aria-label="Tramo 2"></button>
+          <button class="val-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.2)" data-val-idx="2" aria-label="Tramo 3"></button>
+        </div>
+
+        <button id="val-next" aria-label="Tramo siguiente"
+          class="w-9 h-9 border border-white/10 bg-ink flex items-center justify-center text-zinc2 hover:text-gold hover:border-gold/30 transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Nota + CTA — mismo patrón que Servicios -->
+    <div class="reveal mt-px border border-gold/15 bg-gradient-to-r from-gold/8 via-transparent to-transparent p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4" style="transition-delay:.1s">
+      <div class="flex gap-3 items-start">
+        <svg class="w-4 h-4 text-gold/70 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+        </svg>
+        <p class="text-zinc2 text-[13px] leading-relaxed"><span class="text-snow font-semibold">Valores referenciales.</span> Pueden variar según ubicación del predio, superficie, accesibilidad, documentación disponible, complejidad técnica y posibles observaciones del proyecto.</p>
+      </div>
+      <a href="#contacto" aria-label="Solicitar cotización exacta de subdivisión SAG"
+         class="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
+        Solicitar cotización →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
 <!-- ═══ PROCESO ═══ -->
 <section id="proceso" class="reveal-sec py-28 px-6 sgrid bg-ink2 flex flex-col justify-center">
   <div class="max-w-7xl mx-auto">
 
     <div class="text-center mb-16 reveal">
-      <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 02 / Cómo trabajamos</span>
+      <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 03 / Cómo trabajamos</span>
       <h2 class="text-3xl md:text-[2.8rem] font-black text-snow">Tu subdivisión, paso a paso</h2>
       <p class="text-zinc1 text-[14px] max-w-xl mx-auto mt-4 leading-relaxed">
         Un proceso claro para que sepas exactamente qué esperar en cada etapa.
@@ -571,7 +752,7 @@ tailwind.config = {
 
       <!-- Left: text -->
       <div class="reveal">
-        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 03 / Por qué elegirnos</span>
+        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 04 / Por qué elegirnos</span>
         <h2 class="text-4xl md:text-[2.8rem] font-black text-snow mb-6 leading-tight">
           Conocemos el<br>territorio de Ñuble
         </h2>
@@ -637,7 +818,7 @@ tailwind.config = {
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
 
       <div class="reveal">
-        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 04 / Cobertura</span>
+        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 05 / Cobertura</span>
         <h2 class="text-[clamp(2.4rem,6vw,4.5rem)] font-black text-snow leading-[1.02]">
           Toda la Región<br>de <em class="not-italic text-gold">Ñuble</em>
         </h2>
@@ -829,7 +1010,7 @@ tailwind.config = {
   <div class="max-w-4xl mx-auto">
 
     <div class="text-center mb-14 reveal">
-      <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— Preguntas frecuentes</span>
+      <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 06 / Preguntas frecuentes</span>
       <h2 class="text-3xl md:text-[2.6rem] font-black text-snow leading-tight">Lo que más nos preguntan</h2>
       <p class="text-zinc1 text-[14px] max-w-lg mx-auto mt-4 leading-relaxed">
         Resolvemos las dudas más comunes sobre subdivisión rural, parcelación y trámites SAG en Ñuble.
@@ -942,7 +1123,7 @@ tailwind.config = {
     <!-- Header -->
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14 reveal">
       <div>
-        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 05 / Contacto</span>
+        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 07 / Contacto</span>
         <h2 class="text-3xl md:text-[2.6rem] font-black text-snow leading-tight">Conversemos tu<br>proyecto en Ñuble</h2>
       </div>
       <div class="lg:max-w-xs lg:pb-1 reveal" style="transition-delay:.1s">
@@ -1228,7 +1409,7 @@ document.querySelectorAll('#mm a').forEach(a=>a.addEventListener('click',()=>doc
 
 // Nav: marcar sección activa
 const navLinks=document.querySelectorAll('.nav-link');
-const sectionIds=['inicio','servicios','proceso','nosotros','cobertura','faq','contacto'];
+const sectionIds=['inicio','servicios','valores','proceso','nosotros','cobertura','faq','contacto'];
 const sections=sectionIds.map(id=>document.getElementById(id)).filter(Boolean);
 const setActiveNav=id=>{
   navLinks.forEach(link=>{
@@ -1419,6 +1600,87 @@ if(mapaObj && mapaWrap && mapTooltip){
     });
   });
 }
+
+// Carrusel de valores SAG — loop infinito con clones
+(function(){
+  var track=document.getElementById('val-track');
+  if(!track)return;
+  var dots=document.querySelectorAll('.val-dot');
+
+  // Clonar primera y última card para el loop infinito
+  var items=Array.from(track.children);
+  var total=items.length; // 3 slides reales
+  track.insertBefore(items[total-1].cloneNode(true),track.firstChild); // clone-last al inicio
+  track.appendChild(items[0].cloneNode(true));                         // clone-first al final
+  // Track ahora: [clone-3, slide-1, slide-2, slide-3, clone-1]
+  // Índices:        0          1        2        3        4
+
+  var current=1; // empezar en slide-1 real
+  var timer,INTERVAL=5000;
+  var animating=false;
+
+  function updateDots(realIdx){
+    dots.forEach(function(d,i){
+      d.style.width=i===realIdx?'2rem':'0.5rem';
+      d.style.background=i===realIdx?'#F5C500':'rgba(255,255,255,.2)';
+    });
+  }
+
+  function jumpTo(idx){ // movimiento silencioso sin animación
+    track.style.transition='none';
+    current=idx;
+    track.style.transform='translateX(-'+(current*100)+'%)';
+    updateDots((current-1+total)%total);
+  }
+
+  function goTo(idx){
+    if(animating)return;
+    animating=true;
+    current=idx;
+    track.style.transition='transform 500ms ease-in-out';
+    track.style.transform='translateX(-'+(current*100)+'%)';
+    updateDots((current-1+total)%total);
+  }
+
+  track.addEventListener('transitionend',function(){
+    animating=false;
+    if(current===0){
+      // Llegamos al clon del último → saltar al real
+      jumpTo(total);
+    } else if(current===total+1){
+      // Llegamos al clon del primero → saltar al real
+      jumpTo(1);
+    }
+  });
+
+  function startTimer(){timer=setInterval(function(){goTo(current+1);},INTERVAL);}
+  function stopTimer(){clearInterval(timer);}
+
+  document.getElementById('val-prev').addEventListener('click',function(){stopTimer();goTo(current-1);startTimer();});
+  document.getElementById('val-next').addEventListener('click',function(){stopTimer();goTo(current+1);startTimer();});
+  dots.forEach(function(d){
+    d.addEventListener('click',function(){
+      stopTimer();
+      goTo(+d.dataset.valIdx+1); // dot 0→idx 1, dot 1→idx 2, dot 2→idx 3
+      startTimer();
+    });
+  });
+
+  var carousel=document.getElementById('val-carousel');
+  carousel.addEventListener('mouseenter',stopTimer);
+  carousel.addEventListener('mouseleave',startTimer);
+
+  var tx=0;
+  carousel.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+  carousel.addEventListener('touchend',function(e){
+    var dx=tx-e.changedTouches[0].clientX;
+    if(Math.abs(dx)>40){stopTimer();dx>0?goTo(current+1):goTo(current-1);startTimer();}
+  },{passive:true});
+
+  // Posición inicial sin animación
+  jumpTo(1);
+  startTimer();
+})();
 
 // FAQ accordion
 document.querySelectorAll('.faq-item').forEach(item => {
