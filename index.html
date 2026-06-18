@@ -8,25 +8,51 @@
 <link rel="canonical" href="https://toponuble.cl/"/>
 <meta name="description" content="Topógrafo en Ñuble para subdivisión rural SAG, parcelación DL 3.516 y levantamiento GNSS. Evaluación inicial sin costo · Respuesta en 24h · 21 comunas cubiertas. Llámanos."/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-<meta name="keywords" content="topógrafo Ñuble, subdivisión rural SAG Ñuble, parcelación SAG San Carlos, subdivisión predial Chillán, levantamiento GNSS Ñuble, DL 3.516, parcelas 5000 m2, subdivisión terreno rural Chile"/>
+<meta name="keywords" content="topógrafo Ñuble, subdivisión rural SAG Ñuble, parcelación SAG San Carlos, subdivisión predial Chillán, levantamiento GNSS Ñuble, DL 3.516, parcelas 5000 m2, subdivisión terreno rural Chile, topógrafo San Carlos Ñuble, subdivisión predios rústicos Ñuble, costo subdivisión rural SAG, parcelas de agrado Ñuble, tercero autorizado SAG Ñuble, subdivisión DOM Ñuble, topografía rural Ñuble"/>
+<meta name="author" content="Patricio Soto Jofré"/>
 <!-- Open Graph -->
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://toponuble.cl/"/>
 <meta property="og:title" content="Topógrafo en Ñuble · Subdivisión Rural SAG y Parcelación | TopoÑuble"/>
 <meta property="og:description" content="Topógrafo en Ñuble para subdivisión rural SAG, parcelación DL 3.516 y levantamiento GNSS. Evaluación inicial sin costo · Respuesta en 24h · 21 comunas cubiertas."/>
 <meta property="og:image" content="https://toponuble.cl/img/IMAGEN-DE-FONDO.jpg"/>
+<meta property="og:image:alt" content="Topógrafo en Ñuble · Subdivisión rural SAG y levantamiento GNSS"/>
 <meta property="og:locale" content="es_CL"/>
 <meta property="og:site_name" content="TopoÑuble"/>
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Topógrafo en Ñuble · Subdivisión Rural SAG | TopoÑuble"/>
-<meta name="twitter:description" content="Subdivisión rural SAG, parcelación DL 3.516 y levantamiento GNSS en Ñuble. Evaluación sin costo · 21 comunas."/>
+<meta name="twitter:description" content="Subdivisión rural SAG, parcelación DL 3.516 y levantamiento GNSS en Ñuble. Evaluación sin costo · 21 comunas cubiertas."/>
 <meta name="twitter:image" content="https://toponuble.cl/img/IMAGEN-DE-FONDO.jpg"/>
-<!-- Schema: LocalBusiness + FAQPage -->
+<!-- Schema: WebSite + LocalBusiness + Person + FAQPage -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://toponuble.cl/#website",
+      "url": "https://toponuble.cl",
+      "name": "TopoÑuble",
+      "description": "Topógrafo en Ñuble para subdivisión rural SAG, parcelación DL 3.516 y levantamiento GNSS.",
+      "inLanguage": "es-CL",
+      "publisher": {"@id": "https://toponuble.cl/#business"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://toponuble.cl/#patricio",
+      "name": "Patricio Soto Jofré",
+      "jobTitle": "Topógrafo",
+      "email": "patricio@toponuble.cl",
+      "telephone": "+56966640562",
+      "worksFor": {"@id": "https://toponuble.cl/#business"},
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Carlos",
+        "addressRegion": "Región de Ñuble",
+        "addressCountry": "CL"
+      }
+    },
     {
       "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://toponuble.cl/#business",
@@ -35,8 +61,11 @@
       "url": "https://toponuble.cl",
       "telephone": "+56966640562",
       "email": "patricio@toponuble.cl",
-      "image": "https://toponuble.cl/img/logotopoñuble.svg",
+      "image": "https://toponuble.cl/img/IMAGEN-DE-FONDO.jpg",
+      "logo": {"@type": "ImageObject", "url": "https://toponuble.cl/img/logotopoñuble.svg"},
       "priceRange": "$$",
+      "currenciesAccepted": "CLP",
+      "paymentAccepted": "Transferencia bancaria, efectivo",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "San Carlos",
@@ -49,6 +78,15 @@
         "longitude": -71.9552
       },
       "hasMap": "https://maps.app.goo.gl/NWSiZ7nootVe1eHJA",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+56966640562",
+        "contactType": "customer service",
+        "areaServed": "CL",
+        "availableLanguage": "Spanish",
+        "contactOption": "TollFree"
+      },
+      "founder": {"@id": "https://toponuble.cl/#patricio"},
       "areaServed": [
         {"@type": "City", "name": "San Carlos"},
         {"@type": "City", "name": "Chillán"},
@@ -1158,7 +1196,15 @@ tailwind.config = {
           En regiones como Ñuble el acceso al SAG es exclusivo para terceros autorizados. Te explicamos qué hacen, qué no hacen, y cómo funciona el proceso completo hasta inscribir en el Conservador.
         </p>
 
-        <!-- Footer meta -->
+        <!-- Author + Footer meta -->
+        <div class="flex items-center gap-4 mb-4">
+          <img src="img/foto autor Patricios Soto Jofré Topografo.jpeg" alt="Patricio Soto Jofré" class="w-16 h-16 rounded-full object-cover border border-white/10 flex-shrink-0">
+          <div>
+            <p class="font-mono text-[8px] text-white/30 tracking-widest uppercase mb-1">Autor</p>
+            <p class="text-[17px] font-medium text-zinc3 leading-none">Patricio Soto Jofré</p>
+            <p class="font-mono text-[11px] text-zinc1 tracking-widest uppercase mt-1">Topógrafo</p>
+          </div>
+        </div>
         <div class="flex items-center justify-between border-t border-white/6 pt-5">
           <span class="font-mono text-[9px] text-white/30 tracking-widest uppercase"><span data-pub="2026-06-17T10:00:00"></span></span>
           <span class="font-mono text-[10px] text-gold tracking-widest uppercase group-hover:translate-x-1 transition-transform duration-200">Leer →</span>
@@ -1474,7 +1520,9 @@ tailwind.config = {
     if(diff<60) return 'hace '+(diff<1?1:diff)+' seg';
     if(diff<3600){var m=Math.floor(diff/60);return 'hace '+m+(m===1?' minuto':' minutos');}
     if(diff<86400){var h=Math.floor(diff/3600);return 'hace '+h+(h===1?' hora':' horas');}
-    var d=Math.floor(diff/86400);return 'hace '+d+(d===1?' día':' días');
+    var months=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    var pub=new Date(dateStr);
+    return pub.getDate()+' de '+months[pub.getMonth()]+' de '+pub.getFullYear();
   }
   function update(){
     document.querySelectorAll('[data-pub]').forEach(function(el){
