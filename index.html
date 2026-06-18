@@ -274,15 +274,15 @@ tailwind.config = {
   .stat-sep{width:1px;background:rgba(255,255,255,.06);align-self:stretch;margin:0 .5rem}
 
   /* Hero carousel: animación de contenido al activar slide */
-  @keyframes heroFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes heroFadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
   .hero-content>*{opacity:0}
-  .hero-slide-active .hero-content>*{animation:heroFadeUp .55s ease both}
-  .hero-slide-active .hero-content>*:nth-child(1){animation-delay:0s}
-  .hero-slide-active .hero-content>*:nth-child(2){animation-delay:.1s}
-  .hero-slide-active .hero-content>*:nth-child(3){animation-delay:.2s}
-  .hero-slide-active .hero-content>*:nth-child(4){animation-delay:.3s}
-  .hero-slide-active .hero-content>*:nth-child(5){animation-delay:.4s}
-  .hero-slide-active .hero-content>*:nth-child(6){animation-delay:.5s}
+  .hero-slide-active .hero-content>*{animation:heroFadeUp .75s cubic-bezier(0.22,1,0.36,1) both}
+  .hero-slide-active .hero-content>*:nth-child(1){animation-delay:.05s}
+  .hero-slide-active .hero-content>*:nth-child(2){animation-delay:.16s}
+  .hero-slide-active .hero-content>*:nth-child(3){animation-delay:.26s}
+  .hero-slide-active .hero-content>*:nth-child(4){animation-delay:.36s}
+  .hero-slide-active .hero-content>*:nth-child(5){animation-delay:.46s}
+  .hero-slide-active .hero-content>*:nth-child(6){animation-delay:.56s}
   @media(prefers-reduced-motion:reduce){.hero-content>*{opacity:1!important;transform:none!important;animation:none!important}}
 </style>
 </head>
@@ -1814,7 +1814,7 @@ if(mapaObj && mapaWrap && mapTooltip){
     }
     function activateSlide(){Array.from(track.children).forEach(function(s){s.classList.remove('hero-slide-active');});void track.children[current].offsetWidth;track.children[current].classList.add('hero-slide-active');}
     function jumpTo(idx){track.style.transition='none';current=idx;track.style.transform='translateX(-'+(current*100)+'%)';updateDots((current-1+total)%total);activateSlide();}
-    function goTo(idx){if(animating)return;animating=true;current=idx;track.style.transition='transform 600ms ease-in-out';track.style.transform='translateX(-'+(current*100)+'%)';updateDots((current-1+total)%total);}
+    function goTo(idx){if(animating)return;animating=true;current=idx;track.style.transition='transform 650ms cubic-bezier(0.25,0.46,0.45,0.94)';track.style.transform='translateX(-'+(current*100)+'%)';updateDots((current-1+total)%total);}
     track.addEventListener('transitionend',function(){animating=false;if(current===0){jumpTo(total);}else if(current===total+1){jumpTo(1);}else{activateSlide();}});
     function startTimer(){timer=setInterval(function(){goTo(current+1);},INTERVAL);}
     function stopTimer(){clearInterval(timer);}
