@@ -284,7 +284,7 @@ tailwind.config = {
       </div>
     </div>
     <div class="mt-8 flex justify-center reveal" style="transition-delay:.18s">
-      <a href="#sec-dl" style="display:inline-block;cursor:pointer;line-height:0">
+      <a id="chevron-down" href="#sec-dl" style="display:inline-block;cursor:pointer;line-height:0">
         <svg class="animate-bounce" style="width:5rem;height:5rem" fill="none" stroke="#F5C500" stroke-width="1.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
         </svg>
@@ -660,6 +660,18 @@ const io=new IntersectionObserver(es=>{
 },{threshold:0.1});
 document.querySelectorAll('.reveal,.reveal-sec').forEach(el=>io.observe(el));
 
+
+// Chevron hero -> Sección 01 (scroll determinista, sin overshoot)
+(function(){
+  var chev=document.getElementById('chevron-down');
+  var target=document.getElementById('sec-dl');
+  if(!chev||!target) return;
+  chev.addEventListener('click',function(e){
+    e.preventDefault();
+    var y=target.getBoundingClientRect().top+window.scrollY-72; // 72 = alto nav
+    window.scrollTo({top:y,behavior:'smooth'});
+  });
+})();
 
 // Sidebar fixed: visible después del hero
 (function(){
