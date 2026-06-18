@@ -160,16 +160,22 @@ tailwind.config = {
   .cta-callout{background:rgba(245,197,0,.05);border:1px solid rgba(245,197,0,.2);padding:1.6rem;position:relative}
   .cta-callout::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#F5C500}
 
-  /* Sidebar sticky — vive dentro del artículo, nunca aparece sobre el hero */
+  /* Sidebar fixed */
   @media(min-width:1024px){
     .sidebar-sticky{
-      position:sticky;
-      top:7rem;
-      max-height:calc(100vh - 8rem);
+      position:fixed;
+      top:6rem;
+      right:max(1.5rem,calc((100vw - 80rem)/2 + 1.5rem));
+      width:290px;
+      max-height:calc(100vh - 7rem);
       overflow-y:auto;
       scrollbar-width:none;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .3s ease;
     }
     .sidebar-sticky::-webkit-scrollbar{display:none}
+    .sidebar-sticky.on{opacity:1;pointer-events:auto}
   }
 </style>
 <link rel="manifest" href="/manifest.json"/>
@@ -276,7 +282,7 @@ tailwind.config = {
       </div>
     </div>
     <div class="mt-8 flex justify-center reveal" style="transition-delay:.18s">
-      <a href="#sec-dl" style="display:inline-block;cursor:pointer;line-height:0">
+      <a href="#sec-tercero" style="display:inline-block;cursor:pointer;line-height:0">
         <svg class="animate-bounce" style="width:5rem;height:5rem" fill="none" stroke="#F5C500" stroke-width="1.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
         </svg>
@@ -652,6 +658,18 @@ const io=new IntersectionObserver(es=>{
 },{threshold:0.1});
 document.querySelectorAll('.reveal,.reveal-sec').forEach(el=>io.observe(el));
 
+
+// Sidebar: fixed, visible solo después del hero
+(function(){
+  var sb=document.querySelector('.sidebar-sticky');
+  if(!sb) return;
+  var hero=document.getElementById('article-hero');
+  function tick(){
+    sb.classList.toggle('on', hero.getBoundingClientRect().bottom < 1);
+  }
+  window.addEventListener('scroll',tick,{passive:true});
+  tick();
+})();
 
 // Sidebar scroll spy
 (function(){
