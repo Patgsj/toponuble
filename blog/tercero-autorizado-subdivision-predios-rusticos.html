@@ -285,7 +285,7 @@ tailwind.config = {
       </div>
     </div>
     <div class="mt-8 flex justify-center reveal" style="transition-delay:.18s">
-      <a href="#sec-dl" onclick="event.preventDefault();document.getElementById('sec-dl').scrollIntoView({behavior:'smooth'});" style="display:inline-block;cursor:pointer;line-height:0">
+      <a href="#sec-dl" onclick="event.preventDefault();var el=document.getElementById('sec-dl');window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-72,behavior:'smooth'});" style="display:inline-block;cursor:pointer;line-height:0">
         <svg class="animate-bounce" style="width:5rem;height:5rem" fill="none" stroke="#F5C500" stroke-width="1.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
         </svg>
