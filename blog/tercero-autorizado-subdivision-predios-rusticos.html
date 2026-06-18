@@ -173,6 +173,7 @@ tailwind.config = {
       opacity:0;
       pointer-events:none;
       transition:opacity .3s ease;
+      z-index:49;
     }
     .sidebar-sticky::-webkit-scrollbar{display:none}
     .sidebar-sticky.on{opacity:1;pointer-events:auto}
@@ -659,14 +660,12 @@ const io=new IntersectionObserver(es=>{
 document.querySelectorAll('.reveal,.reveal-sec').forEach(el=>io.observe(el));
 
 
-// Sidebar: fixed, visible solo después del hero
+// Sidebar fixed: visible después del hero
 (function(){
   var sb=document.querySelector('.sidebar-sticky');
   if(!sb) return;
-  var hero=document.getElementById('article-hero');
-  function tick(){
-    sb.classList.toggle('on', hero.getBoundingClientRect().bottom < 1);
-  }
+  var heroH=document.getElementById('article-hero').offsetHeight;
+  function tick(){ sb.classList.toggle('on', window.scrollY >= heroH - 40); }
   window.addEventListener('scroll',tick,{passive:true});
   tick();
 })();
