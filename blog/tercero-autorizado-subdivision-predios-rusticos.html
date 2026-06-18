@@ -160,25 +160,16 @@ tailwind.config = {
   .cta-callout{background:rgba(245,197,0,.05);border:1px solid rgba(245,197,0,.2);padding:1.6rem;position:relative}
   .cta-callout::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#F5C500}
 
-  /* Sidebar fijo — oculto en el hero, visible al entrar al artículo */
+  /* Sidebar sticky — vive dentro del artículo, nunca aparece sobre el hero */
   @media(min-width:1024px){
-    .sidebar-fixed{
-      position:fixed;
-      top:6rem;
-      right:max(1.5rem,calc((100vw - 80rem)/2 + 1.5rem));
-      width:290px;
-      max-height:calc(100vh - 7rem);
+    .sidebar-sticky{
+      position:sticky;
+      top:7rem;
+      max-height:calc(100vh - 8rem);
       overflow-y:auto;
       scrollbar-width:none;
-      opacity:0;
-      pointer-events:none;
-      transition:opacity .35s ease;
     }
-    .sidebar-fixed::-webkit-scrollbar{display:none}
-    .sidebar-fixed.sb-visible{
-      opacity:1;
-      pointer-events:auto;
-    }
+    .sidebar-sticky::-webkit-scrollbar{display:none}
   }
 </style>
 <link rel="manifest" href="/manifest.json"/>
@@ -501,7 +492,7 @@ tailwind.config = {
 
       <!-- ── SIDEBAR ── -->
       <aside class="hidden lg:block">
-        <div class="sidebar-fixed space-y-4">
+        <div class="sidebar-sticky space-y-4">
 
           <!-- Table of contents -->
           <div class="border border-white/8 p-5">
@@ -661,17 +652,6 @@ const io=new IntersectionObserver(es=>{
 },{threshold:0.1});
 document.querySelectorAll('.reveal,.reveal-sec').forEach(el=>io.observe(el));
 
-// Sidebar: aparece solo cuando el hero sale completamente de pantalla
-(function(){
-  const sb=document.querySelector('.sidebar-fixed');
-  if(!sb) return;
-  const hero=document.getElementById('article-hero');
-  function check(){
-    sb.classList.toggle('sb-visible', hero.getBoundingClientRect().bottom <= 0);
-  }
-  window.addEventListener('scroll',check,{passive:true});
-  check();
-})();
 
 // Sidebar scroll spy
 (function(){
