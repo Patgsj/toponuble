@@ -307,7 +307,7 @@ tailwind.config = {
       <div class="prose reveal-sec">
 
         <!-- 01 DL 3.516 -->
-        <div id="sec-dl" class="mb-20">
+        <div id="sec-dl" class="mb-20 pt-6">
           <div class="flex items-center gap-3 mb-5">
             <span class="font-mono text-[9px] text-gold tracking-widest">01</span>
             <div class="h-px flex-1 bg-white/6"></div>
@@ -661,16 +661,17 @@ const io=new IntersectionObserver(es=>{
 document.querySelectorAll('.reveal,.reveal-sec').forEach(el=>io.observe(el));
 
 
-// Chevron hero -> Sección 01 (offsetTop estático, sin overshoot)
+// Chevron hero -> Sección 01
 (function(){
   var chev=document.getElementById('chevron-down');
   var target=document.getElementById('sec-dl');
   if(!chev||!target) return;
   chev.addEventListener('click',function(e){
     e.preventDefault();
-    var t=0, el=target;
-    while(el){ t+=el.offsetTop; el=el.offsetParent; }
-    window.scrollTo({top:Math.max(0,t-72),behavior:'smooth'});
+    var t=0,el=target;
+    while(el){t+=el.offsetTop;el=el.offsetParent;}
+    // Sin behavior:'smooth' = scroll instantáneo, sin overshoot posible
+    window.scrollTo({top:Math.max(0,t-72)});
   });
 })();
 
