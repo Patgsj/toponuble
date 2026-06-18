@@ -159,6 +159,27 @@ tailwind.config = {
   /* CTA callout */
   .cta-callout{background:rgba(245,197,0,.05);border:1px solid rgba(245,197,0,.2);padding:1.6rem;position:relative}
   .cta-callout::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#F5C500}
+
+  /* Sidebar fijo — oculto en el hero, visible al entrar al artículo */
+  @media(min-width:1024px){
+    .sidebar-fixed{
+      position:fixed;
+      top:6rem;
+      right:max(1.5rem,calc((100vw - 80rem)/2 + 1.5rem));
+      width:290px;
+      max-height:calc(100vh - 7rem);
+      overflow-y:auto;
+      scrollbar-width:none;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .35s ease;
+    }
+    .sidebar-fixed::-webkit-scrollbar{display:none}
+    .sidebar-fixed.sb-visible{
+      opacity:1;
+      pointer-events:auto;
+    }
+  }
 </style>
 <link rel="manifest" href="/manifest.json"/>
 <link rel="preload" href="https://images.unsplash.com/photo-1775119249927-b669c9470bc5?auto=format&fit=crop&w=1920&q=80" as="image"/>
@@ -264,7 +285,7 @@ tailwind.config = {
       </div>
     </div>
     <div class="mt-8 flex justify-center reveal" style="transition-delay:.18s">
-      <a href="#articulo-inicio" onclick="event.preventDefault();document.getElementById('articulo-inicio').scrollIntoView({behavior:'smooth'});" style="display:inline-block;cursor:pointer;line-height:0">
+      <a href="#sec-dl" onclick="event.preventDefault();document.getElementById('sec-dl').scrollIntoView({behavior:'smooth'});" style="display:inline-block;cursor:pointer;line-height:0">
         <svg class="animate-bounce" style="width:5rem;height:5rem" fill="none" stroke="#F5C500" stroke-width="1.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
         </svg>
@@ -278,182 +299,252 @@ tailwind.config = {
 
 <!-- ═══ ARTICLE ═══ -->
 <article id="articulo-inicio" class="py-16 bg-ink2">
-  <div class="max-w-7xl mx-auto px-6 prose reveal-sec">
+  <div class="max-w-7xl mx-auto px-6">
 
-    <h2>Lo primero: el DL 3.516 y la regla de los 5.000 m²</h2>
-    <p>
-      Si tienes un terreno rural y quieres dividirlo, la norma que regula eso se llama <strong>Decreto Ley N° 3.516 de 1980</strong>. La regla básica es que cada lote que resulte de la división debe tener al menos <strong>0,5 hectáreas, o sea 5.000 m²</strong>. Hay excepciones, pero esa es la regla general.
-    </p>
-    <p>
-      Lo importante es entender que sin el certificado del SAG, notarios y conservadores de bienes raíces simplemente no pueden procesar la operación. El SAG es la puerta de entrada.
-    </p>
+    <!-- Two-column layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_290px] gap-14 items-start">
 
-    <h2>Entonces, ¿qué es el tercero autorizado?</h2>
-    <p>
-      Es una persona o empresa que el SAG reconoció y aprobó formalmente para revisar solicitudes de subdivisión antes de que lleguen al Servicio. No cualquiera puede serlo: tienen que cumplir requisitos específicos, firmar un convenio con el SAG y dejar una garantía de 200 UF. El SAG publica un listado oficial de los autorizados.
-    </p>
-    <p>
-      Su trabajo concreto es:
-    </p>
-    <ul>
-      <li>Recibir tu expediente y revisarlo con la pauta oficial del SAG.</li>
-      <li>Decirte si hay algo que corregir antes de ingresar.</li>
-      <li>Emitir un informe técnico fundado.</li>
-      <li>Cargar todo en la plataforma del SAG y entregar los planos físicos en la oficina correspondiente.</li>
-    </ul>
+      <!-- ── MAIN CONTENT ── -->
+      <div class="prose reveal-sec">
 
-    <div class="info-box">
-      <p><strong style="color:#F5C500">Ojo con esto:</strong> el tercero autorizado <strong>verifica, no aprueba</strong>. La decisión final —certificar o rechazar— siempre la toma el SAG. El informe del tercero es un insumo técnico, no una aprobación.</p>
-    </div>
-
-    <h2>¿Por qué en Ñuble no puedes ir directo al SAG?</h2>
-    <p>
-      El SAG está implementando el Sistema Nacional de Autorización de Terceros (SNAT) de forma gradual por región. Ñuble ya está dentro de las regiones donde el sistema está activo, junto con O'Higgins, Maule, Biobío y Los Lagos.
-    </p>
-    <p>
-      Eso significa que en Ñuble <strong>el acceso digital a la plataforma es exclusivo para terceros autorizados</strong>. Si intentas tramitarlo solo no puedes ingresar la solicitud por esa vía. Tienes que elegir un tercero autorizado del listado oficial y gestionarlo con ellos.
-    </p>
-
-
-    <h2>El proceso completo, paso a paso</h2>
-
-    <div style="margin:1.25rem 0;border:1px solid rgba(255,255,255,.06)">
-      <div class="step-row px-5">
-        <span class="step-num">01</span>
-        <div><p style="margin:0;color:#FAFAFA;font-weight:600;font-size:.88rem">Juntas los antecedentes</p><p style="margin:.2rem 0 0;font-size:.83rem;color:#888">Inscripción de dominio, certificado municipal de ruralidad, avalúo SII, servidumbre si el predio no tiene acceso directo a vía pública.</p></div>
-      </div>
-      <div class="step-row px-5" style="background:rgba(245,197,0,.03);border-left:2px solid rgba(245,197,0,.35)">
-        <span class="step-num">02</span>
-        <div>
-          <p style="margin:0;font-weight:700;font-size:.88rem;color:#F5C500">TopoÑuble entra acá</p>
-          <p style="margin:.2rem 0 0;font-size:.83rem;color:#CCCCCC">Hacemos la medición en terreno, elaboramos el plano topográfico y preparamos la carpeta completa de antecedentes. Luego coordinamos directamente con el tercero autorizado SPR para el ingreso al SAG — tú no tienes que gestionar nada de eso.</p>
-        </div>
-      </div>
-      <div class="step-row px-5" style="background:rgba(245,197,0,.03);border-left:2px solid rgba(245,197,0,.35)">
-        <span class="step-num">03</span>
-        <div>
-          <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.15rem">
-            <p style="margin:0;color:#FAFAFA;font-weight:600;font-size:.88rem">El tercero revisa e ingresa al SAG</p>
-            <span style="font-family:'DM Mono',monospace;font-size:.6rem;color:#F5C500;border:1px solid rgba(245,197,0,.3);padding:.1rem .4rem;flex-shrink:0">TopoÑuble coordina</span>
+        <!-- 01 DL 3.516 -->
+        <div id="sec-dl" class="mb-10 scroll-mt-28">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-[9px] text-gold tracking-widest">01</span>
+            <div class="h-px flex-1 bg-white/6"></div>
           </div>
-          <p style="margin:0;font-size:.83rem;color:#888">Tiene hasta 3 meses para presentar el expediente completo. Nosotros hacemos el seguimiento y mantenemos contacto con el tercero para que los plazos se cumplan.</p>
+          <h2>El DL 3.516 y la regla de los 5.000 m²</h2>
+          <p>La norma que regula la división de terrenos rurales es el <strong>Decreto Ley N° 3.516 de 1980</strong>. Cada lote resultante debe tener al menos <strong>0,5 hectáreas (5.000 m²)</strong>. Hay excepciones, pero esa es la regla general.</p>
+          <p>Sin el certificado del SAG, notarios y conservadores no pueden procesar la operación. <strong>El SAG es la puerta obligatoria.</strong></p>
         </div>
-      </div>
-      <div class="step-row px-5" style="background:rgba(245,197,0,.03);border-left:2px solid rgba(245,197,0,.35)">
-        <span class="step-num">04</span>
-        <div>
-          <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.15rem">
-            <p style="margin:0;color:#FAFAFA;font-weight:600;font-size:.88rem">El SAG evalúa y resuelve</p>
-            <span style="font-family:'DM Mono',monospace;font-size:.6rem;color:#F5C500;border:1px solid rgba(245,197,0,.3);padding:.1rem .4rem;flex-shrink:0">TopoÑuble coordina</span>
+
+        <!-- 02 Tercero autorizado -->
+        <div id="sec-tercero" class="mb-10 scroll-mt-28">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-[9px] text-gold tracking-widest">02</span>
+            <div class="h-px flex-1 bg-white/6"></div>
           </div>
-          <p style="margin:0;font-size:.83rem;color:#888"><strong style="color:#FAFAFA">20 días hábiles</strong> desde que la solicitud queda sin pendientes. Si el SAG solicita correcciones, las gestionamos con el tercero autorizado.</p>
-        </div>
-      </div>
-      <div class="step-row px-5" style="background:rgba(245,197,0,.03);border-left:2px solid rgba(245,197,0,.35)">
-        <span class="step-num">05</span>
-        <div>
-          <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.15rem">
-            <p style="margin:0;color:#FAFAFA;font-weight:600;font-size:.88rem">Carpeta certificada SAG</p>
-            <span style="font-family:'DM Mono',monospace;font-size:.6rem;color:#F5C500;border:1px solid rgba(245,197,0,.3);padding:.1rem .4rem;flex-shrink:0">Hasta acá llega TopoÑuble</span>
+          <h2>Qué es el tercero autorizado</h2>
+          <p>Es una persona o empresa que el SAG aprobó para revisar expedientes antes de que lleguen al Servicio. Deben cumplir requisitos específicos, firmar un convenio y dejar una <strong>garantía de 200 UF</strong>.</p>
+          <ul>
+            <li>Revisar tu expediente con la pauta oficial del SAG</li>
+            <li>Indicar correcciones antes de ingresar</li>
+            <li>Emitir un informe técnico fundado</li>
+            <li>Cargar todo en la plataforma y entregar los planos en la oficina SAG</li>
+          </ul>
+          <div class="info-box">
+            <p><strong style="color:#F5C500">Importante:</strong> el tercero <strong>verifica, no aprueba</strong>. La decisión final siempre la toma el SAG.</p>
           </div>
-          <p style="margin:0;font-size:.83rem;color:#888">Con el certificado del SAG aprobado, te entregamos la carpeta completa y certificada lista para continuar el proceso.</p>
         </div>
-      </div>
-      <div class="step-row px-5">
-        <span class="step-num">06</span>
-        <div>
-          <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.15rem">
-            <p style="margin:0;color:#FAFAFA;font-weight:600;font-size:.88rem">Conservador de Bienes Raíces y SII</p>
-            <span style="font-family:'DM Mono',monospace;font-size:.6rem;color:#888;border:1px solid rgba(255,255,255,.1);padding:.1rem .4rem;flex-shrink:0">Lo ve el cliente</span>
+
+        <!-- 03 Por qué en Ñuble -->
+        <div id="sec-nuble" class="mb-10 scroll-mt-28">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-[9px] text-gold tracking-widest">03</span>
+            <div class="h-px flex-1 bg-white/6"></div>
           </div>
-          <p style="margin:0;font-size:.83rem;color:#888">Con la carpeta en mano se inscribe la subdivisión ante notario y el Conservador, y el SII asigna roles a los nuevos lotes. Si prefieres que sigamos acompañándote, también lo hacemos.</p>
+          <h2>Por qué en Ñuble no puedes ir directo al SAG</h2>
+          <p>El SAG implementa el Sistema Nacional de Autorización de Terceros (SNAT) de forma gradual. <strong>Ñuble ya está activo</strong>, junto con O'Higgins, Maule, Biobío y Los Lagos.</p>
+          <p>El acceso digital es <strong>exclusivo para terceros autorizados</strong>. Debes elegir uno del listado oficial — no hay forma de ingresar la solicitud por tu cuenta.</p>
+        </div>
+
+        <!-- 04 Proceso -->
+        <div id="sec-proceso" class="mb-10 scroll-mt-28">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-[9px] text-gold tracking-widest">04</span>
+            <div class="h-px flex-1 bg-white/6"></div>
+          </div>
+          <h2>El proceso paso a paso</h2>
+
+          <div class="border border-white/6 divide-y divide-white/5">
+            <div class="flex gap-4 px-5 py-4">
+              <span class="font-mono text-[10px] text-white/25 pt-0.5 w-6 flex-shrink-0">01</span>
+              <div>
+                <p class="text-snow font-semibold text-[.88rem] m-0 mb-1">Juntas los antecedentes</p>
+                <p class="text-zinc1 text-[.82rem] leading-relaxed m-0">Inscripción de dominio, certificado de ruralidad, avalúo SII, servidumbre si el predio no tiene acceso directo a vía pública.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 px-5 py-4 bg-gold/3" style="border-left:3px solid #F5C500">
+              <span class="font-mono text-[10px] text-gold pt-0.5 w-6 flex-shrink-0">02</span>
+              <div>
+                <p class="text-gold font-bold text-[.88rem] m-0 mb-1">TopoÑuble entra acá</p>
+                <p class="text-zinc3 text-[.82rem] leading-relaxed m-0">Medición en terreno, plano topográfico y coordinación directa con el tercero autorizado para el ingreso al SAG. Tú no gestionas nada.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 px-5 py-4 bg-gold/2" style="border-left:3px solid rgba(245,197,0,.3)">
+              <span class="font-mono text-[10px] text-gold/50 pt-0.5 w-6 flex-shrink-0">03</span>
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <p class="text-snow font-semibold text-[.88rem] m-0">El tercero revisa e ingresa al SAG</p>
+                  <span class="font-mono text-[8px] text-gold border border-gold/25 px-1.5 py-0.5">TopoÑuble coordina</span>
+                </div>
+                <p class="text-zinc1 text-[.82rem] leading-relaxed m-0">Hasta 3 meses para presentar el expediente. Hacemos el seguimiento para que los plazos se cumplan.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 px-5 py-4 bg-gold/2" style="border-left:3px solid rgba(245,197,0,.3)">
+              <span class="font-mono text-[10px] text-gold/50 pt-0.5 w-6 flex-shrink-0">04</span>
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <p class="text-snow font-semibold text-[.88rem] m-0">SAG evalúa y resuelve</p>
+                  <span class="font-mono text-[8px] text-gold border border-gold/25 px-1.5 py-0.5">TopoÑuble coordina</span>
+                </div>
+                <p class="text-zinc1 text-[.82rem] leading-relaxed m-0"><strong class="text-snow">20 días hábiles</strong> desde que la solicitud queda sin pendientes. Si hay correcciones, las gestionamos.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 px-5 py-4 bg-gold/2" style="border-left:3px solid rgba(245,197,0,.3)">
+              <span class="font-mono text-[10px] text-gold/50 pt-0.5 w-6 flex-shrink-0">05</span>
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <p class="text-snow font-semibold text-[.88rem] m-0">Carpeta certificada SAG</p>
+                  <span class="font-mono text-[8px] text-white/30 border border-white/10 px-1.5 py-0.5">Hasta acá llegamos</span>
+                </div>
+                <p class="text-zinc1 text-[.82rem] leading-relaxed m-0">Te entregamos la carpeta completa y certificada, lista para continuar el proceso.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 px-5 py-4">
+              <span class="font-mono text-[10px] text-white/25 pt-0.5 w-6 flex-shrink-0">06</span>
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-1">
+                  <p class="text-snow font-semibold text-[.88rem] m-0">Conservador de Bienes Raíces y SII</p>
+                  <span class="font-mono text-[8px] text-white/30 border border-white/10 px-1.5 py-0.5">Lo ve el cliente</span>
+                </div>
+                <p class="text-zinc1 text-[.82rem] leading-relaxed m-0">Inscripción ante notario y Conservador; el SII asigna roles a los nuevos lotes. Si prefieres que sigamos contigo, también lo hacemos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Imagen campo rural -->
+        <figure class="sag-figure my-8">
+          <img src="https://images.unsplash.com/photo-1719255517599-97a651a93b8b?auto=format&fit=crop&w=1200&q=85"
+               alt="Vista aérea de un camino rural rodeado de campos verdes en Ñuble"
+               loading="lazy">
+        </figure>
+
+        <!-- 05 Quién hace qué -->
+        <div id="sec-roles" class="mb-10 scroll-mt-28">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-[9px] text-gold tracking-widest">05</span>
+            <div class="h-px flex-1 bg-white/6"></div>
+          </div>
+          <h2>Quién hace qué</h2>
+          <p>Una confusión frecuente es mezclar los roles. Cada actor tiene una función específica y distinta.</p>
+          <div style="overflow-x:auto">
+            <table class="actor-table">
+              <thead>
+                <tr><th>Actor</th><th>Su función</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color:#F5C500">Tercero autorizado</strong></td>
+                  <td>Verifica el expediente y lo ingresa al SAG. No certifica.</td>
+                </tr>
+                <tr>
+                  <td>SAG</td>
+                  <td>Certifica o rechaza la subdivisión. La última palabra es suya.</td>
+                </tr>
+                <tr>
+                  <td>Conservador de Bienes Raíces</td>
+                  <td>Inscribe la nueva situación dominical. Sin inscripción no hay subdivisión real.</td>
+                </tr>
+                <tr>
+                  <td>SII</td>
+                  <td>Asigna roles tributarios a los nuevos lotes.</td>
+                </tr>
+                <tr>
+                  <td>Municipalidad / DOM</td>
+                  <td>Emite el certificado de ruralidad que el SAG exige como requisito.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- CTA callout -->
+        <div class="cta-callout mb-8">
+          <p class="font-mono text-[9px] text-gold tracking-widest uppercase mb-3">En TopoÑuble</p>
+          <h2 style="margin-top:0;font-size:1.1rem">Coordinamos el trámite por ti</h2>
+          <p>Levantamiento topográfico GNSS, plano del proyecto y coordinación con el tercero autorizado SPR para el ingreso al SAG. Todo en una sola gestión.</p>
+          <p style="margin-bottom:0">El pago al tercero y los derechos SAG van <strong>separados de nuestro honorario</strong>, detallados de forma transparente en el presupuesto.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 mb-10">
+          <a href="https://wa.me/56966640562?text=Hola%2C+quiero+evaluar+mi+terreno+para+subdivisión" target="_blank"
+             class="inline-flex items-center justify-center gap-2.5 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-8 py-4 transition-colors duration-200">
+            <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Evaluar mi terreno gratis
+          </a>
+          <a href="../index.html#contacto"
+             class="inline-flex items-center justify-center gap-2 border border-white/15 hover:border-gold/40 hover:text-gold text-zinc2 text-[12px] font-semibold tracking-widest uppercase px-8 py-4 transition-all duration-200">
+            Ir al formulario →
+          </a>
+        </div>
+
+        <!-- Author -->
+        <div class="flex items-center gap-4 py-6 border-t border-white/6 mb-2">
+          <img src="../img/foto autor Patricios Soto Jofré Topografo.jpeg" alt="Patricio Soto Jofré, Topógrafo en Ñuble" class="w-20 h-20 rounded-full object-cover border border-white/15 flex-shrink-0">
+          <div>
+            <span class="font-mono text-[8px] text-white/30 tracking-widest uppercase block mb-1">Escrito por</span>
+            <span class="font-semibold text-snow block text-[16px] leading-none mb-1">Patricio Soto Jofré</span>
+            <span class="font-mono text-zinc1 tracking-widest uppercase text-[9px]">Topógrafo · TopoÑuble</span>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 pt-6 border-t border-white/6">
+          <span class="tag">DL 3.516</span>
+          <span class="tag">Tercero autorizado SAG</span>
+          <span class="tag">Subdivisión rural Ñuble</span>
+          <span class="tag">SNAT</span>
         </div>
       </div>
-    </div>
 
-    <!-- Imagen + texto lateral -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10 items-center">
-      <figure class="sag-figure" style="margin:0">
-        <img src="https://images.unsplash.com/photo-1719255517599-97a651a93b8b?auto=format&fit=crop&w=800&q=85"
-             alt="Vista aérea de un camino rural rodeado de campos verdes"
-             loading="lazy">
-      </figure>
-      <div>
-        <h2 style="margin-top:0">Quién hace qué en todo este proceso</h2>
-        <p>Una confusión frecuente es mezclar los roles. El tercero autorizado <strong>verifica e ingresa</strong>, pero no aprueba. El SAG tiene la última palabra. El Conservador inscribe. El SII asigna roles tributarios.</p>
-        <p>Conocer quién hace qué te evita malentendidos y te ayuda a gestionar los plazos de forma realista.</p>
-      </div>
-    </div>
-    <div style="overflow-x:auto">
-      <table class="actor-table">
-        <thead>
-          <tr><th>Actor</th><th>Su función</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong style="color:#F5C500">Tercero autorizado</strong></td>
-            <td>Verifica el expediente y lo ingresa al SAG. No certifica.</td>
-          </tr>
-          <tr>
-            <td>SAG</td>
-            <td>Certifica o rechaza la subdivisión. La última palabra es suya.</td>
-          </tr>
-          <tr>
-            <td>Conservador de Bienes Raíces</td>
-            <td>Inscribe la nueva situación dominical. Sin inscripción no hay subdivisión real.</td>
-          </tr>
-          <tr>
-            <td>SII</td>
-            <td>Asigna roles tributarios a los nuevos lotes. No acredita propiedad.</td>
-          </tr>
-          <tr>
-            <td>Municipalidad / DOM</td>
-            <td>Emite el certificado de ruralidad que el SAG exige como requisito.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      <!-- ── SIDEBAR ── -->
+      <aside class="hidden lg:block">
+        <div class="sidebar-fixed space-y-4">
 
-    <!-- TopoÑuble callout -->
-    <div class="cta-callout mt-10 mb-8">
-      <p class="font-mono text-[9px] text-gold tracking-widest uppercase mb-3">En TopoÑuble</p>
-      <h2 style="margin-top:0;font-size:1.1rem">Nosotros coordinamos el trámite por ti</h2>
-      <p>
-        Nos encargamos de preparar tu expediente completo: el levantamiento topográfico GNSS, el plano del proyecto y la coordinación con el tercero autorizado SPR para el ingreso al SAG.
-      </p>
-      <p style="margin-bottom:0">
-        El pago al tercero autorizado y los derechos SAG son costos que van <strong>separados de nuestro honorario</strong> y te los detallamos de forma transparente en el presupuesto. Así sabes exactamente qué estás pagando y a quién.
-      </p>
-    </div>
+          <!-- Table of contents -->
+          <div class="border border-white/8 p-5">
+            <p class="font-mono text-[9px] text-white/30 tracking-widest uppercase mb-5">En este artículo</p>
+            <nav id="toc-nav" class="space-y-3">
+              <a href="#sec-dl" class="toc-link flex items-start gap-3 group">
+                <span class="font-mono text-[9px] text-gold/40 group-hover:text-gold transition-colors pt-px flex-shrink-0">01</span>
+                <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors leading-snug">El DL 3.516 y los 5.000 m²</span>
+              </a>
+              <a href="#sec-tercero" class="toc-link flex items-start gap-3 group">
+                <span class="font-mono text-[9px] text-gold/40 group-hover:text-gold transition-colors pt-px flex-shrink-0">02</span>
+                <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors leading-snug">Qué es el tercero autorizado</span>
+              </a>
+              <a href="#sec-nuble" class="toc-link flex items-start gap-3 group">
+                <span class="font-mono text-[9px] text-gold/40 group-hover:text-gold transition-colors pt-px flex-shrink-0">03</span>
+                <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors leading-snug">Por qué no ir directo al SAG</span>
+              </a>
+              <a href="#sec-proceso" class="toc-link flex items-start gap-3 group">
+                <span class="font-mono text-[9px] text-gold/40 group-hover:text-gold transition-colors pt-px flex-shrink-0">04</span>
+                <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors leading-snug">El proceso paso a paso</span>
+              </a>
+              <a href="#sec-roles" class="toc-link flex items-start gap-3 group">
+                <span class="font-mono text-[9px] text-gold/40 group-hover:text-gold transition-colors pt-px flex-shrink-0">05</span>
+                <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors leading-snug">Quién hace qué</span>
+              </a>
+            </nav>
+          </div>
 
-    <div class="flex flex-col sm:flex-row gap-3 mb-10">
-      <a href="https://wa.me/56966640562?text=Hola%2C+quiero+evaluar+mi+terreno+para+subdivisión" target="_blank"
-         class="inline-flex items-center justify-center gap-2.5 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-8 py-4 transition-colors duration-200">
-        <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        Evaluar mi terreno gratis
-      </a>
-      <a href="../index.html#contacto"
-         class="inline-flex items-center justify-center gap-2 border border-white/15 hover:border-gold/40 hover:text-gold text-zinc2 text-[12px] font-semibold tracking-widest uppercase px-8 py-4 transition-all duration-200">
-        Ir al formulario →
-      </a>
-    </div>
+          <!-- Mini CTA -->
+          <div class="border border-gold/20 p-5 bg-gold/3" style="border-left:3px solid #F5C500">
+            <p class="font-mono text-[9px] text-gold tracking-widest uppercase mb-2">¿Tienes un terreno?</p>
+            <p class="text-[12px] text-zinc2 leading-relaxed mb-4">Te evaluamos la viabilidad sin costo. Sin compromiso.</p>
+            <a href="https://wa.me/56966640562?text=Hola%2C+quiero+evaluar+mi+terreno+para+subdivisión" target="_blank"
+               class="flex items-center justify-center gap-2 bg-gold hover:bg-gold2 text-ink text-[10px] font-black tracking-widest uppercase px-4 py-3 transition-colors w-full">
+              <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+              Evaluar gratis →
+            </a>
+          </div>
 
-    <div class="flex items-center gap-4 py-6 border-t border-white/6 mb-2">
-      <img src="../img/foto autor Patricios Soto Jofré Topografo.jpeg" alt="Patricio Soto Jofré, Topógrafo en Ñuble" class="w-24 h-24 rounded-full object-cover border border-white/15 flex-shrink-0">
-      <div class="flex flex-col justify-center">
-        <span class="font-mono text-[8px] text-white/30 tracking-widest uppercase" style="display:block;margin-bottom:4px">Escrito por</span>
-        <span class="font-semibold text-snow" style="display:block;font-size:16px;line-height:1;margin-bottom:4px">Patricio Soto Jofré</span>
-        <span class="font-mono text-zinc1 tracking-widest uppercase" style="display:block;font-size:9px">Topógrafo · TopoÑuble</span>
-      </div>
-    </div>
+        </div>
+      </aside>
 
-    <div class="flex flex-wrap gap-2 pt-6 border-t border-white/6">
-      <span class="tag">DL 3.516</span>
-      <span class="tag">Tercero autorizado SAG</span>
-      <span class="tag">Subdivisión rural Ñuble</span>
-      <span class="tag">SNAT</span>
     </div>
-
   </div>
 </article>
 
@@ -569,6 +660,36 @@ const io=new IntersectionObserver(es=>{
   es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
 },{threshold:0.1});
 document.querySelectorAll('.reveal,.reveal-sec').forEach(el=>io.observe(el));
+
+// Sidebar: aparece cuando #sec-dl entra en pantalla, se oculta al volver al hero
+(function(){
+  const sb=document.querySelector('.sidebar-fixed');
+  if(!sb) return;
+  const trigger=document.getElementById('sec-dl');
+  function check(){
+    const top=trigger.getBoundingClientRect().top;
+    sb.classList.toggle('sb-visible', top < window.innerHeight);
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  check();
+})();
+
+// Sidebar scroll spy
+(function(){
+  const secs=['sec-dl','sec-tercero','sec-nuble','sec-proceso','sec-roles'];
+  const links=document.querySelectorAll('#toc-nav .toc-link');
+  function setActive(id){
+    links.forEach(l=>{
+      const active=l.getAttribute('href')==='#'+id;
+      l.querySelector('span:first-child').style.color=active?'#F5C500':'';
+      l.querySelector('span:last-child').style.color=active?'#FAFAFA':'';
+    });
+  }
+  const spy=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting)setActive(e.target.id);});
+  },{rootMargin:'-20% 0px -60% 0px'});
+  secs.forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+})();
 </script>
 </body>
 </html>
