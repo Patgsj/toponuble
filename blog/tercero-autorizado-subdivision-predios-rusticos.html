@@ -560,12 +560,17 @@ document.querySelectorAll('.reveal,.reveal-sec').forEach(el=>io.observe(el));
   });
 })();
 
-// Sidebar fixed: visible después del hero
+// Sidebar fixed: visible después del hero, oculta antes del footer
 (function(){
   var sb=document.querySelector('.sidebar-sticky');
   if(!sb) return;
   var heroH=document.getElementById('article-hero').offsetHeight;
-  function tick(){ sb.classList.toggle('on', window.scrollY >= heroH - 40); }
+  function tick(){
+    var footerEl=document.querySelector('footer');
+    var pastHero=window.scrollY >= heroH - 40;
+    var nearFooter=footerEl && (window.scrollY + window.innerHeight >= footerEl.offsetTop - 40);
+    sb.classList.toggle('on', pastHero && !nearFooter);
+  }
   window.addEventListener('scroll',tick,{passive:true});
   tick();
 })();
