@@ -184,51 +184,10 @@ tailwind.config = {
 <link rel="preload" href="https://images.unsplash.com/photo-1775119249927-b669c9470bc5?auto=format&fit=crop&w=1920&q=80" as="image"/>
 </head>
 
-<body class="text-snow font-sans antialiased overflow-x-hidden">
+<body class="text-snow font-sans antialiased overflow-x-hidden" data-active-nav="blog">
 
 <!-- ═══ NAV ═══ -->
-<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="../index.html" class="flex items-center">
-      <img src="../img/logotopoñuble.svg" alt="TopoÑuble" class="h-8 w-auto">
-    </a>
-    <ul class="hidden md:flex items-center gap-7 text-[10px] font-medium tracking-widest uppercase text-zinc1">
-      <li><a href="../index.html#inicio"    class="hover:text-gold transition-colors">Inicio</a></li>
-      <li><a href="../index.html#servicios" class="hover:text-gold transition-colors">Servicios</a></li>
-      <li><a href="../index.html#valores"   class="hover:text-gold transition-colors">Valores</a></li>
-      <li><a href="../index.html#proceso"   class="hover:text-gold transition-colors">Proceso</a></li>
-      <li><a href="../index.html#nosotros"  class="hover:text-gold transition-colors">Nosotros</a></li>
-      <li><a href="../index.html#cobertura" class="hover:text-gold transition-colors">Cobertura</a></li>
-      <li><a href="../index.html#faq"       class="hover:text-gold transition-colors">FAQ</a></li>
-      <li><a href="../index.html#blog"      class="nav-link-active transition-colors">Blog</a></li>
-      <li><a href="../index.html#contacto"  class="hover:text-gold transition-colors">Contacto</a></li>
-    </ul>
-    <a href="https://wa.me/56966640562?text=Hola%2C+necesito+cotización+de+topografía" target="_blank"
-       class="hidden sm:inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[10px] font-black tracking-widest uppercase px-5 py-2.5 transition-colors duration-200">
-      Cotizar →
-    </a>
-    <button id="mb" aria-label="Abrir menú" class="md:hidden p-2 text-zinc2">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </div>
-  <div id="mm" class="hidden md:hidden border-t border-white/5 px-6 py-6" style="background:#0A0A0Aee">
-    <ul class="flex flex-col gap-5 text-[12px] font-medium tracking-widest uppercase text-zinc2">
-      <li><a href="../index.html#inicio"    class="hover:text-gold transition-colors">Inicio</a></li>
-      <li><a href="../index.html#servicios" class="hover:text-gold transition-colors">Servicios</a></li>
-      <li><a href="../index.html#valores"   class="hover:text-gold transition-colors">Valores</a></li>
-      <li><a href="../index.html#proceso"   class="hover:text-gold transition-colors">Proceso</a></li>
-      <li><a href="../index.html#nosotros"  class="hover:text-gold transition-colors">Nosotros</a></li>
-      <li><a href="../index.html#cobertura" class="hover:text-gold transition-colors">Cobertura</a></li>
-      <li><a href="../index.html#faq"       class="hover:text-gold transition-colors">FAQ</a></li>
-      <li><a href="../index.html#blog"      class="text-gold">Blog</a></li>
-      <li><a href="../index.html#contacto"  class="hover:text-gold transition-colors">Contacto</a></li>
-      <li><a href="https://wa.me/56966640562?text=Hola%2C+necesito+cotización" target="_blank"
-             class="inline-block bg-gold text-ink font-black px-5 py-2.5 text-[12px] tracking-widest uppercase mt-1">Cotizar →</a></li>
-    </ul>
-  </div>
-</header>
+<div id="nav-placeholder"></div>
 
 
 <!-- ═══ HERO PARALLAX ═══ -->
@@ -549,63 +508,7 @@ tailwind.config = {
 
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="w-full bg-ink py-20 border-t border-white/5 relative overflow-hidden">
-  <div class="absolute inset-0 sgrid opacity-20 pointer-events-none"></div>
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
-
-      <div class="flex flex-col items-start">
-        <a href="../index.html" class="mb-6 block">
-          <img src="../img/logotopoñuble.svg" alt="Logo TopoÑuble" class="h-8 w-auto">
-        </a>
-        <p class="text-zinc1 text-[14px] leading-relaxed mb-6 max-w-sm">
-          Topógrafo en Ñuble para subdivisión rural, parcelación y levantamiento topográfico GNSS.
-        </p>
-        <div class="border-l-2 border-gold/50 pl-4">
-          <p class="font-mono text-[10px] text-gold tracking-widest uppercase">San Carlos, Ñuble · Chile</p>
-          <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase mt-1">Establecido 2026</p>
-        </div>
-      </div>
-
-      <div>
-        <h4 class="font-mono text-[10px] text-white/40 uppercase tracking-[0.3em] mb-8">Navegación</h4>
-        <ul class="space-y-4 text-[13px] text-zinc3">
-          <li><a href="../index.html#inicio"    class="hover:text-gold transition-colors block">Inicio</a></li>
-          <li><a href="../index.html#servicios" class="hover:text-gold transition-colors block">Servicios</a></li>
-          <li><a href="../index.html#proceso"   class="hover:text-gold transition-colors block">Proceso</a></li>
-          <li><a href="../index.html#nosotros"  class="hover:text-gold transition-colors block">Nosotros</a></li>
-          <li><a href="../index.html#cobertura" class="hover:text-gold transition-colors block">Cobertura</a></li>
-          <li><a href="../index.html#blog"      class="text-gold/80 block">Blog</a></li>
-          <li><a href="../index.html#contacto"  class="hover:text-gold transition-colors block">Contacto</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="font-mono text-[10px] text-white/40 uppercase tracking-[0.3em] mb-8">Contacto Directo</h4>
-        <div class="space-y-6">
-          <div>
-            <p class="text-[9px] font-mono text-white/20 uppercase tracking-widest mb-1">WhatsApp</p>
-            <a href="https://api.whatsapp.com/send?phone=56966640562" class="text-snow hover:text-gold transition-colors text-[16px] font-medium">+56 9 6664 0562</a>
-          </div>
-          <div>
-            <p class="text-[9px] font-mono text-white/20 uppercase tracking-widest mb-1">Email</p>
-            <a href="mailto:patricio@toponuble.cl" class="text-snow hover:text-gold transition-colors text-[16px] font-medium break-all">patricio@toponuble.cl</a>
-          </div>
-          <a href="https://api.whatsapp.com/send?phone=56966640562" target="_blank" rel="noopener noreferrer"
-             class="inline-block border border-gold/30 text-gold hover:bg-gold hover:text-ink px-6 py-4 text-[11px] font-black tracking-widest uppercase transition-all">
-            WhatsApp Directo
-          </a>
-        </div>
-      </div>
-
-    </div>
-    <div class="gold-line mt-16 mb-8"></div>
-    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase">© 2026 TopoÑuble. Todos los derechos reservados.</p>
-      <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Levantamiento GNSS · Subdivisión SAG/DOM</p>
-    </div>
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
 
 
 <!-- WHATSAPP FLOTANTE -->
@@ -635,24 +538,6 @@ tailwind.config = {
   setInterval(update,30000);
 })();
 
-// Nav scroll
-window.addEventListener('scroll',()=>{
-  const n=document.getElementById('nav');
-  if(window.scrollY>40){
-    n.style.background='rgba(10,10,10,.95)';
-    n.style.backdropFilter='blur(14px)';
-    n.style.borderBottom='1px solid rgba(255,255,255,.06)';
-  } else {
-    n.style.background='';
-    n.style.backdropFilter='';
-    n.style.borderBottom='';
-  }
-});
-
-// Mobile menu
-document.getElementById('mb').addEventListener('click',function(){
-  document.getElementById('mm').classList.toggle('hidden');
-});
 
 // Reveal animations
 const io=new IntersectionObserver(es=>{
@@ -702,5 +587,7 @@ document.querySelectorAll('.reveal,.reveal-sec').forEach(el=>io.observe(el));
   secs.forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
 })();
 </script>
+<script>window.SITE_ROOT='../';</script>
+<script src="../partials/load.js"></script>
 </body>
 </html>

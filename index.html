@@ -309,53 +309,7 @@ tailwind.config = {
 <body class="text-snow font-sans antialiased overflow-x-hidden">
 
 <!-- ═══ NAV ═══ -->
-<header id="nav" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-
-    <a href="#inicio" class="flex items-center">
-      <img src="./img/logotopoñuble.svg" alt="TopoÑuble, topógrafo en la Región de Ñuble" class="h-8 w-auto">
-    </a>
-
-    <ul class="hidden md:flex items-center gap-7 text-[10px] font-medium tracking-widest uppercase text-zinc1">
-      <li><a href="#inicio"    class="nav-link hover:text-gold transition-colors">Inicio</a></li>
-      <li><a href="#servicios" class="nav-link hover:text-gold transition-colors">Servicios</a></li>
-      <li><a href="#valores"   class="nav-link hover:text-gold transition-colors">Valores</a></li>
-      <li><a href="#proceso"   class="nav-link hover:text-gold transition-colors">Proceso</a></li>
-      <li><a href="#nosotros"  class="nav-link hover:text-gold transition-colors">Nosotros</a></li>
-      <li><a href="#cobertura" class="nav-link hover:text-gold transition-colors">Cobertura</a></li>
-      <li><a href="#faq"       class="nav-link hover:text-gold transition-colors">FAQ</a></li>
-      <li><a href="#blog"      class="nav-link hover:text-gold transition-colors">Blog</a></li>
-      <li><a href="#contacto"  class="nav-link hover:text-gold transition-colors">Contacto</a></li>
-    </ul>
-
-    <a href="https://wa.me/56966640562?text=Hola%2C+necesito+cotización+de+topografía" target="_blank" aria-label="Cotizar topografía por WhatsApp"
-       class="hidden sm:inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[10px] font-black tracking-widest uppercase px-5 py-2.5 transition-colors duration-200">
-      Cotizar →
-    </a>
-
-    <button id="mb" aria-label="Abrir menú de navegación" class="md:hidden p-2 text-zinc2">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </div>
-
-  <div id="mm" class="hidden md:hidden border-t border-white/5 px-6 py-6" style="background:#0A0A0Aee">
-    <ul class="flex flex-col gap-5 text-[12px] font-medium tracking-widest uppercase text-zinc2">
-      <li><a href="#inicio"    class="nav-link hover:text-gold transition-colors">Inicio</a></li>
-      <li><a href="#servicios" class="nav-link hover:text-gold transition-colors">Servicios</a></li>
-      <li><a href="#valores"   class="nav-link hover:text-gold transition-colors">Valores</a></li>
-      <li><a href="#proceso"   class="nav-link hover:text-gold transition-colors">Proceso</a></li>
-      <li><a href="#nosotros"  class="nav-link hover:text-gold transition-colors">Nosotros</a></li>
-      <li><a href="#cobertura" class="nav-link hover:text-gold transition-colors">Cobertura</a></li>
-      <li><a href="#faq"       class="nav-link hover:text-gold transition-colors">FAQ</a></li>
-      <li><a href="#blog"      class="nav-link hover:text-gold transition-colors">Blog</a></li>
-      <li><a href="#contacto"  class="nav-link hover:text-gold transition-colors">Contacto</a></li>
-      <li><a href="https://wa.me/56966640562?text=Hola%2C+necesito+cotización" target="_blank" aria-label="Cotizar por WhatsApp"
-             class="inline-block bg-gold text-ink font-black px-5 py-2.5 text-[12px] tracking-widest uppercase mt-1">Cotizar →</a></li>
-    </ul>
-  </div>
-</header>
+<div id="nav-placeholder"></div>
 
 
 <!-- ═══ HERO · Carousel ═══ -->
@@ -1472,85 +1426,7 @@ tailwind.config = {
 
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="w-full bg-ink py-20 border-t border-white/5 relative overflow-hidden">
-
-  <div class="absolute inset-0 sgrid opacity-20 pointer-events-none"></div>
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
-
-      <!-- Brand -->
-      <div class="flex flex-col items-start">
-        <a href="#inicio" class="mb-6 block">
-          <img src="./img/logotopoñuble.svg" alt="Logo de TopoÑuble, servicios de topografía en Ñuble" class="h-8 w-auto">
-        </a>
-        <p class="text-zinc1 text-[14px] leading-relaxed mb-6 text-left max-w-sm">
-          TopoÑuble: topógrafo en Ñuble para subdivisión rural, subdivisión SAG, parcelación y levantamiento topográfico con GNSS en terrenos rurales.
-        </p>
-        <div class="border-l-2 border-gold/50 pl-4 text-left">
-          <p class="font-mono text-[10px] text-gold tracking-widest uppercase">San Carlos, Ñuble · Chile</p>
-          <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase mt-1">Establecido 2026</p>
-        </div>
-      </div>
-
-      <!-- Nav -->
-      <div class="text-left">
-        <h4 class="font-mono text-[10px] text-white/40 uppercase tracking-[0.3em] mb-8">Navegación</h4>
-        <ul class="space-y-4 text-[13px] text-zinc3">
-          <li><a href="#inicio"    class="hover:text-gold transition-colors block">Inicio</a></li>
-          <li><a href="#servicios" class="hover:text-gold transition-colors block">Servicios</a></li>
-          <li><a href="#proceso"   class="hover:text-gold transition-colors block">Proceso</a></li>
-          <li><a href="#nosotros"  class="hover:text-gold transition-colors block">Nosotros</a></li>
-          <li><a href="#cobertura" class="hover:text-gold transition-colors block">Cobertura</a></li>
-          <li><a href="#blog"      class="hover:text-gold transition-colors block">Blog</a></li>
-          <li><a href="#contacto"  class="hover:text-gold transition-colors block">Contacto</a></li>
-        </ul>
-      </div>
-
-      <!-- Contacto directo -->
-      <div class="text-left">
-        <h4 class="font-mono text-[10px] text-white/40 uppercase tracking-[0.3em] mb-8">Contacto Directo</h4>
-        <div class="space-y-6">
-          <div>
-            <p class="text-[9px] font-mono text-white/20 uppercase tracking-widest mb-1">WhatsApp</p>
-            <a href="https://api.whatsapp.com/send?phone=56966640562" class="text-snow hover:text-gold transition-colors text-[16px] font-medium">
-              +56 9 9876 5432
-            </a>
-          </div>
-          <div>
-            <p class="text-[9px] font-mono text-white/20 uppercase tracking-widest mb-1">Email</p>
-            <a href="mailto:patricio@toponuble.cl" class="text-snow hover:text-gold transition-colors text-[16px] font-medium break-all">
-              patricio@toponuble.cl
-            </a>
-          </div>
-          <a id="footer-whatsapp-btn"
-             href="https://api.whatsapp.com/send?phone=56966640562"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Escribir a WhatsApp directo"
-             onclick="trackWhatsAppConversion()"
-             class="inline-block border border-gold/30 text-gold hover:bg-gold hover:text-ink px-6 py-4 text-[11px] font-black tracking-widest uppercase transition-all">
-            WhatsApp Directo
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="gold-line mt-16 mb-8"></div>
-
-    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase text-center md:text-left">
-        © 2026 TopoÑuble. Todos los derechos reservados.
-      </p>
-      <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase text-center md:text-right">
-        Levantamiento GNSS · Subdivisión SAG/DOM
-      </p>
-    </div>
-
-  </div>
-</footer>
+<div id="footer-placeholder"></div>
 
 
 <!-- ═══ WHATSAPP FLOTANTE ═══ -->
@@ -1594,43 +1470,6 @@ if(window.location.hash){
   });
 }
 
-// Nav scroll
-window.addEventListener('scroll',()=>{
-  const n=document.getElementById('nav');
-  if(window.scrollY>40){
-    n.style.background='rgba(10,10,10,.95)';
-    n.style.backdropFilter='blur(14px)';
-    n.style.borderBottom='1px solid rgba(255,255,255,.05)';
-  } else {
-    n.style.background='';n.style.backdropFilter='';n.style.borderBottom='';
-  }
-});
-
-// Mobile menu
-document.getElementById('mb').addEventListener('click',()=>document.getElementById('mm').classList.toggle('hidden'));
-document.querySelectorAll('#mm a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mm').classList.add('hidden')));
-
-// Nav: marcar sección activa
-const navLinks=document.querySelectorAll('.nav-link');
-const sectionIds=['inicio','servicios','valores','proceso','nosotros','cobertura','faq','blog','contacto'];
-const sections=sectionIds.map(id=>document.getElementById(id)).filter(Boolean);
-const setActiveNav=id=>{
-  navLinks.forEach(link=>{
-    const isActive=link.getAttribute('href')===`#${id}`;
-    link.classList.toggle('nav-link-active',isActive);
-  });
-};
-const updateActiveNav=()=>{
-  const marker=window.scrollY + window.innerHeight * 0.35;
-  let current='inicio';
-  sections.forEach(section=>{
-    if(marker>=section.offsetTop) current=section.id;
-  });
-  setActiveNav(current);
-};
-window.addEventListener('scroll',updateActiveNav);
-window.addEventListener('load',updateActiveNav);
-updateActiveNav();
 
 // Scroll reveal
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:0,rootMargin:'0px 0px -12% 0px'});
@@ -1947,5 +1786,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 </script>
+<script>window.SITE_ROOT='';</script>
+<script src="partials/load.js"></script>
 </body>
 </html>
