@@ -1,0 +1,79 @@
+<footer class="w-full bg-ink py-20 border-t border-white/5 relative overflow-hidden">
+
+  <div class="absolute inset-0 sgrid opacity-20 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+
+      <!-- Brand -->
+      <div class="flex flex-col items-start">
+        <a href="{{LOGO_HREF}}" class="mb-6 block">
+          <img src="{{ASSETS}}img/logotopoñuble.svg" alt="Logo de TopoÑuble, servicios de topografía en Ñuble" class="h-8 w-auto">
+        </a>
+        <p class="text-zinc1 text-[14px] leading-relaxed mb-6 text-left max-w-sm">
+          TopoÑuble: topógrafo en Ñuble para subdivisión rural, subdivisión SAG, parcelación y levantamiento topográfico con GNSS en terrenos rurales.
+        </p>
+        <div class="border-l-2 border-gold/50 pl-4 text-left">
+          <p class="font-mono text-[10px] text-gold tracking-widest uppercase">San Carlos, Ñuble · Chile</p>
+          <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase mt-1">Establecido 2026</p>
+        </div>
+      </div>
+
+      <!-- Nav -->
+      <div class="text-left">
+        <h4 class="font-mono text-[10px] text-white/40 uppercase tracking-[0.3em] mb-8">Navegación</h4>
+        <ul class="space-y-4 text-[13px] text-zinc3">
+          <li><a href="{{NAV_HREF}}#inicio"    class="hover:text-gold transition-colors block">Inicio</a></li>
+          <li><a href="{{NAV_HREF}}#servicios" class="hover:text-gold transition-colors block">Servicios</a></li>
+          <li><a href="{{NAV_HREF}}#proceso"   class="hover:text-gold transition-colors block">Proceso</a></li>
+          <li><a href="{{NAV_HREF}}#nosotros"  class="hover:text-gold transition-colors block">Nosotros</a></li>
+          <li><a href="{{NAV_HREF}}#cobertura" class="hover:text-gold transition-colors block">Cobertura</a></li>
+          <li><a href="{{NAV_HREF}}#blog"      class="hover:text-gold transition-colors block">Blog</a></li>
+          <li><a href="{{NAV_HREF}}#contacto"  class="hover:text-gold transition-colors block">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto directo -->
+      <div class="text-left">
+        <h4 class="font-mono text-[10px] text-white/40 uppercase tracking-[0.3em] mb-8">Contacto Directo</h4>
+        <div class="space-y-6">
+          <div>
+            <p class="text-[9px] font-mono text-white/20 uppercase tracking-widest mb-1">WhatsApp</p>
+            <a href="https://api.whatsapp.com/send?phone=56966640562" class="text-snow hover:text-gold transition-colors text-[16px] font-medium">
+              +56 9 6664 0562
+            </a>
+          </div>
+          <div>
+            <p class="text-[9px] font-mono text-white/20 uppercase tracking-widest mb-1">Email</p>
+            <a href="mailto:patricio@toponuble.cl" class="text-snow hover:text-gold transition-colors text-[16px] font-medium break-all">
+              patricio@toponuble.cl
+            </a>
+          </div>
+          <a id="footer-whatsapp-btn"
+             href="https://api.whatsapp.com/send?phone=56966640562"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Escribir a WhatsApp directo"
+             onclick="if(typeof trackWhatsAppConversion==='function')trackWhatsAppConversion()"
+             class="inline-block border border-gold/30 text-gold hover:bg-gold hover:text-ink px-6 py-4 text-[11px] font-black tracking-widest uppercase transition-all">
+            WhatsApp Directo
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gold-line mt-16 mb-8"></div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase text-center md:text-left">
+        © 2026 TopoÑuble. Todos los derechos reservados.
+      </p>
+      <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase text-center md:text-right">
+        Levantamiento GNSS · Subdivisión SAG/DOM
+      </p>
+    </div>
+
+  </div>
+</footer>
