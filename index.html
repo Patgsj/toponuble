@@ -410,6 +410,52 @@ tailwind.config = {
         </div>
       </div>
 
+      <!-- ── SLIDE 3: Artículo quién hace el plano ── -->
+      <div class="w-full flex-shrink-0 relative min-h-screen flex items-center pt-20 bg-ink overflow-hidden">
+        <div class="absolute inset-0 sgrid"></div>
+        <div class="hero-img-panel absolute inset-y-0 right-0 w-full md:w-[58%] pointer-events-none">
+          <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image:url('img/topografo_gnss.jpg')"></div>
+          <div class="absolute inset-0" style="background:linear-gradient(to right,#0A0A0A 0%,rgba(10,10,10,.55) 50%,rgba(10,10,10,.2) 100%)"></div>
+          <div class="absolute inset-0 md:hidden" style="background:rgba(10,10,10,.88)"></div>
+        </div>
+        <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none" style="background:radial-gradient(ellipse at left,rgba(245,197,0,.06) 0%,transparent 65%)"></div>
+        <div class="absolute top-0 left-0 w-16 h-px bg-gold/40"></div>
+        <div class="absolute top-0 left-0 w-px h-16 bg-gold/40"></div>
+        <div class="absolute bottom-0 right-0 w-16 h-px bg-gold/20"></div>
+        <div class="absolute bottom-0 right-0 w-px h-16 bg-gold/20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-24">
+          <div class="max-w-[620px] hero-content">
+            <div class="inline-flex items-center gap-2 border border-gold/25 bg-gold/5 text-gold text-[10px] font-mono font-medium tracking-widest px-4 py-1.5 mb-8 uppercase">
+              <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+              Nuevo artículo · Blog
+            </div>
+            <h2 class="text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.04] tracking-tight mb-5 text-snow">
+              ¿Quién hace<br>el plano de<br><em class="not-italic text-gold">subdivisión?</em>
+            </h2>
+            <div class="w-12 h-[3px] bg-gold mb-6"></div>
+            <p class="text-zinc2 text-[16px] leading-relaxed mb-10 font-light max-w-[500px]">
+              Arquitectos, agrónomos, forestales y topógrafos pueden hacer el plano SAG — pero no todos con el mismo resultado. Te explicamos por qué el perfil importa.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 mb-10">
+              <a href="blog/quien-hace-plano-subdivision-predio-rustico"
+                 class="inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold2 text-ink text-[13px] font-black tracking-widest uppercase px-8 py-4 transition-colors duration-200">
+                Leer artículo →
+              </a>
+              <a href="#blog"
+                 class="inline-flex items-center justify-center gap-2 border border-white/15 hover:border-gold/40 hover:text-gold text-zinc2 text-[13px] font-semibold tracking-widest uppercase px-8 py-4 transition-all duration-200">
+                Ver todos los artículos
+              </a>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag">Normativa SAG</span>
+              <span class="tag">Plano subdivisión</span>
+              <span class="tag">Topógrafo GNSS</span>
+              <span class="tag">Resolución 4.788</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -427,6 +473,7 @@ tailwind.config = {
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
     <button class="hero-dot h-px transition-all duration-300" style="width:2rem;background:#F5C500" data-hero-idx="0" aria-label="Slide 1"></button>
     <button class="hero-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.3)" data-hero-idx="1" aria-label="Slide 2"></button>
+    <button class="hero-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.3)" data-hero-idx="2" aria-label="Slide 3"></button>
   </div>
 </section>
 
