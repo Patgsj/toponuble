@@ -662,7 +662,7 @@ tailwind.config = {
     var pub=new Date(dateStr);
     var fmt=pub.getDate()+' de '+months[pub.getMonth()]+' de '+pub.getFullYear();
     if(diff<=0) return fmt;
-    if(diff<60){var s=diff;return 'hace '+s+(s===1?' segundo':' segundos');}
+    if(diff<60) return 'hace '+diff+' seg';
     if(diff<3600){var m=Math.floor(diff/60);return 'hace '+m+(m===1?' minuto':' minutos');}
     if(diff<86400){var h=Math.floor(diff/3600);return 'hace '+h+(h===1?' hora':' horas');}
     return fmt;
