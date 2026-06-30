@@ -332,6 +332,20 @@ tailwind.config = {
           <p>También hay una diferencia en las constelaciones que recibe cada uno. <strong>GPS</strong> es el sistema de satélites de Estados Unidos. <strong>GNSS</strong> es el término que engloba todos los sistemas: GPS (EE.UU.), GLONASS (Rusia), Galileo (Unión Europea) y BeiDou (China). Un receptor profesional escucha todos a la vez, lo que mejora la geometría de la solución y mantiene la precisión incluso en zonas con vegetación densa o topografía compleja.</p>
         </div>
 
+        <!-- Topógrafo GNSS: dos columnas texto + imagen -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8 items-start">
+          <div>
+            <p style="margin-top:0">Un equipo GNSS profesional con RTK opera de forma completamente distinta. El receptor del mástil (rover) mide la <strong>fase de la onda portadora</strong> — no el código — y recibe correcciones en tiempo real desde una estación base de posición conocida.</p>
+            <p>El resultado: precisión de <strong>1 a 2 centímetros horizontal</strong> y 2 a 3 centímetros vertical. Suficiente para medir deslindes, generar planos con validez legal y producir el KML georreferenciado que exige el SAG.</p>
+          </div>
+          <figure class="sag-figure m-0">
+            <img src="../img/topografo_gnss.jpg"
+                 alt="Topógrafo operando equipo GNSS RTK en terreno rural"
+                 loading="lazy">
+            <figcaption>Topógrafo con equipo GNSS RTK</figcaption>
+          </figure>
+        </div>
+
         <!-- Imagen -->
         <figure class="sag-figure my-8">
           <img src="../img/SATELITE.jpg"
