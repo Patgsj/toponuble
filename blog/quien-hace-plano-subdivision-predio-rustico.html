@@ -536,12 +536,14 @@ tailwind.config = {
 (function(){
   function relTime(dateStr){
     var diff=Math.floor((Date.now()-new Date(dateStr).getTime())/1000);
-    if(diff<60) return 'hace '+(diff<1?1:diff)+' seg';
-    if(diff<3600){var m=Math.floor(diff/60);return 'hace '+m+(m===1?' minuto':' minutos');}
-    if(diff<86400){var h=Math.floor(diff/3600);return 'hace '+h+(h===1?' hora':' horas');}
     var months=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
     var pub=new Date(dateStr);
-    return pub.getDate()+' de '+months[pub.getMonth()]+' de '+pub.getFullYear();
+    var fmt=pub.getDate()+' de '+months[pub.getMonth()]+' de '+pub.getFullYear();
+    if(diff<=0) return fmt;
+    if(diff<60){var s=diff;return 'hace '+s+(s===1?' segundo':' segundos');}
+    if(diff<3600){var m=Math.floor(diff/60);return 'hace '+m+(m===1?' minuto':' minutos');}
+    if(diff<86400){var h=Math.floor(diff/3600);return 'hace '+h+(h===1?' hora':' horas');}
+    return fmt;
   }
   function update(){
     document.querySelectorAll('[data-pub]').forEach(function(el){
