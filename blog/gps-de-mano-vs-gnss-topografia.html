@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>GPS de mano vs GNSS: la diferencia de precisión que importa en topografía | TopoÑuble</title>
+<link rel="icon" href="../img/favicon.png" type="image/x-icon">
+<link rel="canonical" href="https://toponuble.cl/blog/gps-de-mano-vs-gnss-topografia"/>
+<meta name="description" content="Un GPS de mano tiene 3–10 metros de error. Un equipo GNSS RTK llega a 1–2 centímetros. La diferencia no es menor cuando se trata de medir deslindes o subdividir un terreno."/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+<meta name="keywords" content="GPS de mano vs GNSS, diferencia GPS GNSS topografía, precisión GNSS RTK centímetros, GPS Garmin topografía, GNSS RTK medición terreno, diferencia GPS receptor GNSS, topografía GPS Ñuble"/>
+<meta name="author" content="Patricio Soto Jofré"/>
+<meta name="geo.region" content="CL-NB"/>
+<meta name="geo.placename" content="San Carlos, Región de Ñuble, Chile"/>
+<meta name="geo.position" content="-36.4258;-71.9552"/>
+<meta name="ICBM" content="-36.4258, -71.9552"/>
+<!-- Open Graph article -->
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://toponuble.cl/blog/gps-de-mano-vs-gnss-topografia"/>
+<meta property="og:title" content="GPS de mano vs GNSS: la diferencia de precisión que importa en topografía"/>
+<meta property="og:description" content="Un GPS de mano tiene 3–10 metros de error. Un GNSS RTK llega a 1–2 centímetros. Entender esa diferencia es clave antes de medir un terreno."/>
+<meta property="og:image" content="https://toponuble.cl/img/topografo_gnss.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Topógrafo operando equipo GNSS RTK en terreno rural en Ñuble"/>
+<meta property="og:locale" content="es_CL"/>
+<meta property="og:site_name" content="TopoÑuble"/>
+<meta property="article:published_time" content="2026-06-30T10:00:00-04:00"/>
+<meta property="article:modified_time" content="2026-06-30T10:00:00-04:00"/>
+<meta property="article:author" content="Patricio Soto Jofré"/>
+<meta property="article:section" content="Topografía"/>
+<meta property="article:tag" content="GNSS RTK"/>
+<meta property="article:tag" content="GPS topografía"/>
+<meta property="article:tag" content="precisión topográfica"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="GPS de mano vs GNSS: la diferencia de precisión que importa en topografía"/>
+<meta name="twitter:description" content="3–10 metros vs 1–2 centímetros. La diferencia entre un GPS de mano y un GNSS RTK en la práctica topográfica."/>
+<meta name="twitter:image" content="https://toponuble.cl/img/topografo_gnss.jpg"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://toponuble.cl/blog/gps-de-mano-vs-gnss-topografia#article",
+      "headline": "GPS de mano vs GNSS: la diferencia de precisión que importa en topografía",
+      "description": "Un GPS de mano tiene 3–10 metros de error. Un equipo GNSS RTK llega a 1–2 centímetros. La diferencia es determinante cuando se miden deslindes o se subdivide un terreno rural.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://toponuble.cl/img/topografo_gnss.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://toponuble.cl/#patricio",
+        "name": "Patricio Soto Jofré",
+        "jobTitle": "Topógrafo",
+        "worksFor": {"@type": "Organization", "name": "TopoÑuble", "url": "https://toponuble.cl"}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "TopoÑuble",
+        "url": "https://toponuble.cl",
+        "logo": {"@type": "ImageObject", "url": "https://toponuble.cl/img/logotopoñuble.svg"}
+      },
+      "datePublished": "2026-06-30",
+      "dateModified": "2026-06-30",
+      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://toponuble.cl/blog/gps-de-mano-vs-gnss-topografia"},
+      "keywords": ["GPS de mano", "GNSS RTK", "precisión topográfica", "diferencia GPS GNSS", "topografía Ñuble"],
+      "articleSection": "Topografía",
+      "inLanguage": "es-CL",
+      "isPartOf": {"@id": "https://toponuble.cl/#website"}
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://toponuble.cl/blog/gps-de-mano-vs-gnss-topografia#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánta precisión tiene un GPS de mano?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un GPS de mano típico (Garmin, teléfono celular) tiene una precisión de 3 a 10 metros en condiciones normales. Este error se debe a que el receptor mide el tiempo de llegada del código de la señal satelital, que está afectado por perturbaciones de la ionosfera, la troposfera y el efecto multitrayectoria (rebote de la señal en edificios o vegetación)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué diferencia hay entre GPS y GNSS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GPS es el sistema de navegación satelital de Estados Unidos (24+ satélites). GNSS (Global Navigation Satellite System) es el término que engloba todos los sistemas satelitales: GPS (EE.UU.), GLONASS (Rusia), Galileo (Unión Europea) y BeiDou (China). Un receptor GNSS profesional recibe señales de todas estas constelaciones simultáneamente, lo que mejora la cobertura y la precisión, especialmente en zonas con vegetación densa o terreno accidentado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se puede usar un GPS de mano para la subdivisión de un predio rústico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. El SAG exige coordenadas UTM/WGS84 con precisión catastral y un archivo KML georreferenciado que debe coincidir exactamente con el plano topográfico. Un GPS de mano con error de varios metros no puede garantizar esa correspondencia. Para documentos legales — planos, escrituras, expedientes SAG — se requiere un equipo GNSS con corrección RTK que alcance precisión centimétrica."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://toponuble.cl"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://toponuble.cl/#blog"},
+        {"@type": "ListItem", "position": 3, "name": "GPS de mano vs GNSS: la diferencia de precisión que importa en topografía", "item": "https://toponuble.cl/blog/gps-de-mano-vs-gnss-topografia"}
+      ]
+    }
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18107428909"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18107428909');
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:    '#0A0A0A',
+        ink2:   '#141414',
+        ink3:   '#1E1E1E',
+        ink4:   '#2A2A2A',
+        zinc1:  '#888888',
+        zinc2:  '#AAAAAA',
+        zinc3:  '#CCCCCC',
+        gold:   '#F5C500',
+        gold2:  '#FFD740',
+        snow:   '#FAFAFA',
+      },
+      fontFamily: {
+        sans: ['"DM Sans"','system-ui','sans-serif'],
+        mono: ['"DM Mono"','monospace'],
+      },
+    }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  html{scroll-padding-top:72px}
+  body{background:#0A0A0A}
+  .sgrid{background-image:linear-gradient(rgba(245,197,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(245,197,0,.04) 1px,transparent 1px);background-size:48px 48px}
+  .reveal{opacity:0;transition:opacity .6s ease}
+  .reveal.in{opacity:1}
+  .reveal-sec{opacity:0;transition:opacity .7s ease-out}
+  .reveal-sec.in{opacity:1}
+  @media(prefers-reduced-motion:reduce){.reveal,.reveal-sec{opacity:1!important;transform:none!important;transition:none!important}}
+  .nav-link-active{color:#F5C500!important}
+  .gold-line{height:1px;background:linear-gradient(to right,transparent,rgba(245,197,0,.5),transparent)}
+  .tag{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.08);padding:.35rem .8rem;font-size:10px;font-family:'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#888}
+
+  /* Prose */
+  .prose h2{font-size:1.35rem;font-weight:900;color:#FAFAFA;line-height:1.25;margin-top:2.25rem;margin-bottom:.8rem}
+  .prose p{font-size:.97rem;line-height:1.82;color:#AAAAAA;margin-bottom:1rem}
+  .prose p strong{color:#FAFAFA;font-weight:600}
+  .prose ul{list-style:none;padding:0;margin-bottom:1.25rem}
+  .prose ul li{position:relative;padding-left:1.2rem;font-size:.93rem;line-height:1.7;color:#AAAAAA;margin-bottom:.35rem}
+  .prose ul li::before{content:'';position:absolute;left:0;top:.76rem;width:6px;height:1px;background:#F5C500}
+
+  /* Image figure */
+  .sag-figure{margin:2rem 0;border:1px solid rgba(255,255,255,.07);overflow:hidden}
+  .sag-figure img{width:100%;display:block;opacity:.9}
+  .sag-figure figcaption{padding:.6rem .9rem;background:rgba(20,20,20,.9);font-family:'DM Mono',monospace;font-size:.7rem;color:#666;letter-spacing:.06em}
+
+  /* Info box */
+  .info-box{background:rgba(245,197,0,.04);border:1px solid rgba(245,197,0,.18);padding:1.1rem 1.4rem;margin:1.5rem 0}
+  .info-box p{margin-bottom:0;color:#CCCCCC;font-size:.92rem}
+
+  /* Comparison table */
+  .cmp-table{width:100%;border-collapse:collapse;font-size:.82rem;margin:1.25rem 0}
+  .cmp-table th{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#666;padding:.5rem .7rem;border-bottom:1px solid rgba(255,255,255,.08);text-align:left}
+  .cmp-table td{padding:.65rem .7rem;border-bottom:1px solid rgba(255,255,255,.05);color:#AAAAAA;vertical-align:top;line-height:1.45}
+  .cmp-table td:first-child{color:#FAFAFA;font-weight:500;width:42%}
+  .cmp-table .col-hand{color:#888}
+  .cmp-table .col-gnss{color:#F5C500;font-weight:600}
+
+  /* CTA callout */
+  .cta-callout{background:rgba(245,197,0,.05);border:1px solid rgba(245,197,0,.2);padding:1.6rem;position:relative}
+  .cta-callout::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:#F5C500}
+
+  /* Sidebar fixed */
+  @media(min-width:1024px){
+    .sidebar-sticky{
+      position:fixed;
+      top:6rem;
+      right:max(1.5rem,calc((100vw - 80rem)/2 + 1.5rem));
+      width:290px;
+      max-height:calc(100vh - 7rem);
+      overflow-y:auto;
+      scrollbar-width:none;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .3s ease;
+      z-index:49;
+    }
+    .sidebar-sticky::-webkit-scrollbar{display:none}
+    .sidebar-sticky.on{opacity:1;pointer-events:auto}
+  }
+</style>
+<link rel="manifest" href="/manifest.json"/>
+<link rel="preload" href="../img/topografo_gnss.jpg" as="image"/>
+</head>
+
+<body class="text-snow font-sans antialiased overflow-x-hidden" data-active-nav="blog">
+
+<!-- ═══ NAV ═══ -->
+<div id="nav-placeholder"></div>
+
+
+<!-- ═══ HERO PARALLAX ═══ -->
+<section id="article-hero" class="relative pt-28 pb-24 px-6" style="min-height:420px;background-image:url('../img/topografo_gnss.jpg');background-attachment:fixed;background-size:cover;background-position:center 40%">
+
+  <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(10,10,10,.72) 0%,rgba(10,10,10,.82) 60%,rgba(10,10,10,1) 100%)"></div>
+  <div class="absolute inset-0 sgrid" style="opacity:.2"></div>
+
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="max-w-7xl mx-auto h-full relative">
+      <div class="absolute top-0 left-0 w-16 h-px bg-gold/40"></div>
+      <div class="absolute top-0 left-0 w-px h-16 bg-gold/40"></div>
+      <div class="absolute bottom-0 right-0 w-16 h-px bg-gold/20"></div>
+      <div class="absolute bottom-0 right-0 w-px h-16 bg-gold/20"></div>
+    </div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 mb-8 reveal">
+      <a href="../index.html" class="font-mono text-[9px] text-white/40 tracking-widest uppercase hover:text-gold transition-colors">TopoÑuble</a>
+      <span class="font-mono text-[9px] text-white/25">/</span>
+      <a href="../index.html#blog" class="font-mono text-[9px] text-white/40 tracking-widest uppercase hover:text-gold transition-colors">Blog</a>
+      <span class="font-mono text-[9px] text-white/25">/</span>
+      <span class="font-mono text-[9px] text-gold/70 tracking-widest uppercase">Topografía</span>
+    </div>
+
+    <!-- Badge + fecha -->
+    <div class="flex flex-wrap items-center gap-3 mb-6 reveal" style="transition-delay:.05s">
+      <span class="inline-flex items-center border border-gold/30 bg-gold/8 text-gold text-[9px] font-mono tracking-widest px-3 py-1.5 uppercase">Topografía</span>
+      <span class="font-mono text-[9px] text-white/40 tracking-widest uppercase"><span data-pub="2026-06-30T10:00:00"></span></span>
+    </div>
+
+    <!-- Título -->
+    <h1 class="text-[clamp(1.9rem,5vw,3.2rem)] font-black leading-[1.08] tracking-tight mb-5 text-snow reveal" style="transition-delay:.08s;text-shadow:0 2px 24px rgba(0,0,0,.5)">
+      GPS de mano vs GNSS:<br class="hidden sm:block">
+      la diferencia que no se ve a simple vista
+    </h1>
+    <div class="w-10 h-[3px] bg-gold mb-5 reveal" style="transition-delay:.1s"></div>
+    <p class="text-zinc2 text-[1rem] leading-relaxed max-w-xl reveal" style="transition-delay:.12s">
+      Un GPS de mano da tu posición con varios metros de error. Un equipo GNSS con RTK llega a 1–2 centímetros. No son versiones del mismo aparato — son tecnologías distintas para propósitos distintos.
+    </p>
+    <div class="flex items-center gap-4 mt-6 reveal" style="transition-delay:.15s">
+      <img src="../img/foto autor Patricios Soto Jofré Topografo.jpeg" alt="Patricio Soto Jofré, Topógrafo en Ñuble" class="w-20 h-20 rounded-full object-cover border border-white/15 flex-shrink-0">
+      <div class="flex flex-col justify-center">
+        <p class="font-mono text-[8px] text-white/30 tracking-widest uppercase mb-1">Escrito por</p>
+        <p class="text-[14px] font-semibold text-snow leading-none">Patricio Soto Jofré</p>
+        <p class="font-mono text-[9px] text-zinc1 tracking-widest uppercase mt-1">Topógrafo · TopoÑuble</p>
+      </div>
+    </div>
+    <div class="mt-8 flex justify-center reveal" style="transition-delay:.18s">
+      <a id="chevron-down" href="#sec-confusion" style="display:inline-block;cursor:pointer;line-height:0">
+        <svg class="animate-bounce" style="width:5rem;height:5rem" fill="none" stroke="#F5C500" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+
+<!-- ═══ ARTICLE ═══ -->
+<article id="articulo-inicio" class="py-16 bg-ink2">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_290px] gap-14 items-start">
+
+      <!-- ── MAIN CONTENT ── -->
+      <div class="prose reveal-sec">
+
+        <!-- 01 La confusión frecuente -->
+        <div id="sec-confusion" class="mb-20 pt-6">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-[9px] text-gold tracking-widest">01</span>
+            <div class="h-px flex-1 bg-white/6"></div>
+          </div>
+          <h2>La confusión más frecuente</h2>
+          <p>Cuando alguien ve un topógrafo trabajando con un equipo GNSS, la pregunta habitual es: "¿y eso no es lo mismo que el GPS del celular?". La respuesta corta es no. La respuesta larga explica por qué esa diferencia importa mucho cuando está en juego la medición de un terreno.</p>
+          <p>Un GPS de mano — ya sea un Garmin de senderismo o un teléfono celular — te dice dónde estás con un margen de error de <strong>3 a 10 metros</strong>. Para orientarte en un cerro o llegar a un destino eso sobra. Pero si necesitas medir el deslinde entre dos propiedades, ese margen puede significar medir varios metros fuera del límite real.</p>
+          <div class="info-box">
+            <p>En un lote de 5.000 m² (el mínimo legal para subdivisión rural), un error de 5 metros en un deslinde equivale a desplazar el límite casi el ancho de una habitación. <strong>No es un error menor.</strong></p>
+          </div>
+        </div>
+
+        <!-- 02 Cómo mide cada uno -->
+        <div id="sec-como" class="mb-10 scroll-mt-28">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-[9px] text-gold tracking-widest">02</span>
+            <div class="h-px flex-1 bg-white/6"></div>
+          </div>
+          <h2>Cómo mide cada uno</h2>
+          <p>La diferencia de fondo está en qué parte de la señal satelital utiliza cada receptor para calcular su posición.</p>
+          <p><strong>El GPS de mano mide por código.</strong> Cada satélite emite una señal con un código pseudoaleatorio (PRN). El receptor mide cuánto tiempo tardó ese código en llegar y calcula la distancia al satélite. El problema es que esa señal viaja a través de la ionosfera y la troposfera, que la desvían y retrasan de forma variable. Eso introduce errores de metros que el equipo no puede eliminar por sí solo.</p>
+          <p><strong>El equipo GNSS profesional mide por fase de portadora.</strong> En vez de usar el código, mide la fase de la onda portadora de la señal — una onda con longitud de onda de apenas 19 centímetros. Medir la fase permite una resolución mucho mayor. Pero no es suficiente con eso: el equipo necesita además una <strong>corrección diferencial en tiempo real (RTK)</strong>, que proviene de una estación base cuya posición se conoce con exactitud. Esa estación le dice al receptor móvil cuánto se está desviando la señal en ese momento, y el receptor corrige el error en tiempo real.</p>
+          <p>También hay una diferencia en las constelaciones que recibe cada uno. <strong>GPS</strong> es el sistema de satélites de Estados Unidos. <strong>GNSS</strong> es el término que engloba todos los sistemas: GPS (EE.UU.), GLONASS (Rusia), Galileo (Unión Europea) y BeiDou (China). Un receptor profesional escucha todos a la vez, lo que mejora la geometría de la solución y mantiene la precisión incluso en zonas con vegetación densa o topografía compleja.</p>
+        </div>
+
+        <!-- Imagen -->
+        <figure class="sag-figure my-8">
+          <img src="../img/topografo_gnss.jpg"
+               alt="Topógrafo operando equipo GNSS RTK en terreno rural en Ñuble"
+               loading="lazy">
+          <figcaption>Equipo GNSS RTK en operación. El receptor del mástil (rover) recibe correcciones de una estación base para alcanzar precisión centimétrica.</figcaption>
+        </figure>
+
+        <!-- 03 La diferencia en números -->
+        <div id="sec-numeros" class="mb-10 scroll-mt-28">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-[9px] text-gold tracking-widest">03</span>
+            <div class="h-px flex-1 bg-white/6"></div>
+          </div>
+          <h2>La diferencia en números</h2>
+          <p>Sin rodeos, lo que separa a un equipo del otro:</p>
+
+          <div style="overflow-x:auto">
+            <table class="cmp-table">
+              <thead>
+                <tr>
+                  <th>Característica</th>
+                  <th>GPS de mano</th>
+                  <th>GNSS con RTK</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Precisión horizontal</td>
+                  <td class="col-hand">3 – 10 metros</td>
+                  <td class="col-gnss">1 – 2 centímetros</td>
+                </tr>
+                <tr>
+                  <td>Precisión vertical</td>
+                  <td class="col-hand">5 – 15 metros</td>
+                  <td class="col-gnss">2 – 3 centímetros</td>
+                </tr>
+                <tr>
+                  <td>Método de medición</td>
+                  <td class="col-hand">Código PRN</td>
+                  <td class="col-gnss">Fase de portadora</td>
+                </tr>
+                <tr>
+                  <td>Corrección diferencial</td>
+                  <td class="col-hand">No</td>
+                  <td class="col-gnss">Sí, en tiempo real</td>
+                </tr>
+                <tr>
+                  <td>Constelaciones</td>
+                  <td class="col-hand">GPS (EE.UU.)</td>
+                  <td class="col-gnss">GPS + GLONASS + Galileo + BeiDou</td>
+                </tr>
+                <tr>
+                  <td>Válido para documentos legales</td>
+                  <td class="col-hand">No</td>
+                  <td class="col-gnss">Sí</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 04 Por qué importa -->
+        <div id="sec-importa" class="mb-10 scroll-mt-28">
+          <div class="flex items-center gap-3 mb-5">
+            <span class="font-mono text-[9px] text-gold tracking-widest">04</span>
+            <div class="h-px flex-1 bg-white/6"></div>
+          </div>
+          <h2>Por qué importa en la práctica</h2>
+          <p>Si el objetivo es navegar, hacer senderismo o marcar un punto de referencia aproximado, un GPS de mano es suficiente. El problema aparece cuando el resultado se va a usar en un documento con efectos legales.</p>
+          <p>Para subdividir un predio rústico, el SAG exige coordenadas <strong>UTM/WGS84</strong> y un archivo <strong>KML georreferenciado</strong> que debe coincidir exactamente con el plano topográfico. Si ese archivo tiene un desplazamiento de 5 metros — perfectamente posible con un GPS de mano — el SAG detecta la inconsistencia en la revisión y devuelve el expediente. Eso extiende el proceso en semanas o meses.</p>
+          <p>Lo mismo aplica a cualquier trabajo donde los límites de un predio importan de verdad: compraventas, proyectos de construcción, deslindes entre vecinos, catastro rural. En todos esos contextos, un error de metros no es una imprecisión tolerable — es información incorrecta.</p>
+          <ul>
+            <li>Deslinde medido con error → escritura que no coincide con la realidad del terreno</li>
+            <li>KML con desplazamiento → expediente SAG devuelto para corrección</li>
+            <li>Superficie calculada con error → diferencias en m² que afectan el avalúo y el rol SII</li>
+          </ul>
+          <p>Por eso el equipo que usa un topógrafo no es un GPS más caro — es un instrumento técnicamente distinto, diseñado para un tipo de trabajo distinto.</p>
+        </div>
+
+        <!-- Enlace interno -->
+        <p class="text-zinc2 text-[.9rem] mb-8">Si estás pensando en subdividir un terreno en Ñuble, lee también <a href="quien-hace-plano-subdivision-predio-rustico.html" class="text-gold hover:underline">quién es el profesional más idóneo para hacer el plano de subdivisión</a> y <a href="tercero-autorizado-subdivision-predios-rusticos.html" class="text-gold hover:underline">qué hace el tercero autorizado SAG en ese proceso</a>.</p>
+
+        <!-- CTA callout -->
+        <div class="cta-callout mb-8">
+          <p class="font-mono text-[9px] text-gold tracking-widest uppercase mb-3">En TopoÑuble</p>
+          <h2 style="margin-top:0;font-size:1.1rem">Medimos con GNSS RTK, no con GPS de mano</h2>
+          <p>Cada trabajo — subdivisión, deslinde, levantamiento de terreno — se realiza con equipo GNSS de doble frecuencia y corrección RTK. La diferencia de precisión se traduce directamente en documentos que el SAG, el Conservador y el SII aceptan sin observaciones.</p>
+          <p style="margin-bottom:0">Si tienes un predio en la Región de Ñuble y necesitas una medición, parte con una evaluación sin costo.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 mb-10">
+          <a href="https://wa.me/56966640562?text=Hola%2C+necesito+medir+un+terreno+con+GNSS" target="_blank"
+             class="inline-flex items-center justify-center gap-2.5 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-8 py-4 transition-colors duration-200">
+            <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            Consultar por WhatsApp
+          </a>
+          <a href="../index.html#contacto"
+             class="inline-flex items-center justify-center gap-2 border border-white/15 hover:border-gold/40 hover:text-gold text-zinc2 text-[12px] font-semibold tracking-widest uppercase px-8 py-4 transition-all duration-200">
+            Ir al formulario →
+          </a>
+        </div>
+
+        <!-- Author -->
+        <div class="flex items-center gap-4 py-6 border-t border-white/6 mb-2">
+          <img src="../img/foto autor Patricios Soto Jofré Topografo.jpeg" alt="Patricio Soto Jofré, Topógrafo en Ñuble" class="w-20 h-20 rounded-full object-cover border border-white/15 flex-shrink-0">
+          <div>
+            <span class="font-mono text-[8px] text-white/30 tracking-widest uppercase block mb-1">Escrito por</span>
+            <span class="font-semibold text-snow block text-[16px] leading-none mb-1">Patricio Soto Jofré</span>
+            <span class="font-mono text-zinc1 tracking-widest uppercase text-[9px]">Topógrafo · TopoÑuble</span>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 pt-6 border-t border-white/6">
+          <span class="tag">GPS vs GNSS</span>
+          <span class="tag">RTK topografía</span>
+          <span class="tag">Precisión GNSS</span>
+          <span class="tag">Medición terreno</span>
+        </div>
+      </div>
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="hidden lg:block">
+        <div class="sidebar-sticky space-y-4">
+
+          <!-- Table of contents -->
+          <div class="border border-white/8 p-5">
+            <p class="font-mono text-[9px] text-white/30 tracking-widest uppercase mb-5">En este artículo</p>
+            <nav id="toc-nav" class="space-y-3">
+              <a href="#sec-confusion" class="toc-link flex items-start gap-3 group">
+                <span class="font-mono text-[9px] text-gold/40 group-hover:text-gold transition-colors pt-px flex-shrink-0">01</span>
+                <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors leading-snug">La confusión más frecuente</span>
+              </a>
+              <a href="#sec-como" class="toc-link flex items-start gap-3 group">
+                <span class="font-mono text-[9px] text-gold/40 group-hover:text-gold transition-colors pt-px flex-shrink-0">02</span>
+                <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors leading-snug">Cómo mide cada uno</span>
+              </a>
+              <a href="#sec-numeros" class="toc-link flex items-start gap-3 group">
+                <span class="font-mono text-[9px] text-gold/40 group-hover:text-gold transition-colors pt-px flex-shrink-0">03</span>
+                <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors leading-snug">La diferencia en números</span>
+              </a>
+              <a href="#sec-importa" class="toc-link flex items-start gap-3 group">
+                <span class="font-mono text-[9px] text-gold/40 group-hover:text-gold transition-colors pt-px flex-shrink-0">04</span>
+                <span class="text-[12px] text-zinc1 group-hover:text-snow transition-colors leading-snug">Por qué importa en la práctica</span>
+              </a>
+            </nav>
+          </div>
+
+          <!-- Mini CTA -->
+          <div class="border border-gold/20 p-5 bg-gold/3" style="border-left:3px solid #F5C500">
+            <p class="font-mono text-[9px] text-gold tracking-widest uppercase mb-2">¿Necesitas medir?</p>
+            <p class="text-[12px] text-zinc2 leading-relaxed mb-4">Te cotizamos la medición con GNSS RTK. Sin compromiso.</p>
+            <a href="https://wa.me/56966640562?text=Hola%2C+necesito+medir+un+terreno+con+GNSS" target="_blank"
+               class="flex items-center justify-center gap-2 bg-gold hover:bg-gold2 text-ink text-[10px] font-black tracking-widest uppercase px-4 py-3 transition-colors w-full">
+              <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+              Consultar →
+            </a>
+          </div>
+
+          <!-- Artículos relacionados -->
+          <div class="border border-white/8 p-5">
+            <p class="font-mono text-[9px] text-white/30 tracking-widest uppercase mb-4">Artículos relacionados</p>
+            <div class="space-y-4">
+              <a href="quien-hace-plano-subdivision-predio-rustico.html" class="group block">
+                <p class="text-[12px] text-zinc2 group-hover:text-snow transition-colors leading-snug mb-1">¿Quién es el profesional más idóneo para hacer el plano de subdivisión?</p>
+                <span class="font-mono text-[10px] text-gold tracking-widest uppercase group-hover:translate-x-1 inline-block transition-transform duration-200">Leer →</span>
+              </a>
+              <div class="h-px bg-white/5"></div>
+              <a href="tercero-autorizado-subdivision-predios-rusticos.html" class="group block">
+                <p class="text-[12px] text-zinc2 group-hover:text-snow transition-colors leading-snug mb-1">Qué hace un tercero autorizado SAG en la subdivisión de predios rústicos</p>
+                <span class="font-mono text-[10px] text-gold tracking-widest uppercase group-hover:translate-x-1 inline-block transition-transform duration-200">Leer →</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</article>
+
+
+<!-- ═══ FOOTER ═══ -->
+<div id="footer-placeholder"></div>
+
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/56966640562?text=Hola%2C+necesito+cotización+de+topografía" target="_blank" aria-label="WhatsApp"
+   class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center rounded-full shadow-lg transition-all duration-200 hover:scale-110">
+  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script>
+(function(){
+  function relTime(dateStr){
+    var diff=Math.floor((Date.now()-new Date(dateStr).getTime())/1000);
+    if(diff<60) return 'hace '+(diff<1?1:diff)+' seg';
+    if(diff<3600){var m=Math.floor(diff/60);return 'hace '+m+(m===1?' minuto':' minutos');}
+    if(diff<86400){var h=Math.floor(diff/3600);return 'hace '+h+(h===1?' hora':' horas');}
+    var months=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    var pub=new Date(dateStr);
+    return pub.getDate()+' de '+months[pub.getMonth()]+' de '+pub.getFullYear();
+  }
+  function update(){
+    document.querySelectorAll('[data-pub]').forEach(function(el){
+      el.textContent=relTime(el.getAttribute('data-pub'));
+    });
+  }
+  update();
+  setInterval(update,30000);
+})();
+
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal,.reveal-sec').forEach(el=>io.observe(el));
+
+(function(){
+  var chev=document.getElementById('chevron-down');
+  var target=document.getElementById('sec-confusion');
+  if(!chev||!target) return;
+  chev.addEventListener('click',function(e){
+    e.preventDefault();
+    var t=0,el=target;
+    while(el){t+=el.offsetTop;el=el.offsetParent;}
+    window.scrollTo({top:Math.max(0,t-72)});
+  });
+})();
+
+(function(){
+  var sb=document.querySelector('.sidebar-sticky');
+  if(!sb) return;
+  var heroH=document.getElementById('article-hero').offsetHeight;
+  function tick(){
+    var footerEl=document.querySelector('footer');
+    var pastHero=window.scrollY >= heroH - 40;
+    var nearFooter=footerEl && (window.scrollY + window.innerHeight >= footerEl.offsetTop - 40);
+    sb.classList.toggle('on', pastHero && !nearFooter);
+  }
+  window.addEventListener('scroll',tick,{passive:true});
+  tick();
+})();
+
+(function(){
+  const secs=['sec-confusion','sec-como','sec-numeros','sec-importa'];
+  const links=document.querySelectorAll('#toc-nav .toc-link');
+  function setActive(id){
+    links.forEach(l=>{
+      const active=l.getAttribute('href')==='#'+id;
+      l.querySelector('span:first-child').style.color=active?'#F5C500':'';
+      l.querySelector('span:last-child').style.color=active?'#FAFAFA':'';
+    });
+  }
+  const spy=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting)setActive(e.target.id);});
+  },{rootMargin:'-20% 0px -60% 0px'});
+  secs.forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el);});
+})();
+</script>
+<script>window.SITE_ROOT='../';</script>
+<script src="../partials/load.js"></script>
+</body>
+</html>
