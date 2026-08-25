@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Topógrafo en Ñuble · Subdivisión Rural SAG y Parcelación | TopoÑuble</title>
+<title>Topógrafo en Ñuble | Subdivisión Rural SAG y Parcelación</title>
 <link rel="icon" href="./img/favicon.png" type="image/x-icon">
 <link rel="canonical" href="https://toponuble.cl/"/>
-<meta name="description" content="Topógrafo en Ñuble para subdivisión rural SAG, parcelación DL 3.516 y levantamiento GNSS. Evaluación inicial sin costo · Respuesta en 24h · 21 comunas cubiertas. Llámanos."/>
+<meta name="description" content="Topógrafo en Ñuble para subdivisión rural SAG, parcelación DL 3.516 y levantamiento GNSS. Evaluación sin costo, respuesta en 24h, 21 comunas cubiertas."/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 <meta name="keywords" content="topógrafo Ñuble, subdivisión rural SAG Ñuble, parcelación SAG San Carlos, subdivisión predial Chillán, levantamiento GNSS Ñuble, DL 3.516, parcelas 5000 m2, subdivisión terreno rural Chile, topógrafo San Carlos Ñuble, subdivisión predios rústicos Ñuble, costo subdivisión rural SAG, parcelas de agrado Ñuble, tercero autorizado SAG Ñuble, subdivisión DOM Ñuble, topografía rural Ñuble"/>
 <meta name="author" content="Patricio Soto Jofré"/>
@@ -216,7 +216,7 @@ tailwind.config = {
 <link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  html,body{width:100%;max-width:100%}
   body{background:#0A0A0A}
 
   .sgrid{background-image:linear-gradient(rgba(245,197,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(245,197,0,.04) 1px,transparent 1px);background-size:48px 48px}
@@ -252,6 +252,9 @@ tailwind.config = {
   input,textarea,select{color-scheme:dark}
   ::selection{background:#F5C500;color:#0A0A0A}
 
+  /* FORM VALIDATION */
+  .field-invalid{border-color:#f87171!important}
+
   /* HERO CLIP */
   .hero-img-panel{clip-path:polygon(12% 0,100% 0,100% 100%,0% 100%)}
   @media(max-width:767px){.hero-img-panel{clip-path:none}}
@@ -261,6 +264,37 @@ tailwind.config = {
 
   /* FEATURE TAG */
   .tag{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.08);padding:.35rem .8rem;font-size:10px;font-family:'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:#888}
+
+  /* SECTION EYEBROW LABEL */
+  .eyebrow{display:block;margin-bottom:1rem;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#F5C500}
+
+  /* CARD "COTIZAR →" LINK */
+  .card-link-gold{display:inline-flex;align-items:center;gap:.375rem;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:900;color:#F5C500;transition:color .2s}
+  .card-link-gold:hover{color:#FFD740}
+
+  /* CTA STRIP (banda dorada dentro de una sección) */
+  .cta-strip{border:1px solid rgba(245,197,0,.15);background-image:linear-gradient(to right,rgba(245,197,0,.08),transparent,transparent);padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+  @media(min-width:768px){.cta-strip{flex-direction:row;align-items:center;justify-content:space-between}}
+
+  /* DECORATIVE GOLD CORNER (usar con corner-tl/tr/bl/br + un color de texto vía currentColor) */
+  .corner-deco{position:absolute;width:2.5rem;height:2.5rem;pointer-events:none}
+  .corner-deco::before,.corner-deco::after{content:'';position:absolute;background:currentColor}
+  .corner-deco::before{height:1px;width:100%}
+  .corner-deco::after{width:1px;height:100%}
+  .corner-deco.corner-lg{width:4rem;height:4rem}
+  .corner-deco.corner-sm{width:1.75rem;height:1.75rem}
+  .corner-deco.corner-tl{top:0;left:0}
+  .corner-deco.corner-tl::before{top:0;left:0}
+  .corner-deco.corner-tl::after{top:0;left:0}
+  .corner-deco.corner-tr{top:0;right:0}
+  .corner-deco.corner-tr::before{top:0;right:0}
+  .corner-deco.corner-tr::after{top:0;right:0}
+  .corner-deco.corner-bl{bottom:0;left:0}
+  .corner-deco.corner-bl::before{bottom:0;left:0}
+  .corner-deco.corner-bl::after{bottom:0;left:0}
+  .corner-deco.corner-br{bottom:0;right:0}
+  .corner-deco.corner-br::before{bottom:0;right:0}
+  .corner-deco.corner-br::after{bottom:0;right:0}
 
   /* NOSOTROS ROW ITEM */
   .nos-item{border-left:2px solid transparent;transition:border-color .2s,background .2s}
@@ -319,17 +353,15 @@ tailwind.config = {
           <div class="absolute inset-0 md:hidden" style="background:rgba(10,10,10,.88)"></div>
         </div>
         <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none" style="background:radial-gradient(ellipse at left,rgba(245,197,0,.06) 0%,transparent 65%)"></div>
-        <div class="absolute top-0 left-0 w-16 h-px bg-gold/40"></div>
-        <div class="absolute top-0 left-0 w-px h-16 bg-gold/40"></div>
-        <div class="absolute bottom-0 right-0 w-16 h-px bg-gold/20"></div>
-        <div class="absolute bottom-0 right-0 w-px h-16 bg-gold/20"></div>
+        <div class="corner-deco corner-lg corner-tl text-gold/40"></div>
+        <div class="corner-deco corner-lg corner-br text-gold/20"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-24">
           <div class="max-w-[620px] hero-content">
             <div class="inline-flex items-center gap-2 border border-gold/25 bg-gold/5 text-gold text-[10px] font-mono font-medium tracking-widest px-4 py-1.5 mb-8 uppercase">
               <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
               Región de Ñuble · Chile
             </div>
-            <h1 class="text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.04] tracking-tight mb-5 text-snow">
+            <h1 class="text-[2.2rem] sm:text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
               Subdivide tu<br>terreno rural<br><em class="not-italic text-gold">en Ñuble</em>
             </h1>
             <div class="w-12 h-[3px] bg-gold mb-6"></div>
@@ -361,22 +393,20 @@ tailwind.config = {
       <div class="w-full flex-shrink-0 relative min-h-screen flex items-center pt-20 bg-ink overflow-hidden">
         <div class="absolute inset-0 sgrid"></div>
         <div class="hero-img-panel absolute inset-y-0 right-0 w-full md:w-[58%] pointer-events-none">
-          <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image:url('https://images.unsplash.com/photo-1775119249927-b669c9470bc5?auto=format&fit=crop&w=1920&q=80')"></div>
+          <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image:url('img/topografo_gnss.jpg')"></div>
           <div class="absolute inset-0" style="background:linear-gradient(to right,#0A0A0A 0%,rgba(10,10,10,.55) 50%,rgba(10,10,10,.2) 100%)"></div>
           <div class="absolute inset-0 md:hidden" style="background:rgba(10,10,10,.88)"></div>
         </div>
         <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none" style="background:radial-gradient(ellipse at left,rgba(245,197,0,.06) 0%,transparent 65%)"></div>
-        <div class="absolute top-0 left-0 w-16 h-px bg-gold/40"></div>
-        <div class="absolute top-0 left-0 w-px h-16 bg-gold/40"></div>
-        <div class="absolute bottom-0 right-0 w-16 h-px bg-gold/20"></div>
-        <div class="absolute bottom-0 right-0 w-px h-16 bg-gold/20"></div>
+        <div class="corner-deco corner-lg corner-tl text-gold/40"></div>
+        <div class="corner-deco corner-lg corner-br text-gold/20"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-24">
           <div class="max-w-[620px] hero-content">
             <div class="inline-flex items-center gap-2 border border-gold/25 bg-gold/5 text-gold text-[10px] font-mono font-medium tracking-widest px-4 py-1.5 mb-8 uppercase">
               <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
               <span data-pub="2026-06-17T10:00:00"></span>
             </div>
-            <h2 class="text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.04] tracking-tight mb-5 text-snow">
+            <h2 class="text-[2.2rem] sm:text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
               Tercero<br>autorizado SAG<br><em class="not-italic text-gold">¿qué hace?</em>
             </h2>
             <div class="w-12 h-[3px] bg-gold mb-6"></div>
@@ -412,17 +442,15 @@ tailwind.config = {
           <div class="absolute inset-0 md:hidden" style="background:rgba(10,10,10,.88)"></div>
         </div>
         <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none" style="background:radial-gradient(ellipse at left,rgba(245,197,0,.06) 0%,transparent 65%)"></div>
-        <div class="absolute top-0 left-0 w-16 h-px bg-gold/40"></div>
-        <div class="absolute top-0 left-0 w-px h-16 bg-gold/40"></div>
-        <div class="absolute bottom-0 right-0 w-16 h-px bg-gold/20"></div>
-        <div class="absolute bottom-0 right-0 w-px h-16 bg-gold/20"></div>
+        <div class="corner-deco corner-lg corner-tl text-gold/40"></div>
+        <div class="corner-deco corner-lg corner-br text-gold/20"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-24">
           <div class="max-w-[620px] hero-content">
             <div class="inline-flex items-center gap-2 border border-gold/25 bg-gold/5 text-gold text-[10px] font-mono font-medium tracking-widest px-4 py-1.5 mb-8 uppercase">
               <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
               <span data-pub="2026-06-30T09:16:00-04:00"></span>
             </div>
-            <h2 class="text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.04] tracking-tight mb-5 text-snow">
+            <h2 class="text-[2.2rem] sm:text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
               GPS de mano<br>vs GNSS<br><em class="not-italic text-gold">¿cuál es la diferencia?</em>
             </h2>
             <div class="w-12 h-[3px] bg-gold mb-6"></div>
@@ -458,17 +486,15 @@ tailwind.config = {
           <div class="absolute inset-0 md:hidden" style="background:rgba(10,10,10,.88)"></div>
         </div>
         <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none" style="background:radial-gradient(ellipse at left,rgba(245,197,0,.06) 0%,transparent 65%)"></div>
-        <div class="absolute top-0 left-0 w-16 h-px bg-gold/40"></div>
-        <div class="absolute top-0 left-0 w-px h-16 bg-gold/40"></div>
-        <div class="absolute bottom-0 right-0 w-16 h-px bg-gold/20"></div>
-        <div class="absolute bottom-0 right-0 w-px h-16 bg-gold/20"></div>
+        <div class="corner-deco corner-lg corner-tl text-gold/40"></div>
+        <div class="corner-deco corner-lg corner-br text-gold/20"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-24">
           <div class="max-w-[620px] hero-content">
             <div class="inline-flex items-center gap-2 border border-gold/25 bg-gold/5 text-gold text-[10px] font-mono font-medium tracking-widest px-4 py-1.5 mb-8 uppercase">
               <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
               <span data-pub="2026-06-29T19:49:00"></span>
             </div>
-            <h2 class="text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.04] tracking-tight mb-5 text-snow">
+            <h2 class="text-[2.2rem] sm:text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
               El profesional<br>más idóneo para<br><em class="not-italic text-gold">el plano SAG</em>
             </h2>
             <div class="w-12 h-[3px] bg-gold mb-6"></div>
@@ -500,12 +526,12 @@ tailwind.config = {
 
   <!-- Flecha izquierda -->
   <button id="hero-prev" aria-label="Slide anterior"
-    class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 border border-white/20 bg-black/30 backdrop-blur-sm flex items-center justify-center text-white/60 hover:text-gold hover:border-gold/50 transition-all duration-200">
+    class="hidden sm:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 border border-white/20 bg-black/30 backdrop-blur-sm items-center justify-center text-white/60 hover:text-gold hover:border-gold/50 transition-all duration-200">
     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
   </button>
   <!-- Flecha derecha -->
   <button id="hero-next" aria-label="Slide siguiente"
-    class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 border border-white/20 bg-black/30 backdrop-blur-sm flex items-center justify-center text-white/60 hover:text-gold hover:border-gold/50 transition-all duration-200">
+    class="hidden sm:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 border border-white/20 bg-black/30 backdrop-blur-sm items-center justify-center text-white/60 hover:text-gold hover:border-gold/50 transition-all duration-200">
     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
   </button>
   <!-- Dots centrados abajo -->
@@ -548,10 +574,10 @@ tailwind.config = {
     <!-- Header -->
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 reveal">
       <div>
-        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 01 / Servicios</span>
+        <span class="eyebrow">— 01 / Servicios</span>
         <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Topógrafo en Ñuble para<br class="hidden md:block"> subdivisión rural y parcelación</h2>
       </div>
-      <p class="text-zinc1 text-[14px] max-w-sm leading-relaxed lg:text-right lg:pb-1">
+      <p class="text-zinc2 text-[14px] max-w-sm leading-relaxed lg:text-right lg:pb-1">
         Orientación técnica, mediciones precisas y acompañamiento en cada etapa de tu subdivisión.
       </p>
     </div>
@@ -572,12 +598,12 @@ tailwind.config = {
         </div>
         <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">SAG Rural</p>
         <h3 class="text-[1.3rem] font-bold text-snow mb-4 leading-snug">Subdivisión rural SAG para terrenos rurales</h3>
-        <p class="text-zinc1 text-[14px] leading-relaxed mb-8 flex-1">
+        <p class="text-zinc2 text-[14px] leading-relaxed mb-8 flex-1">
           Preparamos los antecedentes técnicos necesarios para tu subdivisión rural y te orientamos para que el proceso avance con mayor claridad, menos observaciones y tiempos mejor gestionados.
         </p>
         <div class="pt-5 border-t border-white/6 flex items-center justify-between">
           <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Trámite SAG</span>
-          <a href="#contacto" aria-label="Cotizar subdivisión predial SAG" class="inline-flex items-center gap-1.5 text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors group">
+          <a href="#contacto" aria-label="Cotizar subdivisión predial SAG" class="card-link-gold group">
             Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
           </a>
         </div>
@@ -596,12 +622,12 @@ tailwind.config = {
         </div>
         <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">GNSS</p>
         <h3 class="text-[1.3rem] font-bold text-snow mb-4 leading-snug">Levantamiento topográfico GNSS con respaldo técnico</h3>
-        <p class="text-zinc1 text-[14px] leading-relaxed mb-8 flex-1">
+        <p class="text-zinc2 text-[14px] leading-relaxed mb-8 flex-1">
           Realizamos mediciones precisas con tecnología GNSS para respaldar técnicamente tu proyecto, plano o trámite, y ayudarte a reducir errores que generan observaciones.
         </p>
         <div class="pt-5 border-t border-white/6 flex items-center justify-between">
           <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Alta precisión</span>
-          <a href="#contacto" aria-label="Cotizar levantamiento GNSS" class="inline-flex items-center gap-1.5 text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors group">
+          <a href="#contacto" aria-label="Cotizar levantamiento GNSS" class="card-link-gold group">
             Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
           </a>
         </div>
@@ -620,12 +646,12 @@ tailwind.config = {
         </div>
         <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">DOM Urbana</p>
         <h3 class="text-[1.3rem] font-bold text-snow mb-4 leading-snug">Subdivisión urbana DOM en sectores urbanizados</h3>
-        <p class="text-zinc1 text-[14px] leading-relaxed mb-8 flex-1">
+        <p class="text-zinc2 text-[14px] leading-relaxed mb-8 flex-1">
           Gestionamos la subdivisión de predios urbanos ante la Dirección de Obras Municipales, con levantamiento planimétrico y documentación conforme a la normativa local.
         </p>
         <div class="pt-5 border-t border-white/6 flex items-center justify-between">
           <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Trámite DOM</span>
-          <a href="#contacto" aria-label="Cotizar subdivisión DOM" class="inline-flex items-center gap-1.5 text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors group">
+          <a href="#contacto" aria-label="Cotizar subdivisión DOM" class="card-link-gold group">
             Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
           </a>
         </div>
@@ -633,11 +659,11 @@ tailwind.config = {
     </div>
 
     <!-- CTA strip -->
-    <div class="reveal mt-px border border-gold/15 bg-gradient-to-r from-gold/8 via-transparent to-transparent p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4" style="transition-delay:.2s">
+    <div class="reveal mt-px cta-strip" style="transition-delay:.2s">
       <p class="text-zinc2 text-[13px]">¿No sabes cuál servicio necesitas? Evaluamos tu caso sin costo inicial.</p>
       <a href="#contacto" aria-label="Solicitar cotización de topografía"
-         class="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200">
-        Solicitar evaluación →
+         class="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
+        Cotizar →
       </a>
     </div>
   </div>
@@ -651,10 +677,10 @@ tailwind.config = {
     <!-- Header — mismo patrón que Servicios -->
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 reveal">
       <div>
-        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 02 / Valores SAG</span>
+        <span class="eyebrow">— 02 / Valores SAG</span>
         <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Valores referenciales<br class="hidden md:block"> Subdivisión Rural SAG</h2>
       </div>
-      <p class="text-zinc1 text-[14px] max-w-sm leading-relaxed lg:text-right lg:pb-1">
+      <p class="text-zinc2 text-[14px] max-w-sm leading-relaxed lg:text-right lg:pb-1">
         Referencia de costos según la cantidad de lotes resultantes del proyecto.
       </p>
     </div>
@@ -696,7 +722,7 @@ tailwind.config = {
               </div>
               <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
                 <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 01</span>
-                <a href="#contacto" aria-label="Cotizar tramo 2 a 4 lotes" class="inline-flex items-center gap-1.5 text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors group">
+                <a href="#contacto" aria-label="Cotizar tramo 2 a 4 lotes" class="card-link-gold group">
                   Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
                 </a>
               </div>
@@ -734,7 +760,7 @@ tailwind.config = {
               </div>
               <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
                 <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 02</span>
-                <a href="#contacto" aria-label="Cotizar tramo 5 a 8 lotes" class="inline-flex items-center gap-1.5 text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors group">
+                <a href="#contacto" aria-label="Cotizar tramo 5 a 8 lotes" class="card-link-gold group">
                   Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
                 </a>
               </div>
@@ -774,7 +800,7 @@ tailwind.config = {
               </div>
               <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
                 <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 03</span>
-                <a href="#contacto" aria-label="Cotizar tramo 9 lotes o más" class="inline-flex items-center gap-1.5 text-[11px] text-gold hover:text-gold2 tracking-widest uppercase font-black transition-colors group">
+                <a href="#contacto" aria-label="Cotizar tramo 9 lotes o más" class="card-link-gold group">
                   Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
                 </a>
               </div>
@@ -806,7 +832,7 @@ tailwind.config = {
     </div>
 
     <!-- Nota + CTA — mismo patrón que Servicios -->
-    <div class="reveal mt-px border border-gold/15 bg-gradient-to-r from-gold/8 via-transparent to-transparent p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4" style="transition-delay:.1s">
+    <div class="reveal mt-px cta-strip" style="transition-delay:.1s">
       <div class="flex gap-3 items-start">
         <svg class="w-4 h-4 text-gold/70 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
@@ -815,7 +841,7 @@ tailwind.config = {
       </div>
       <a href="#contacto" aria-label="Solicitar cotización exacta de subdivisión SAG"
          class="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
-        Solicitar cotización →
+        Cotizar →
       </a>
     </div>
 
@@ -828,9 +854,9 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto">
 
     <div class="text-center mb-16 reveal">
-      <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 03 / Cómo trabajamos</span>
-      <h2 class="text-3xl md:text-[2.8rem] font-black text-snow">Tu subdivisión, paso a paso</h2>
-      <p class="text-zinc1 text-[14px] max-w-xl mx-auto mt-4 leading-relaxed">
+      <span class="eyebrow">— 03 / Cómo trabajamos</span>
+      <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Tu subdivisión, paso a paso</h2>
+      <p class="text-zinc2 text-[14px] max-w-xl mx-auto mt-4 leading-relaxed">
         Un proceso claro para que sepas exactamente qué esperar en cada etapa.
       </p>
     </div>
@@ -846,7 +872,7 @@ tailwind.config = {
           </svg>
         </div>
         <h3 class="font-bold text-snow text-[15px] mb-2">Evaluación inicial</h3>
-        <p class="text-zinc1 text-[13px] leading-relaxed">Revisamos tu terreno, documentos y objetivos para darte una orientación clara y sin compromisos.</p>
+        <p class="text-zinc2 text-[13px] leading-relaxed">Revisamos tu terreno, documentos y objetivos para darte una orientación clara y sin compromisos.</p>
       </div>
 
       <div class="reveal border border-white/6 bg-ink p-7 relative overflow-hidden group hover:border-gold/20 transition-colors" style="transition-delay:.08s">
@@ -858,7 +884,7 @@ tailwind.config = {
           </svg>
         </div>
         <h3 class="font-bold text-snow text-[15px] mb-2">Levantamiento GNSS</h3>
-        <p class="text-zinc1 text-[13px] leading-relaxed">Salimos a terreno con equipamiento de alta precisión para obtener los datos geoespaciales de tu predio.</p>
+        <p class="text-zinc2 text-[13px] leading-relaxed">Salimos a terreno con equipamiento de alta precisión para obtener los datos geoespaciales de tu predio.</p>
       </div>
 
       <div class="reveal border border-white/6 bg-ink p-7 relative overflow-hidden group hover:border-gold/20 transition-colors" style="transition-delay:.16s">
@@ -869,7 +895,7 @@ tailwind.config = {
           </svg>
         </div>
         <h3 class="font-bold text-snow text-[15px] mb-2">Preparación de antecedentes</h3>
-        <p class="text-zinc1 text-[13px] leading-relaxed">Elaboramos los planos, memorias y documentos técnicos requeridos para la presentación ante el organismo correspondiente.</p>
+        <p class="text-zinc2 text-[13px] leading-relaxed">Elaboramos los planos, memorias y documentos técnicos requeridos para la presentación ante el organismo correspondiente.</p>
       </div>
 
       <div class="reveal border border-white/6 bg-ink p-7 relative overflow-hidden group hover:border-gold/20 transition-colors" style="transition-delay:.24s">
@@ -880,7 +906,7 @@ tailwind.config = {
           </svg>
         </div>
         <h3 class="font-bold text-snow text-[15px] mb-2">Seguimiento y entrega</h3>
-        <p class="text-zinc1 text-[13px] leading-relaxed">Te acompañamos durante el trámite, respondemos observaciones y te entregamos el resultado de tu subdivisión.</p>
+        <p class="text-zinc2 text-[13px] leading-relaxed">Te acompañamos durante el trámite, respondemos observaciones y te entregamos el resultado de tu subdivisión.</p>
       </div>
 
     </div>
@@ -895,17 +921,17 @@ tailwind.config = {
 
       <!-- Left: text -->
       <div class="reveal">
-        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 04 / Por qué elegirnos</span>
-        <h2 class="text-4xl md:text-[2.8rem] font-black text-snow mb-6 leading-tight">
+        <span class="eyebrow">— 04 / Por qué elegirnos</span>
+        <h2 class="text-3xl md:text-[2.8rem] font-black text-snow mb-6 leading-tight">
           Conocemos el<br>territorio de Ñuble
         </h2>
         <div class="w-10 h-[2px] bg-gold mb-7"></div>
-        <p class="text-zinc1 leading-relaxed text-[15px] mb-8">
+        <p class="text-zinc2 leading-relaxed text-[15px] mb-8">
           Somos un equipo de topografía enfocado en subdivisión rural y parcelación de terrenos en la Región de Ñuble. Combinamos experiencia en terreno, levantamiento topográfico con GNSS y orientación según normativa vigente, para que tomes decisiones informadas y avances con mayor seguridad en tu trámite.
         </p>
-        <a href="https://wa.me/56966640562?text=Hola%2C+necesito+información" target="_blank"
-           class="inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-7 py-3.5 transition-colors duration-200">
-          Hablar con un topógrafo →
+        <a href="https://wa.me/56966640562?text=Hola%2C+necesito+información" target="_blank" onclick="trackWhatsAppConversion()"
+           class="inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
+          Hablar por WhatsApp →
         </a>
       </div>
 
@@ -916,7 +942,7 @@ tailwind.config = {
           <span class="font-mono text-[1.6rem] font-bold text-gold/20 leading-none flex-shrink-0 pt-0.5">01</span>
           <div>
             <h3 class="font-bold text-snow mb-1.5 text-[15px]">Experiencia en subdivisión rural</h3>
-            <p class="text-zinc1 text-[13px] leading-relaxed">Trabajamos casos reales de terrenos rurales en Ñuble, con enfoque práctico para evitar errores frecuentes que retrasan los trámites.</p>
+            <p class="text-zinc2 text-[13px] leading-relaxed">Trabajamos casos reales de terrenos rurales en Ñuble, con enfoque práctico para evitar errores frecuentes que retrasan los trámites.</p>
           </div>
         </div>
 
@@ -924,7 +950,7 @@ tailwind.config = {
           <span class="font-mono text-[1.6rem] font-bold text-gold/20 leading-none flex-shrink-0 pt-0.5">02</span>
           <div>
             <h3 class="font-bold text-snow mb-1.5 text-[15px]">Proceso claro y acompañamiento</h3>
-            <p class="text-zinc1 text-[13px] leading-relaxed">Te explicamos cada etapa de forma simple para que sepas qué sigue y cómo avanzar sin perder tiempo ni dinero en el proceso.</p>
+            <p class="text-zinc2 text-[13px] leading-relaxed">Te explicamos cada etapa de forma simple para que sepas qué sigue y cómo avanzar sin perder tiempo ni dinero en el proceso.</p>
           </div>
         </div>
 
@@ -932,7 +958,7 @@ tailwind.config = {
           <span class="font-mono text-[1.6rem] font-bold text-gold/20 leading-none flex-shrink-0 pt-0.5">03</span>
           <div>
             <h3 class="font-bold text-snow mb-1.5 text-[15px]">Respaldo técnico GNSS</h3>
-            <p class="text-zinc1 text-[13px] leading-relaxed">Respaldamos técnicamente tu plano y antecedentes con levantamiento GNSS de alta precisión para reducir observaciones evitables.</p>
+            <p class="text-zinc2 text-[13px] leading-relaxed">Respaldamos técnicamente tu plano y antecedentes con levantamiento GNSS de alta precisión para reducir observaciones evitables.</p>
           </div>
         </div>
 
@@ -943,7 +969,7 @@ tailwind.config = {
 
 
 <!-- ═══ COBERTURA ═══ -->
-<section id="cobertura" class="reveal-sec pb-0 pt-0 bg-ink relative overflow-hidden">
+<section id="cobertura" class="reveal-sec py-28 bg-ink relative overflow-hidden">
 
   <!-- Background: topografía image muy sutil -->
   <div class="absolute inset-0 bg-cover bg-center pointer-events-none" style="background-image:url('img/FONDO_TOPOGRAFIA.jpg');opacity:.05"></div>
@@ -957,18 +983,18 @@ tailwind.config = {
   </div>
 
   <!-- ── HEADER ── -->
-  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-14">
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pb-16">
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
 
       <div class="reveal">
-        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 05 / Cobertura</span>
-        <h2 class="text-[clamp(2.4rem,6vw,4.5rem)] font-black text-snow leading-[1.02]">
+        <span class="eyebrow">— 05 / Cobertura</span>
+        <h2 class="text-[clamp(2.4rem,6vw,4.5rem)] font-black text-snow leading-[1.04]">
           Toda la Región<br>de <em class="not-italic text-gold">Ñuble</em>
         </h2>
       </div>
 
       <div class="reveal lg:max-w-xs lg:pb-1" style="transition-delay:.1s">
-        <p class="text-zinc1 text-[14px] leading-relaxed mb-7">
+        <p class="text-zinc2 text-[14px] leading-relaxed mb-7">
           Cubrimos las 21 comunas de la Región de Ñuble con levantamientos GNSS de alta precisión y orientación técnica para subdivisiones rurales y parcelaciones.
         </p>
         <div class="flex items-center gap-6">
@@ -998,7 +1024,7 @@ tailwind.config = {
 
       <!-- Columna izquierda de comunas (solo desktop) -->
       <div class="hidden lg:flex flex-col reveal">
-        <p class="font-mono text-[8px] text-gold/40 tracking-[0.25em] uppercase mb-5">Zona norte / centro</p>
+        <p class="font-mono text-[8px] text-gold/40 tracking-widest uppercase mb-5">Zona norte / centro</p>
         <div class="space-y-0">
           <div data-comuna="Chillán" class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group cursor-pointer">
             <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
@@ -1041,7 +1067,7 @@ tailwind.config = {
           <!-- Glow ambient detrás del mapa -->
           <div class="absolute -inset-6 pointer-events-none" style="background:radial-gradient(ellipse,rgba(245,197,0,.09) 0%,transparent 65%)"></div>
 
-          <div id="mapa-wrap" class="relative h-[28rem] md:h-[40rem] lg:h-[54rem] border border-gold/15 flex items-center justify-center overflow-hidden" style="background:rgba(10,10,10,.94)">
+          <div id="mapa-wrap" class="relative h-[18rem] md:h-[32rem] lg:h-[54rem] border border-gold/15 flex items-center justify-center overflow-hidden" style="background:rgba(10,10,10,.94)">
 
             <!-- Micro grid interior -->
             <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(245,197,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(245,197,0,.025) 1px,transparent 1px);background-size:18px 18px"></div>
@@ -1051,24 +1077,20 @@ tailwind.config = {
 
             <!-- El mapa SVG interactivo -->
             <object id="mapa-nuble" data="img/Mapa%20%C3%B1uble.svg" type="image/svg+xml" aria-label="Mapa interactivo de comunas de la Región de Ñuble"
-              class="relative z-10 w-[88%] h-[26rem] md:w-[85%] md:h-[38rem] lg:w-full lg:h-[52rem]"></object>
+              class="relative z-10 w-[88%] h-[14rem] md:w-[85%] md:h-[27rem] lg:w-full lg:h-[52rem]"></object>
 
             <div id="map-tooltip" class="map-tooltip">Comuna</div>
 
             <!-- Esquinas decorativas -->
-            <div class="absolute top-0 left-0 w-10 h-px bg-gold/60"></div>
-            <div class="absolute top-0 left-0 w-px h-10 bg-gold/60"></div>
-            <div class="absolute top-0 right-0 w-10 h-px bg-gold/60"></div>
-            <div class="absolute top-0 right-0 w-px h-10 bg-gold/60"></div>
-            <div class="absolute bottom-0 left-0 w-10 h-px bg-gold/60"></div>
-            <div class="absolute bottom-0 left-0 w-px h-10 bg-gold/60"></div>
-            <div class="absolute bottom-0 right-0 w-10 h-px bg-gold/60"></div>
-            <div class="absolute bottom-0 right-0 w-px h-10 bg-gold/60"></div>
+            <div class="corner-deco corner-tl text-gold/60"></div>
+            <div class="corner-deco corner-tr text-gold/60"></div>
+            <div class="corner-deco corner-bl text-gold/60"></div>
+            <div class="corner-deco corner-br text-gold/60"></div>
 
             <!-- Etiqueta inferior centrada -->
             <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
               <span class="w-4 h-px bg-gold/30"></span>
-              <span class="font-mono text-[8px] text-gold/35 tracking-[0.3em] uppercase whitespace-nowrap">Región de Ñuble · Chile</span>
+              <span class="font-mono text-[8px] text-gold/35 tracking-widest uppercase whitespace-nowrap">Región de Ñuble · Chile</span>
               <span class="w-4 h-px bg-gold/30"></span>
             </div>
           </div>
@@ -1077,7 +1099,7 @@ tailwind.config = {
 
       <!-- Columna derecha de comunas (solo desktop) -->
       <div class="hidden lg:flex flex-col reveal" style="transition-delay:.16s">
-        <p class="font-mono text-[8px] text-gold/40 tracking-[0.25em] uppercase mb-5">Zona sur / costa</p>
+        <p class="font-mono text-[8px] text-gold/40 tracking-widest uppercase mb-5">Zona sur / costa</p>
         <div class="space-y-0">
           <div data-comuna="Bulnes" class="flex items-center gap-2.5 py-2.5 border-b border-white/[0.05] group cursor-pointer">
             <span class="w-2 h-px bg-gold/50 flex-shrink-0 transition-all group-hover:w-4 group-hover:bg-gold"></span>
@@ -1136,11 +1158,11 @@ tailwind.config = {
     <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
       <div>
         <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-1">¿Tu terreno está en Ñuble?</p>
-        <p class="text-zinc1 text-[13px]">Evaluamos tu caso sin importar la ubicación dentro de la Región.</p>
+        <p class="text-zinc2 text-[13px]">Evaluamos tu caso sin importar la ubicación dentro de la Región.</p>
       </div>
       <a href="#contacto" aria-label="Solicitar evaluación de terreno en Ñuble"
-         class="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3.5 transition-colors duration-200">
-        Consultar disponibilidad →
+         class="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
+        Cotizar →
       </a>
     </div>
   </div>
@@ -1152,10 +1174,10 @@ tailwind.config = {
 <section id="faq" class="reveal-sec py-28 px-6 bg-ink2 sgrid">
   <div class="max-w-4xl mx-auto">
 
-    <div class="text-center mb-14 reveal">
-      <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 06 / Preguntas frecuentes</span>
-      <h2 class="text-3xl md:text-[2.6rem] font-black text-snow leading-tight">Lo que más nos preguntan</h2>
-      <p class="text-zinc1 text-[14px] max-w-lg mx-auto mt-4 leading-relaxed">
+    <div class="text-center mb-16 reveal">
+      <span class="eyebrow">— 06 / Preguntas frecuentes</span>
+      <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Lo que más nos preguntan</h2>
+      <p class="text-zinc2 text-[14px] max-w-lg mx-auto mt-4 leading-relaxed">
         Resolvemos las dudas más comunes sobre subdivisión rural, parcelación y trámites SAG en Ñuble.
       </p>
     </div>
@@ -1171,7 +1193,7 @@ tailwind.config = {
         </button>
         <div class="faq-body overflow-hidden" style="height:0">
           <div class="px-6 pb-5 pt-1 border-t border-white/6">
-            <p class="text-zinc1 text-[14px] leading-relaxed">En general, una subdivisión rural SAG tarda entre <strong class="text-snow">3 y 8 meses</strong> desde la presentación de antecedentes hasta la resolución. Con documentación bien preparada y sin observaciones, el proceso avanza más rápido. En TopoÑuble preparamos los antecedentes para minimizar los plazos.</p>
+            <p class="text-zinc2 text-[14px] leading-relaxed">En general, una subdivisión rural SAG tarda entre <strong class="text-snow">3 y 8 meses</strong> desde la presentación de antecedentes hasta la resolución. Con documentación bien preparada y sin observaciones, el proceso avanza más rápido. En TopoÑuble preparamos los antecedentes para minimizar los plazos.</p>
           </div>
         </div>
       </div>
@@ -1185,7 +1207,7 @@ tailwind.config = {
         </button>
         <div class="faq-body overflow-hidden" style="height:0">
           <div class="px-6 pb-5 pt-1 border-t border-white/6">
-            <p class="text-zinc1 text-[14px] leading-relaxed">El valor varía según la superficie del predio, la cantidad de lotes resultantes y la complejidad del levantamiento topográfico. En TopoÑuble realizamos una <strong class="text-snow">evaluación inicial sin costo</strong> para entregarte un presupuesto ajustado a tu caso. Escríbenos por WhatsApp para coordinar.</p>
+            <p class="text-zinc2 text-[14px] leading-relaxed">El valor varía según la superficie del predio, la cantidad de lotes resultantes y la complejidad del levantamiento topográfico. En TopoÑuble realizamos una <strong class="text-snow">evaluación inicial sin costo</strong> para entregarte un presupuesto ajustado a tu caso. Escríbenos por WhatsApp para coordinar.</p>
           </div>
         </div>
       </div>
@@ -1199,7 +1221,7 @@ tailwind.config = {
         </button>
         <div class="faq-body overflow-hidden" style="height:0">
           <div class="px-6 pb-5 pt-1 border-t border-white/6">
-            <p class="text-zinc1 text-[14px] leading-relaxed">El <strong class="text-snow">Decreto Ley 3.516</strong> regula la subdivisión de predios rurales en Chile. Establece que cada lote resultante debe tener un mínimo de <strong class="text-snow">0,5 hectáreas (5.000 m²)</strong> para uso habitacional —las llamadas parcelas de agrado—. Es la norma principal que rige los trámites ante el SAG.</p>
+            <p class="text-zinc2 text-[14px] leading-relaxed">El <strong class="text-snow">Decreto Ley 3.516</strong> regula la subdivisión de predios rurales en Chile. Establece que cada lote resultante debe tener un mínimo de <strong class="text-snow">0,5 hectáreas (5.000 m²)</strong> para uso habitacional —las llamadas parcelas de agrado—. Es la norma principal que rige los trámites ante el SAG.</p>
           </div>
         </div>
       </div>
@@ -1213,7 +1235,7 @@ tailwind.config = {
         </button>
         <div class="faq-body overflow-hidden" style="height:0">
           <div class="px-6 pb-5 pt-1 border-t border-white/6">
-            <p class="text-zinc1 text-[14px] leading-relaxed">No todos los terrenos son aptos. Existen restricciones según el uso de suelo, la superficie mínima resultante (5.000 m² por DL 3.516), servidumbres y zonas de protección. Por eso realizamos una <strong class="text-snow">evaluación técnica previa gratuita</strong> antes de iniciar cualquier trámite.</p>
+            <p class="text-zinc2 text-[14px] leading-relaxed">No todos los terrenos son aptos. Existen restricciones según el uso de suelo, la superficie mínima resultante (5.000 m² por DL 3.516), servidumbres y zonas de protección. Por eso realizamos una <strong class="text-snow">evaluación técnica previa gratuita</strong> antes de iniciar cualquier trámite.</p>
           </div>
         </div>
       </div>
@@ -1227,7 +1249,7 @@ tailwind.config = {
         </button>
         <div class="faq-body overflow-hidden" style="height:0">
           <div class="px-6 pb-5 pt-1 border-t border-white/6">
-            <p class="text-zinc1 text-[14px] leading-relaxed">Los antecedentes básicos son: <strong class="text-snow">escritura del predio</strong>, certificado de dominio vigente del Conservador de Bienes Raíces, rol de avalúo SII y <strong class="text-snow">plano de levantamiento topográfico GNSS</strong>. Según el caso puede requerirse documentación adicional. En TopoÑuble te orientamos desde el inicio.</p>
+            <p class="text-zinc2 text-[14px] leading-relaxed">Los antecedentes básicos son: <strong class="text-snow">escritura del predio</strong>, certificado de dominio vigente del Conservador de Bienes Raíces, rol de avalúo SII y <strong class="text-snow">plano de levantamiento topográfico GNSS</strong>. Según el caso puede requerirse documentación adicional. En TopoÑuble te orientamos desde el inicio.</p>
           </div>
         </div>
       </div>
@@ -1241,7 +1263,7 @@ tailwind.config = {
         </button>
         <div class="faq-body overflow-hidden" style="height:0">
           <div class="px-6 pb-5 pt-1 border-t border-white/6">
-            <p class="text-zinc1 text-[14px] leading-relaxed">La <strong class="text-snow">subdivisión SAG</strong> aplica a predios rurales y se tramita ante el Servicio Agrícola y Ganadero bajo el DL 3.516. La <strong class="text-snow">subdivisión DOM</strong> aplica a predios urbanos o con plan regulador vigente y se tramita ante la Dirección de Obras Municipales. En TopoÑuble gestionamos ambos tipos.</p>
+            <p class="text-zinc2 text-[14px] leading-relaxed">La <strong class="text-snow">subdivisión SAG</strong> aplica a predios rurales y se tramita ante el Servicio Agrícola y Ganadero bajo el DL 3.516. La <strong class="text-snow">subdivisión DOM</strong> aplica a predios urbanos o con plan regulador vigente y se tramita ante la Dirección de Obras Municipales. En TopoÑuble gestionamos ambos tipos.</p>
           </div>
         </div>
       </div>
@@ -1249,9 +1271,9 @@ tailwind.config = {
     </div>
 
     <div class="reveal mt-10 text-center" style="transition-delay:.3s">
-      <p class="text-zinc1 text-[13px] mb-4">¿Tienes otra consulta sobre tu terreno?</p>
-      <a href="#contacto" class="inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-7 py-3.5 transition-colors duration-200">
-        Consultar gratis →
+      <p class="text-zinc2 text-[13px] mb-4">¿Tienes otra consulta sobre tu terreno?</p>
+      <a href="#contacto" class="inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
+        Cotizar →
       </a>
     </div>
 
@@ -1266,10 +1288,10 @@ tailwind.config = {
     <!-- Header -->
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 reveal">
       <div>
-        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 07 / Blog</span>
+        <span class="eyebrow">— 07 / Blog</span>
         <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Información útil para<br class="hidden md:block"> tu proyecto en Ñuble</h2>
       </div>
-      <p class="text-zinc1 text-[14px] max-w-sm leading-relaxed lg:text-right lg:pb-1">
+      <p class="text-zinc2 text-[14px] max-w-sm leading-relaxed lg:text-right lg:pb-1">
         Artículos técnicos para entender el proceso antes de iniciar tu trámite.
       </p>
     </div>
@@ -1288,7 +1310,7 @@ tailwind.config = {
         <h3 class="text-[1.15rem] font-black text-snow leading-snug mb-4 group-hover:text-gold transition-colors duration-200">
           Qué hace un tercero autorizado en la subdivisión de predios rústicos
         </h3>
-        <p class="text-zinc1 text-[13px] leading-relaxed flex-1 mb-8">
+        <p class="text-zinc2 text-[13px] leading-relaxed flex-1 mb-8">
           En regiones como Ñuble el acceso al SAG es exclusivo para terceros autorizados. Te explicamos qué hacen, qué no hacen, y cómo funciona el proceso completo hasta inscribir en el Conservador.
         </p>
         <div class="flex items-center gap-4 mb-4">
@@ -1316,7 +1338,7 @@ tailwind.config = {
         <h3 class="text-[1.15rem] font-black text-snow leading-snug mb-4 group-hover:text-gold transition-colors duration-200">
           ¿Quién es el profesional más idóneo para hacer el plano de subdivisión?
         </h3>
-        <p class="text-zinc1 text-[13px] leading-relaxed flex-1 mb-8">
+        <p class="text-zinc2 text-[13px] leading-relaxed flex-1 mb-8">
           Arquitectos, agrónomos, forestales, topógrafos — todos habilitados por el SAG. Pero habilitado no es lo mismo que idóneo. Te explicamos por qué el perfil del topógrafo encaja con lo que el trámite realmente exige.
         </p>
         <div class="flex items-center gap-4 mb-4">
@@ -1344,7 +1366,7 @@ tailwind.config = {
         <h3 class="text-[1.15rem] font-black text-snow leading-snug mb-4 group-hover:text-gold transition-colors duration-200">
           GPS de mano vs GNSS: la diferencia que no se ve a simple vista
         </h3>
-        <p class="text-zinc1 text-[13px] leading-relaxed flex-1 mb-8">
+        <p class="text-zinc2 text-[13px] leading-relaxed flex-1 mb-8">
           Un GPS de mano tiene 3–10 metros de error. Un equipo GNSS con RTK llega a 1–2 centímetros. No son versiones del mismo aparato — te explicamos la diferencia técnica y por qué importa cuando está en juego la medición de tu terreno.
         </p>
         <div class="flex items-center gap-4 mb-4">
@@ -1372,13 +1394,13 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto">
 
     <!-- Header -->
-    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14 reveal">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 reveal">
       <div>
-        <span class="font-mono text-[10px] text-gold tracking-widest uppercase block mb-4">— 08 / Contacto</span>
-        <h2 class="text-3xl md:text-[2.6rem] font-black text-snow leading-tight">Conversemos tu<br>proyecto en Ñuble</h2>
+        <span class="eyebrow">— 08 / Contacto</span>
+        <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Conversemos tu<br>proyecto en Ñuble</h2>
       </div>
       <div class="lg:max-w-xs lg:pb-1 reveal" style="transition-delay:.1s">
-        <p class="text-zinc1 text-[14px] leading-relaxed mb-4">
+        <p class="text-zinc2 text-[14px] leading-relaxed mb-4">
           Cuéntanos tu terreno rural en Chillán o la Región de Ñuble y te orientamos con una evaluación inicial.
         </p>
         <div class="inline-flex items-center gap-2 border border-gold/25 bg-gold/5 text-gold text-[10px] font-mono tracking-widest px-3 py-1.5 uppercase">
@@ -1396,16 +1418,16 @@ tailwind.config = {
         <!-- Cards de contacto directo -->
         <div class="border border-white/8 bg-ink p-5">
           <p class="font-mono text-[9px] text-gold tracking-widest uppercase mb-4">Contacto directo</p>
-          <div class="grid grid-cols-2 gap-3">
-            <a href="https://api.whatsapp.com/send?phone=56966640562" target="_blank" rel="noopener noreferrer"
-               class="group border border-white/8 bg-ink2 hover:border-gold/30 hover:bg-ink3 p-4 transition-all flex flex-col gap-2.5">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="https://api.whatsapp.com/send?phone=56966640562" target="_blank" rel="noopener noreferrer" id="contacto-directo-whatsapp" onclick="trackWhatsAppConversion()"
+               class="group border border-white/8 bg-ink2 hover:border-gold/30 hover:bg-ink3 p-4 transition-all flex flex-col gap-2.5 active:scale-[0.98]">
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-[#25D366] flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
                 </svg>
                 <span class="font-mono text-[8px] text-zinc1 tracking-widest uppercase group-hover:text-gold transition-colors">WhatsApp</span>
               </div>
-              <span class="text-[13px] text-snow font-medium leading-snug">+56 9 9876 5432</span>
+              <span class="text-[13px] text-snow font-medium leading-snug">+56 9 6664 0562</span>
             </a>
             <a href="mailto:patricio@toponuble.cl"
                class="group border border-white/8 bg-ink2 hover:border-gold/30 hover:bg-ink3 p-4 transition-all flex flex-col gap-2.5">
@@ -1433,14 +1455,10 @@ tailwind.config = {
           <!-- Frame del mapa con esquinas decorativas -->
           <div class="relative flex-1 min-h-[14rem]">
             <!-- esquinas gold -->
-            <div class="absolute top-0 left-0 w-7 h-px bg-gold/60 z-10 pointer-events-none"></div>
-            <div class="absolute top-0 left-0 w-px h-7 bg-gold/60 z-10 pointer-events-none"></div>
-            <div class="absolute top-0 right-0 w-7 h-px bg-gold/60 z-10 pointer-events-none"></div>
-            <div class="absolute top-0 right-0 w-px h-7 bg-gold/60 z-10 pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 w-7 h-px bg-gold/60 z-10 pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 w-px h-7 bg-gold/60 z-10 pointer-events-none"></div>
-            <div class="absolute bottom-0 right-0 w-7 h-px bg-gold/60 z-10 pointer-events-none"></div>
-            <div class="absolute bottom-0 right-0 w-px h-7 bg-gold/60 z-10 pointer-events-none"></div>
+            <div class="corner-deco corner-sm corner-tl text-gold/60 z-10 pointer-events-none"></div>
+            <div class="corner-deco corner-sm corner-tr text-gold/60 z-10 pointer-events-none"></div>
+            <div class="corner-deco corner-sm corner-bl text-gold/60 z-10 pointer-events-none"></div>
+            <div class="corner-deco corner-sm corner-br text-gold/60 z-10 pointer-events-none"></div>
             <!-- viñeta para integrar al fondo oscuro -->
             <div class="absolute inset-0 z-[1] pointer-events-none" style="box-shadow:inset 0 0 32px rgba(10,10,10,.55)"></div>
             <iframe
@@ -1465,7 +1483,7 @@ tailwind.config = {
 
       <!-- ── FORMULARIO ── -->
       <form id="lead-form-toponuble" class="lg:col-span-7 reveal border border-white/8 bg-ink p-6 md:p-8 flex flex-col" style="transition-delay:.12s"
-            action="send.php" method="POST">
+            action="send.php" method="POST" novalidate>
 
         <!-- Cabecera del form -->
         <div class="mb-7 pb-6 border-b border-white/6">
@@ -1477,31 +1495,34 @@ tailwind.config = {
             </div>
           </div>
           <h3 class="text-[1.5rem] font-bold text-snow mb-1.5">Cuéntanos tu proyecto</h3>
-          <p class="text-zinc1 text-[13px]">Completa el formulario y te contactamos con una evaluación sin costo.</p>
+          <p class="text-zinc2 text-[13px]">Completa el formulario y te contactamos con una evaluación sin costo.</p>
         </div>
 
         <!-- Bloque 01: datos personales -->
-        <p class="font-mono text-[9px] text-white/20 tracking-[0.25em] uppercase mb-3">01 · Datos de contacto</p>
+        <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase mb-3">01 · Datos de contacto</p>
         <div class="grid sm:grid-cols-2 gap-3 mb-6">
           <div>
             <label for="nombre" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Nombre completo *</label>
-            <input id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="Juan González"
+            <input id="nombre" name="nombre" type="text" required autocomplete="name" placeholder="Juan González" aria-describedby="nombre-error"
                    class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+            <p id="nombre-error" class="field-error hidden text-red-400 text-[11px] mt-1"></p>
           </div>
           <div>
             <label for="telefono" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Teléfono *</label>
-            <input id="telefono" name="telefono" type="tel" required autocomplete="tel" placeholder="+56 9 XXXX XXXX"
+            <input id="telefono" name="telefono" type="tel" required autocomplete="tel" placeholder="+56 9 XXXX XXXX" aria-describedby="telefono-error"
                    class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+            <p id="telefono-error" class="field-error hidden text-red-400 text-[11px] mt-1"></p>
           </div>
           <div>
             <label for="email" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Correo electrónico *</label>
-            <input id="email" name="email" type="email" required autocomplete="email" placeholder="correo@empresa.cl"
+            <input id="email" name="email" type="email" required autocomplete="email" placeholder="correo@empresa.cl" aria-describedby="email-error"
                    class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+            <p id="email-error" class="field-error hidden text-red-400 text-[11px] mt-1"></p>
           </div>
           <div>
             <label for="servicio" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Servicio *</label>
             <div class="relative">
-              <select id="servicio" name="servicio" required
+              <select id="servicio" name="servicio" required aria-describedby="servicio-error"
                       class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow transition-colors appearance-none cursor-pointer">
                 <option value="" disabled selected>Seleccione un servicio</option>
                 <option value="Levantamiento Topográfico GNSS">Levantamiento Topográfico GNSS</option>
@@ -1514,21 +1535,24 @@ tailwind.config = {
                 <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
               </div>
             </div>
+            <p id="servicio-error" class="field-error hidden text-red-400 text-[11px] mt-1"></p>
           </div>
         </div>
 
         <!-- Bloque 02: detalles del proyecto -->
-        <p class="font-mono text-[9px] text-white/20 tracking-[0.25em] uppercase mb-3">02 · Detalles del proyecto</p>
+        <p class="font-mono text-[9px] text-white/20 tracking-widest uppercase mb-3">02 · Detalles del proyecto</p>
         <div class="space-y-3 flex-1">
           <div>
-            <label for="ubicacion" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Superficie y ubicación del terreno</label>
-            <input id="ubicacion" name="ubicacion" type="text" placeholder="Ej: 3 ha - sector Quillón, Ñuble"
+            <label for="ubicacion" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Superficie y ubicación del terreno *</label>
+            <input id="ubicacion" name="ubicacion" type="text" required placeholder="Ej: 3 ha - sector Quillón, Ñuble" aria-describedby="ubicacion-error"
                    class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow placeholder-white/20 transition-colors"/>
+            <p id="ubicacion-error" class="field-error hidden text-red-400 text-[11px] mt-1"></p>
           </div>
           <div>
             <label for="mensaje" class="block font-mono text-[9px] text-zinc1 uppercase tracking-widest mb-1.5">Descripción del requerimiento *</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntenos brevemente qué necesita..."
+            <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntenos brevemente qué necesita..." aria-describedby="mensaje-error"
                       class="w-full bg-ink2 border border-white/10 focus:border-gold outline-none px-4 py-3 text-[13px] text-snow placeholder-white/20 transition-colors resize-none"></textarea>
+            <p id="mensaje-error" class="field-error hidden text-red-400 text-[11px] mt-1"></p>
           </div>
         </div>
 
@@ -1648,8 +1672,8 @@ const setSubmitButtonSuccessState=()=>{
   btn.classList.add('bg-green-500','hover:bg-green-600');
   btn.style.color='#fff';
 };
-const setSubmitButtonErrorState=()=>{
-  btn.textContent=BTN_ERROR_TEXT;
+const setSubmitButtonErrorState=(message)=>{
+  btn.textContent=message||BTN_ERROR_TEXT;
   btn.classList.remove('bg-gold','hover:bg-gold2','bg-green-500','hover:bg-green-600','opacity-70','cursor-not-allowed');
   btn.classList.add('bg-red-600','hover:bg-red-700');
   btn.style.color='#fff';
@@ -1663,18 +1687,72 @@ function trackWhatsAppConversion(){
   gtag('event','conversion',{'send_to':'AW-18107428909/KslRCLDVlaMcEK3gpbpD','value':1.0,'currency':'CLP'});
 }
 
+// Validación inline por campo
+const REQUIRED_FIELD_IDS=['nombre','telefono','email','servicio','ubicacion','mensaje'];
+const fieldErrorMessage=field=>{
+  if(field.validity.valueMissing)return 'Este campo es obligatorio.';
+  if(field.validity.typeMismatch && field.type==='email')return 'Ingresa un correo válido.';
+  return 'Revisa este campo.';
+};
+const validateField=field=>{
+  const errorEl=document.getElementById(field.id+'-error');
+  const valid=field.checkValidity();
+  if(valid){
+    field.classList.remove('field-invalid');
+    field.removeAttribute('aria-invalid');
+    if(errorEl){errorEl.textContent='';errorEl.classList.add('hidden')}
+  } else {
+    field.classList.add('field-invalid');
+    field.setAttribute('aria-invalid','true');
+    if(errorEl){errorEl.textContent=fieldErrorMessage(field);errorEl.classList.remove('hidden')}
+  }
+  return valid;
+};
+REQUIRED_FIELD_IDS.forEach(id=>{
+  const field=document.getElementById(id);
+  if(!field)return;
+  field.addEventListener('input',()=>{if(field.classList.contains('field-invalid'))validateField(field)});
+  field.addEventListener('change',()=>{if(field.classList.contains('field-invalid'))validateField(field)});
+});
+const validateFormFields=()=>{
+  let firstInvalid=null;
+  REQUIRED_FIELD_IDS.forEach(id=>{
+    const field=document.getElementById(id);
+    if(!field)return;
+    const valid=validateField(field);
+    if(!valid && !firstInvalid)firstInvalid=field;
+  });
+  return firstInvalid;
+};
+
 form.addEventListener('submit',async e=>{
   e.preventDefault();
+  const firstInvalid=validateFormFields();
+  if(firstInvalid){
+    firstInvalid.focus();
+    firstInvalid.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
   setSubmitButtonSendingState();
   try{
     const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-    if(r.ok){
+    let data=null;
+    try{data=await r.json()}catch{}
+    if(r.ok && data && data.status==='success'){
       trackEvent('generate_lead',{event_category:'lead',event_label:'formulario_cotizacion',lead_type:'form_submission',form_id:'lead-form-toponuble',value:1,currency:'CLP'});
       setSubmitButtonSuccessState();
       form.reset();
+      REQUIRED_FIELD_IDS.forEach(id=>{
+        const field=document.getElementById(id);
+        if(!field)return;
+        field.classList.remove('field-invalid');
+        field.removeAttribute('aria-invalid');
+        const errorEl=document.getElementById(id+'-error');
+        if(errorEl){errorEl.textContent='';errorEl.classList.add('hidden')}
+      });
       btnResetTimeout=setTimeout(()=>resetSubmitButtonState(),4000);
     } else {
-      setSubmitButtonErrorState();
+      setSubmitButtonErrorState(data&&data.message?data.message.toUpperCase():null);
       btnResetTimeout=setTimeout(()=>resetSubmitButtonState(),3000);
     }
   } catch {
@@ -1744,7 +1822,27 @@ if(mapaObj && mapaWrap && mapTooltip){
         path.style.stroke=baseStroke;
         mapTooltip.classList.remove('show');
       });
+      path.addEventListener('touchstart',evt=>{
+        comunas.forEach(p=>{p.style.fill='rgba(245,197,0,0)';p.style.stroke='rgba(245,197,0,.42)'});
+        path.style.fill='rgba(245,197,0,.18)';
+        path.style.stroke='rgba(245,197,0,.92)';
+        mapTooltip.textContent=comuna;
+        mapTooltip.classList.add('show');
+        const touch=evt.touches[0];
+        if(touch){
+          const p=getPointerPosition(touch);
+          mapTooltip.style.left=`${p.x+8}px`;
+          mapTooltip.style.top=`${p.y+4}px`;
+        }
+      },{passive:true});
     });
+
+    document.addEventListener('touchstart',evt=>{
+      if(!mapaWrap.contains(evt.target)){
+        comunas.forEach(p=>{p.style.fill='rgba(245,197,0,0)';p.style.stroke='rgba(245,197,0,.42)'});
+        mapTooltip.classList.remove('show');
+      }
+    },{passive:true});
 
     root.style.width='100%';
     root.style.height='100%';
