@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>GPS de mano vs GNSS: la diferencia de precisión que importa en topografía | TopoÑuble</title>
+<title>GPS de mano vs GNSS: diferencia de precisión | TopoÑuble</title>
 <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 <link rel="canonical" href="https://toponuble.cl/blog/gps-de-mano-vs-gnss-topografia"/>
-<meta name="description" content="Un GPS de mano tiene 3–10 metros de error. Un equipo GNSS RTK llega a 1–2 centímetros. La diferencia no es menor cuando se trata de medir deslindes o subdividir un terreno."/>
+<meta name="description" content="Un GPS de mano tiene 3–10 metros de error; un GNSS RTK llega a 1–2 centímetros. Clave antes de medir deslindes o subdividir un terreno."/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
 <meta name="keywords" content="GPS de mano vs GNSS, diferencia GPS GNSS topografía, precisión GNSS RTK centímetros, GPS Garmin topografía, GNSS RTK medición terreno, diferencia GPS receptor GNSS, topografía GPS Ñuble"/>
 <meta name="author" content="Patricio Soto Jofré"/>
@@ -213,7 +213,7 @@ tailwind.config = {
   }
 </style>
 <link rel="manifest" href="/manifest.json"/>
-<link rel="preload" href="../img/SATELITE.jpg" as="image"/>
+<link rel="preload" href="../img/SATELITE.webp" as="image"/>
 </head>
 
 <body class="text-snow font-sans antialiased overflow-x-hidden" data-active-nav="blog">
@@ -223,7 +223,7 @@ tailwind.config = {
 
 
 <!-- ═══ HERO PARALLAX ═══ -->
-<section id="article-hero" class="relative pt-28 pb-24 px-6" style="min-height:420px;background-image:url('../img/SATELITE.jpg');background-attachment:fixed;background-size:cover;background-position:center 40%">
+<section id="article-hero" class="relative pt-28 pb-24 px-6" style="min-height:420px;background-image:url('../img/SATELITE.webp');background-attachment:fixed;background-size:cover;background-position:center 40%">
 
   <div class="absolute inset-0" style="background:linear-gradient(to bottom,rgba(10,10,10,.72) 0%,rgba(10,10,10,.82) 60%,rgba(10,10,10,1) 100%)"></div>
   <div class="absolute inset-0 sgrid" style="opacity:.2"></div>
@@ -309,7 +309,7 @@ tailwind.config = {
         <!-- GPS de mano: dos columnas imagen + texto -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8 items-start">
           <figure class="sag-figure m-0">
-            <img src="../img/gps-de-mano.jpg"
+            <img src="../img/gps-de-mano.webp"
                  alt="GPS de mano, dispositivo de navegación portátil"
                  width="1022" height="680"
                  loading="lazy">
@@ -341,7 +341,7 @@ tailwind.config = {
             <p>El resultado: precisión de <strong>1 a 2 centímetros horizontal</strong> y 2 a 3 centímetros vertical. Suficiente para medir deslindes, generar planos con validez legal y producir el KML georreferenciado que exige el SAG.</p>
           </div>
           <figure class="sag-figure m-0">
-            <img src="../img/topografo-gnss-1.jpg"
+            <img src="../img/topografo-gnss-1.webp"
                  alt="Topógrafo operando equipo GNSS RTK en terreno rural"
                  width="1009" height="761"
                  loading="lazy">
@@ -351,7 +351,7 @@ tailwind.config = {
 
         <!-- Imagen -->
         <figure class="sag-figure my-8">
-          <img src="../img/SATELITE.jpg"
+          <img src="../img/SATELITE.webp"
                alt="Satélite de navegación GNSS en órbita transmitiendo señal hacia la Tierra"
                width="1280" height="720"
                loading="lazy">
@@ -431,7 +431,7 @@ tailwind.config = {
         </div>
 
         <!-- Enlace interno -->
-        <p class="text-zinc2 text-[.9rem] mb-8">Si estás pensando en subdividir un terreno en Ñuble, lee también <a href="quien-hace-plano-subdivision-predio-rustico.html" class="text-gold hover:underline">quién es el profesional más idóneo para hacer el plano de subdivisión</a> y <a href="tercero-autorizado-subdivision-predios-rusticos.html" class="text-gold hover:underline">qué hace el tercero autorizado SAG en ese proceso</a>.</p>
+        <p class="text-zinc2 text-[.9rem] mb-8">Si estás pensando en subdividir un terreno en Ñuble, lee también <a href="quien-hace-plano-subdivision-predio-rustico" class="text-gold hover:underline">quién es el profesional más idóneo para hacer el plano de subdivisión</a> y <a href="tercero-autorizado-subdivision-predios-rusticos" class="text-gold hover:underline">qué hace el tercero autorizado SAG en ese proceso</a>.</p>
 
         <!-- CTA callout -->
         <div class="cta-callout mb-8">
@@ -514,13 +514,18 @@ tailwind.config = {
           <div class="border border-white/8 p-5">
             <p class="font-mono text-[9px] text-white/30 tracking-widest uppercase mb-4">Artículos relacionados</p>
             <div class="space-y-4">
-              <a href="quien-hace-plano-subdivision-predio-rustico.html" class="group block">
+              <a href="quien-hace-plano-subdivision-predio-rustico" class="group block">
                 <p class="text-[12px] text-zinc2 group-hover:text-snow transition-colors leading-snug mb-1">¿Quién es el profesional más idóneo para hacer el plano de subdivisión?</p>
                 <span class="font-mono text-[10px] text-gold tracking-widest uppercase group-hover:translate-x-1 inline-block transition-transform duration-200">Leer →</span>
               </a>
               <div class="h-px bg-white/5"></div>
-              <a href="tercero-autorizado-subdivision-predios-rusticos.html" class="group block">
+              <a href="tercero-autorizado-subdivision-predios-rusticos" class="group block">
                 <p class="text-[12px] text-zinc2 group-hover:text-snow transition-colors leading-snug mb-1">Qué hace un tercero autorizado SAG en la subdivisión de predios rústicos</p>
+                <span class="font-mono text-[10px] text-gold tracking-widest uppercase group-hover:translate-x-1 inline-block transition-transform duration-200">Leer →</span>
+              </a>
+              <div class="h-px bg-white/5"></div>
+              <a href="lo-barato-sale-caro-en-topografia" class="group block">
+                <p class="text-[12px] text-zinc2 group-hover:text-snow transition-colors leading-snug mb-1">Lo barato sale caro en topografía: qué revisar antes de contratar</p>
                 <span class="font-mono text-[10px] text-gold tracking-widest uppercase group-hover:translate-x-1 inline-block transition-transform duration-200">Leer →</span>
               </a>
             </div>
