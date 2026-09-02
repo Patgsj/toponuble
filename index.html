@@ -728,7 +728,7 @@ tailwind.config = {
                 <div class="border-t border-white/6 pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/6 md:pl-6">
                   <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Tercero Autorizado SAG</p>
                   <p class="text-zinc2 text-[12px] leading-snug mb-3">Servicio externo requerido por normativa en Ñuble — valor referencial</p>
-                  <p class="text-snow font-black text-[2.4rem] leading-none">$450.000</p>
+                  <p class="text-snow font-black text-[2.4rem] leading-none">$500.000</p>
                   <p class="font-mono text-sm text-white/70 tracking-widest uppercase mt-2 font-semibold">valor fijo adicional</p>
                 </div>
               </div>
@@ -794,7 +794,7 @@ tailwind.config = {
                 <span class="font-mono text-base text-gold/50 tracking-widest">03</span>
               </div>
               <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Tramo · SAG Rural</p>
-              <h3 class="text-[1.3rem] font-bold text-snow mb-6 leading-snug">9 lotes o más</h3>
+              <h3 class="text-[1.3rem] font-bold text-snow mb-6 leading-snug">9 a 14 lotes</h3>
               <div class="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 md:items-center flex-1">
                 <div>
                   <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Servicio Topográfico</p>
@@ -812,7 +812,35 @@ tailwind.config = {
               </div>
               <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
                 <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 03</span>
-                <a href="#contacto" aria-label="Cotizar tramo 9 lotes o más" class="card-link-gold group">
+                <a href="#contacto" aria-label="Cotizar tramo 9 a 14 lotes" class="card-link-gold group">
+                  Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 · 15 lotes o más -->
+          <article class="w-full flex-shrink-0">
+            <div class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
+              <div class="flex items-start justify-between mb-8">
+                <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="5" height="5" rx=".5"/><rect x="10" y="3" width="5" height="5" rx=".5"/><rect x="17" y="3" width="5" height="5" rx=".5"/>
+                    <rect x="3" y="10" width="5" height="5" rx=".5"/><rect x="10" y="10" width="5" height="5" rx=".5"/><rect x="17" y="10" width="5" height="5" rx=".5"/>
+                    <rect x="3" y="17" width="5" height="5" rx=".5"/><rect x="10" y="17" width="5" height="5" rx=".5"/><rect x="17" y="17" width="5" height="5" rx=".5"/>
+                  </svg>
+                </div>
+                <span class="font-mono text-base text-gold/50 tracking-widest">04</span>
+              </div>
+              <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Tramo · SAG Rural</p>
+              <h3 class="text-[1.3rem] font-bold text-snow mb-6 leading-snug">15 lotes o más</h3>
+              <div class="flex-1 flex flex-col justify-center">
+                <p class="text-zinc2 text-[13px] leading-relaxed mb-5">Proyectos de gran escala: el valor del Servicio Topográfico y del Tercero Autorizado SAG se evalúa según la superficie, cantidad de lotes y complejidad del proyecto.</p>
+                <p class="text-snow font-black text-[1.7rem] leading-none">Cotización personalizada</p>
+              </div>
+              <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
+                <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 04</span>
+                <a href="#contacto" aria-label="Cotizar tramo 15 lotes o más" class="card-link-gold group">
                   Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
                 </a>
               </div>
@@ -833,6 +861,7 @@ tailwind.config = {
           <button class="val-dot h-px transition-all duration-300" style="width:2rem;background:#F5C500" data-val-idx="0" aria-label="Tramo 1"></button>
           <button class="val-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.2)" data-val-idx="1" aria-label="Tramo 2"></button>
           <button class="val-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.2)" data-val-idx="2" aria-label="Tramo 3"></button>
+          <button class="val-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.2)" data-val-idx="3" aria-label="Tramo 4"></button>
         </div>
 
         <button id="val-next" aria-label="Tramo siguiente"
