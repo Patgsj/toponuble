@@ -319,6 +319,12 @@ tailwind.config = {
   #hero-track{height:100%;position:relative}
   #hero-track>div{position:absolute;inset:0;opacity:0;transition:opacity 900ms ease-in-out;pointer-events:none}
   #hero-track>div.hero-slide-active{opacity:1;pointer-events:auto;z-index:1}
+
+  /* Anillo de pulso alrededor del botón flotante de WhatsApp */
+  #floating-whatsapp-btn{position:fixed}
+  #floating-whatsapp-btn::before{content:'';position:absolute;inset:0;border-radius:9999px;background:#25D366;animation:waPulse 2.2s ease-out infinite;z-index:-1}
+  @keyframes waPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.9);opacity:0}}
+  @media(prefers-reduced-motion:reduce){#floating-whatsapp-btn::before{animation:none;display:none}}
 </style>
 <link rel="manifest" href="/manifest.json"/>
 <link rel="preload" href="img/IMAGEN-DE-FONDO.webp" as="image"/>
