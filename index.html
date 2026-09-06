@@ -320,11 +320,6 @@ tailwind.config = {
   #hero-track>div{position:absolute;inset:0;opacity:0;transition:opacity 900ms ease-in-out;pointer-events:none}
   #hero-track>div.hero-slide-active{opacity:1;pointer-events:auto;z-index:1}
 
-  /* Anillo de pulso alrededor del botón flotante de WhatsApp */
-  #floating-whatsapp-btn{position:fixed}
-  #floating-whatsapp-btn::before{content:'';position:absolute;inset:0;border-radius:9999px;background:#25D366;animation:waPulse 2.2s ease-out infinite;z-index:-1}
-  @keyframes waPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.9);opacity:0}}
-  @media(prefers-reduced-motion:reduce){#floating-whatsapp-btn::before{animation:none;display:none}}
 </style>
 <link rel="manifest" href="/manifest.json"/>
 <link rel="preload" href="img/IMAGEN-DE-FONDO.webp" as="image"/>
@@ -690,185 +685,60 @@ tailwind.config = {
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 reveal">
       <div>
         <span class="eyebrow">— 02 / Valores SAG</span>
-        <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Valores referenciales<br class="hidden md:block"> Subdivisión Rural SAG</h2>
+        <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Cómo se calcula el valor<br class="hidden md:block"> de tu subdivisión</h2>
       </div>
       <p class="text-zinc2 text-[14px] max-w-sm leading-relaxed lg:text-right lg:pb-1">
-        Referencia de costos según la cantidad de lotes resultantes del proyecto.
+        Cada proyecto se cotiza según la cantidad de lotes resultantes. Nuestro asistente te entrega el valor de tu caso al instante.
       </p>
     </div>
 
-    <!-- Carrusel -->
-    <div class="reveal" style="transition-delay:.05s">
+    <!-- Los dos componentes del presupuesto -->
+    <div class="grid md:grid-cols-2 gap-px reveal" style="transition-delay:.05s">
 
-      <div class="overflow-hidden" id="val-carousel">
-        <div class="flex" id="val-track">
-
-          <!-- Card 1 · 2 a 4 lotes -->
-          <article class="w-full flex-shrink-0">
-            <div class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
-              <div class="flex items-start justify-between mb-8">
-                <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                    <rect x="3" y="4" width="8" height="8" rx=".5"/><rect x="13" y="4" width="8" height="8" rx=".5"/>
-                    <path stroke-linecap="round" d="M3 17h8M13 17h8"/>
-                  </svg>
-                </div>
-                <span class="font-mono text-base text-gold/50 tracking-widest">01</span>
-              </div>
-              <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Tramo · SAG Rural</p>
-              <h3 class="text-[1.3rem] font-bold text-snow mb-6 leading-snug">2 a 4 lotes</h3>
-              <div class="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 md:items-center flex-1">
-                <div>
-                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Servicio Topográfico</p>
-                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Nuestro cobro directo por el trabajo</p>
-                  <p class="text-gold font-black text-[2.4rem] leading-none">$300.000</p>
-                  <p class="font-mono text-sm text-gold/80 tracking-widest uppercase mt-2 font-semibold">por lote</p>
-                </div>
-                <span class="font-mono text-5xl text-white/50 font-light self-center text-center">+</span>
-                <div class="border-t border-white/6 pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/6 md:pl-6">
-                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Tercero Autorizado SAG</p>
-                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Servicio externo requerido por normativa en Ñuble — valor referencial</p>
-                  <p class="text-snow font-black text-[2.4rem] leading-none">$500.000</p>
-                  <p class="font-mono text-sm text-white/70 tracking-widest uppercase mt-2 font-semibold">valor fijo adicional</p>
-                </div>
-              </div>
-              <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
-                <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 01</span>
-                <a href="#contacto" aria-label="Cotizar tramo 2 a 4 lotes" class="card-link-gold group">
-                  Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 2 · 5 a 8 lotes -->
-          <article class="w-full flex-shrink-0">
-            <div class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
-              <div class="flex items-start justify-between mb-8">
-                <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="7" height="7" rx=".5"/><rect x="14" y="3" width="7" height="7" rx=".5"/>
-                    <rect x="3" y="14" width="7" height="7" rx=".5"/><rect x="14" y="14" width="7" height="7" rx=".5"/>
-                  </svg>
-                </div>
-                <span class="font-mono text-base text-gold/50 tracking-widest">02</span>
-              </div>
-              <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Tramo · SAG Rural</p>
-              <h3 class="text-[1.3rem] font-bold text-snow mb-6 leading-snug">5 a 8 lotes</h3>
-              <div class="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 md:items-center flex-1">
-                <div>
-                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Servicio Topográfico</p>
-                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Nuestro cobro directo por el trabajo</p>
-                  <p class="text-gold font-black text-[2.4rem] leading-none">$240.000</p>
-                  <p class="font-mono text-sm text-gold/80 tracking-widest uppercase mt-2 font-semibold">por lote</p>
-                </div>
-                <span class="font-mono text-5xl text-white/50 font-light self-center text-center">+</span>
-                <div class="border-t border-white/6 pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/6 md:pl-6">
-                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Tercero Autorizado SAG</p>
-                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Servicio externo requerido por normativa en Ñuble — valor referencial</p>
-                  <p class="text-snow font-black text-[2.4rem] leading-none">$500.000</p>
-                  <p class="font-mono text-sm text-white/70 tracking-widest uppercase mt-2 font-semibold">valor fijo adicional</p>
-                </div>
-              </div>
-              <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
-                <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 02</span>
-                <a href="#contacto" aria-label="Cotizar tramo 5 a 8 lotes" class="card-link-gold group">
-                  Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 3 · 9 lotes o más -->
-          <article class="w-full flex-shrink-0">
-            <div class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
-              <div class="flex items-start justify-between mb-8">
-                <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="5" height="5" rx=".5"/><rect x="10" y="3" width="5" height="5" rx=".5"/><rect x="17" y="3" width="5" height="5" rx=".5"/>
-                    <rect x="3" y="10" width="5" height="5" rx=".5"/><rect x="10" y="10" width="5" height="5" rx=".5"/><rect x="17" y="10" width="5" height="5" rx=".5"/>
-                    <rect x="3" y="17" width="5" height="5" rx=".5"/>
-                    <path stroke-linecap="round" d="M10 19.5h7"/>
-                  </svg>
-                </div>
-                <span class="font-mono text-base text-gold/50 tracking-widest">03</span>
-              </div>
-              <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Tramo · SAG Rural</p>
-              <h3 class="text-[1.3rem] font-bold text-snow mb-6 leading-snug">9 a 14 lotes</h3>
-              <div class="flex flex-col md:grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 md:items-center flex-1">
-                <div>
-                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Servicio Topográfico</p>
-                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Nuestro cobro directo por el trabajo</p>
-                  <p class="text-gold font-black text-[2.4rem] leading-none">$180.000</p>
-                  <p class="font-mono text-sm text-gold/80 tracking-widest uppercase mt-2 font-semibold">por lote</p>
-                </div>
-                <span class="font-mono text-5xl text-white/50 font-light self-center text-center">+</span>
-                <div class="border-t border-white/6 pt-6 md:border-t-0 md:pt-0 md:border-l md:border-white/6 md:pl-6">
-                  <p class="font-mono text-xs text-white/60 tracking-widest uppercase mb-1">Tercero Autorizado SAG</p>
-                  <p class="text-zinc2 text-[12px] leading-snug mb-3">Servicio externo requerido por normativa en Ñuble — valor referencial</p>
-                  <p class="text-snow font-black text-[2.4rem] leading-none">$500.000</p>
-                  <p class="font-mono text-sm text-white/70 tracking-widest uppercase mt-2 font-semibold">valor fijo adicional</p>
-                </div>
-              </div>
-              <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
-                <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 03</span>
-                <a href="#contacto" aria-label="Cotizar tramo 9 a 14 lotes" class="card-link-gold group">
-                  Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Card 4 · 15 lotes o más -->
-          <article class="w-full flex-shrink-0">
-            <div class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
-              <div class="flex items-start justify-between mb-8">
-                <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
-                  <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="5" height="5" rx=".5"/><rect x="10" y="3" width="5" height="5" rx=".5"/><rect x="17" y="3" width="5" height="5" rx=".5"/>
-                    <rect x="3" y="10" width="5" height="5" rx=".5"/><rect x="10" y="10" width="5" height="5" rx=".5"/><rect x="17" y="10" width="5" height="5" rx=".5"/>
-                    <rect x="3" y="17" width="5" height="5" rx=".5"/><rect x="10" y="17" width="5" height="5" rx=".5"/><rect x="17" y="17" width="5" height="5" rx=".5"/>
-                  </svg>
-                </div>
-                <span class="font-mono text-base text-gold/50 tracking-widest">04</span>
-              </div>
-              <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Tramo · SAG Rural</p>
-              <h3 class="text-[1.3rem] font-bold text-snow mb-6 leading-snug">15 lotes o más</h3>
-              <div class="flex-1 flex flex-col justify-center">
-                <p class="text-zinc2 text-[13px] leading-relaxed mb-5">Proyectos de gran escala: el valor del Servicio Topográfico y del Tercero Autorizado SAG se evalúa según la superficie, cantidad de lotes y complejidad del proyecto.</p>
-                <p class="text-snow font-black text-[1.7rem] leading-none">Cotización personalizada</p>
-              </div>
-              <div class="pt-5 mt-8 border-t border-white/6 flex items-center justify-between">
-                <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Tramo 04</span>
-                <a href="#contacto" aria-label="Cotizar tramo 15 lotes o más" class="card-link-gold group">
-                  Cotizar <span class="transition-transform group-hover:translate-x-1">→</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
+      <!-- Componente 1 · Servicio topográfico -->
+      <article class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
+            <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="8" height="8" rx=".5"/><rect x="13" y="4" width="8" height="8" rx=".5"/>
+              <path stroke-linecap="round" d="M3 17h8M13 17h8"/>
+            </svg>
+          </div>
+          <span class="font-mono text-base text-gold/50 tracking-widest">01</span>
         </div>
-      </div>
-
-      <!-- Controles: prev · dots · next -->
-      <div class="flex items-center justify-between mt-px border-t border-white/5 pt-4">
-        <button id="val-prev" aria-label="Tramo anterior"
-          class="w-9 h-9 border border-white/10 bg-ink flex items-center justify-center text-zinc2 hover:text-gold hover:border-gold/30 transition-colors">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
-        </button>
-
-        <div class="flex items-center gap-2">
-          <button class="val-dot h-px transition-all duration-300" style="width:2rem;background:#F5C500" data-val-idx="0" aria-label="Tramo 1"></button>
-          <button class="val-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.2)" data-val-idx="1" aria-label="Tramo 2"></button>
-          <button class="val-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.2)" data-val-idx="2" aria-label="Tramo 3"></button>
-          <button class="val-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.2)" data-val-idx="3" aria-label="Tramo 4"></button>
+        <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Componente · Nuestro cobro</p>
+        <h3 class="text-[1.3rem] font-bold text-snow mb-4 leading-snug">Servicio topográfico</h3>
+        <p class="text-zinc2 text-[13px] leading-relaxed flex-1">
+          Es nuestro cobro directo por el trabajo: levantamiento GNSS, planos, memorias y la preparación de los antecedentes
+          técnicos del proyecto. Se calcula por lote, y el valor por lote baja a medida que crece la cantidad de lotes
+          resultantes.
+        </p>
+        <div class="pt-5 mt-8 border-t border-white/6">
+          <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Componente 01</span>
         </div>
+      </article>
 
-        <button id="val-next" aria-label="Tramo siguiente"
-          class="w-9 h-9 border border-white/10 bg-ink flex items-center justify-center text-zinc2 hover:text-gold hover:border-gold/30 transition-colors">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-        </button>
-      </div>
+      <!-- Componente 2 · Tercero Autorizado SAG -->
+      <article class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
+        <div class="flex items-start justify-between mb-8">
+          <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
+            <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/>
+            </svg>
+          </div>
+          <span class="font-mono text-base text-gold/50 tracking-widest">02</span>
+        </div>
+        <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Componente · Servicio externo</p>
+        <h3 class="text-[1.3rem] font-bold text-snow mb-4 leading-snug">Tercero Autorizado SAG</h3>
+        <p class="text-zinc2 text-[13px] leading-relaxed flex-1">
+          Profesional certificado que el SAG exige para aprobar la subdivisión. No es un cobro nuestro: es un servicio externo
+          requerido por normativa, con un valor fijo que se suma al presupuesto.
+        </p>
+        <div class="pt-5 mt-8 border-t border-white/6">
+          <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Componente 02</span>
+        </div>
+      </article>
 
     </div>
 
@@ -878,12 +748,12 @@ tailwind.config = {
         <svg class="w-4 h-4 text-gold/70 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
         </svg>
-        <p class="text-zinc2 text-[13px] leading-relaxed"><span class="text-snow font-semibold">Valores referenciales.</span> Pueden variar según ubicación del predio, superficie, accesibilidad, documentación disponible, complejidad técnica y posibles observaciones del proyecto.</p>
+        <p class="text-zinc2 text-[13px] leading-relaxed"><span class="text-snow font-semibold">Cada caso es distinto.</span> El valor depende de la cantidad de lotes resultantes —incluido el lote remanente, que casi siempre se olvida— y puede variar según ubicación del predio, superficie, accesibilidad, documentación disponible y complejidad técnica.</p>
       </div>
-      <a href="#contacto" aria-label="Solicitar cotización exacta de subdivisión SAG"
-         class="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
-        Cotizar →
-      </a>
+      <button type="button" id="valores-cotizar-btn" aria-label="Cotizar subdivisión con el asistente"
+              class="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
+        Cotizar ahora →
+      </button>
     </div>
 
   </div>
@@ -1645,11 +1515,20 @@ tailwind.config = {
 <div id="footer-placeholder"></div>
 
 
-<!-- ═══ CTA FLOTANTE (WhatsApp) ═══ -->
-<a id="floating-whatsapp-btn" href="https://wa.me/56966640562?text=Hola%2C+escribo+desde+TopoÑuble%2C+necesito+cotización+de+topografía" target="_blank" aria-label="Abrir WhatsApp para cotizar topografía" onclick="trackWhatsAppConversion()"
-   class="fixed bottom-6 right-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] z-50 w-14 h-14 bg-[#25D366] hover:bg-[#1ebe5d] text-white flex items-center justify-center rounded-full shadow-lg transition-all duration-200 hover:scale-110">
-  <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-</a>
+<script>
+// El CTA de la sección Valores abre el asistente, que es donde vive el tarifario.
+// Si el widget no cargó, cae al formulario de contacto en vez de no hacer nada.
+document.getElementById("valores-cotizar-btn")?.addEventListener("click", function () {
+  if (window.TopoNubleChat) window.TopoNubleChat.open();
+  else window.location.hash = "#contacto";
+});
+</script>
+
+<!-- ═══ ASISTENTE IA FLOTANTE ═══ -->
+<!-- Reemplaza al botón flotante de WhatsApp: el asistente cotiza la subdivisión SAG
+     y al final deriva a WhatsApp (a Patricio en casos SAG, a Diego en casos DOM).
+     Se pinta solo, no necesita contenedor. -->
+<script src="https://chatbot-topo-nuble.patricio-gsj.workers.dev/widget.js" data-position="bottom-right" defer></script>
 
 
 <!-- ═══ SCRIPTS ═══ -->
@@ -1826,16 +1705,7 @@ form.addEventListener('submit',async e=>{
   }
 });
 
-const whatsappButtons=['footer-whatsapp-btn','floating-whatsapp-btn'];
-whatsappButtons.forEach(id=>{
-  const el=document.getElementById(id);
-  if(!el)return;
-  el.addEventListener('click',()=>{
-    trackEvent('click_whatsapp',{event_category:'contact',event_label:id,contact_method:'whatsapp'});
-  });
-});
-
-const callButtons=['hero-cta-llamar','contacto-directo-call','footer-call-btn','floating-call-btn'];
+const callButtons=['hero-cta-llamar'];
 callButtons.forEach(id=>{
   const el=document.getElementById(id);
   if(!el)return;
@@ -1944,7 +1814,7 @@ if(mapaObj && mapaWrap && mapTooltip){
   });
 }
 
-// Carrusel de valores SAG — loop infinito con clones
+// Carrusel del hero — crossfade
 (function(){
   // Hero carousel – crossfade
   (function(){
@@ -1969,83 +1839,6 @@ if(mapaObj && mapaWrap && mapTooltip){
     activateSlide(0);startTimer();
   })();
 
-  var track=document.getElementById('val-track');
-  if(!track)return;
-  var dots=document.querySelectorAll('.val-dot');
-
-  // Clonar primera y última card para el loop infinito
-  var items=Array.from(track.children);
-  var total=items.length; // 3 slides reales
-  track.insertBefore(items[total-1].cloneNode(true),track.firstChild); // clone-last al inicio
-  track.appendChild(items[0].cloneNode(true));                         // clone-first al final
-  // Track ahora: [clone-3, slide-1, slide-2, slide-3, clone-1]
-  // Índices:        0          1        2        3        4
-
-  var current=1; // empezar en slide-1 real
-  var timer,INTERVAL=5000;
-  var animating=false;
-
-  function updateDots(realIdx){
-    dots.forEach(function(d,i){
-      d.style.width=i===realIdx?'2rem':'0.5rem';
-      d.style.background=i===realIdx?'#F5C500':'rgba(255,255,255,.2)';
-    });
-  }
-
-  function jumpTo(idx){ // movimiento silencioso sin animación
-    track.style.transition='none';
-    current=idx;
-    track.style.transform='translateX(-'+(current*100)+'%)';
-    updateDots((current-1+total)%total);
-  }
-
-  function goTo(idx){
-    if(animating)return;
-    animating=true;
-    current=idx;
-    track.style.transition='transform 500ms ease-in-out';
-    track.style.transform='translateX(-'+(current*100)+'%)';
-    updateDots((current-1+total)%total);
-  }
-
-  track.addEventListener('transitionend',function(){
-    animating=false;
-    if(current===0){
-      // Llegamos al clon del último → saltar al real
-      jumpTo(total);
-    } else if(current===total+1){
-      // Llegamos al clon del primero → saltar al real
-      jumpTo(1);
-    }
-  });
-
-  function startTimer(){timer=setInterval(function(){goTo(current+1);},INTERVAL);}
-  function stopTimer(){clearInterval(timer);}
-
-  document.getElementById('val-prev').addEventListener('click',function(){stopTimer();goTo(current-1);startTimer();});
-  document.getElementById('val-next').addEventListener('click',function(){stopTimer();goTo(current+1);startTimer();});
-  dots.forEach(function(d){
-    d.addEventListener('click',function(){
-      stopTimer();
-      goTo(+d.dataset.valIdx+1); // dot 0→idx 1, dot 1→idx 2, dot 2→idx 3
-      startTimer();
-    });
-  });
-
-  var carousel=document.getElementById('val-carousel');
-  carousel.addEventListener('mouseenter',stopTimer);
-  carousel.addEventListener('mouseleave',startTimer);
-
-  var tx=0;
-  carousel.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
-  carousel.addEventListener('touchend',function(e){
-    var dx=tx-e.changedTouches[0].clientX;
-    if(Math.abs(dx)>40){stopTimer();dx>0?goTo(current+1):goTo(current-1);startTimer();}
-  },{passive:true});
-
-  // Posición inicial sin animación
-  jumpTo(1);
-  startTimer();
 })();
 
 // FAQ accordion
