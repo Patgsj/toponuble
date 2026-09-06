@@ -678,94 +678,12 @@ tailwind.config = {
 
 
 <!-- ═══ VALORES ═══ -->
-<section id="valores" class="reveal-sec py-28 px-6 bg-ink2 sgrid">
-  <div class="max-w-7xl mx-auto">
-
-    <!-- Header — mismo patrón que Servicios -->
-    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 reveal">
-      <div>
-        <span class="eyebrow">— 02 / Valores SAG</span>
-        <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Cómo se calcula el valor<br class="hidden md:block"> de tu subdivisión</h2>
-      </div>
-      <p class="text-zinc2 text-[14px] max-w-sm leading-relaxed lg:text-right lg:pb-1">
-        Cada proyecto se cotiza según la cantidad de lotes resultantes. Nuestro asistente te entrega el valor de tu caso al instante.
-      </p>
-    </div>
-
-    <!-- Los dos componentes del presupuesto -->
-    <div class="grid md:grid-cols-2 gap-px reveal" style="transition-delay:.05s">
-
-      <!-- Componente 1 · Servicio topográfico -->
-      <article class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
-        <div class="flex items-start justify-between mb-8">
-          <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
-            <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <rect x="3" y="4" width="8" height="8" rx=".5"/><rect x="13" y="4" width="8" height="8" rx=".5"/>
-              <path stroke-linecap="round" d="M3 17h8M13 17h8"/>
-            </svg>
-          </div>
-          <span class="font-mono text-base text-gold/50 tracking-widest">01</span>
-        </div>
-        <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Componente · Nuestro cobro</p>
-        <h3 class="text-[1.3rem] font-bold text-snow mb-4 leading-snug">Servicio topográfico</h3>
-        <p class="text-zinc2 text-[13px] leading-relaxed flex-1">
-          Es nuestro cobro directo por el trabajo: levantamiento GNSS, planos, memorias y la preparación de los antecedentes
-          técnicos del proyecto. Se calcula por lote, y el valor por lote baja a medida que crece la cantidad de lotes
-          resultantes.
-        </p>
-        <div class="pt-5 mt-8 border-t border-white/6">
-          <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Componente 01</span>
-        </div>
-      </article>
-
-      <!-- Componente 2 · Tercero Autorizado SAG -->
-      <article class="bg-ink border border-white/5 p-8 md:p-9 flex flex-col">
-        <div class="flex items-start justify-between mb-8">
-          <div class="w-12 h-12 bg-gold/8 border border-gold/20 flex items-center justify-center">
-            <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/>
-            </svg>
-          </div>
-          <span class="font-mono text-base text-gold/50 tracking-widest">02</span>
-        </div>
-        <p class="font-mono text-[10px] text-gold tracking-widest uppercase mb-2">Componente · Servicio externo</p>
-        <h3 class="text-[1.3rem] font-bold text-snow mb-4 leading-snug">Tercero Autorizado SAG</h3>
-        <p class="text-zinc2 text-[13px] leading-relaxed flex-1">
-          Profesional certificado que el SAG exige para aprobar la subdivisión. No es un cobro nuestro: es un servicio externo
-          requerido por normativa, con un valor fijo que se suma al presupuesto.
-        </p>
-        <div class="pt-5 mt-8 border-t border-white/6">
-          <span class="font-mono text-[9px] text-white/20 tracking-widest uppercase">Componente 02</span>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- Nota + CTA — mismo patrón que Servicios -->
-    <div class="reveal mt-px cta-strip" style="transition-delay:.1s">
-      <div class="flex gap-3 items-start">
-        <svg class="w-4 h-4 text-gold/70 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-        </svg>
-        <p class="text-zinc2 text-[13px] leading-relaxed"><span class="text-snow font-semibold">Cada caso es distinto.</span> El valor depende de la cantidad de lotes resultantes —incluido el lote remanente, que casi siempre se olvida— y puede variar según ubicación del predio, superficie, accesibilidad, documentación disponible y complejidad técnica.</p>
-      </div>
-      <button type="button" id="valores-cotizar-btn" aria-label="Cotizar subdivisión con el asistente"
-              class="flex-shrink-0 inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
-        Cotizar ahora →
-      </button>
-    </div>
-
-  </div>
-</section>
-
-
 <!-- ═══ PROCESO ═══ -->
 <section id="proceso" class="reveal-sec py-28 px-6 sgrid bg-ink2 flex flex-col justify-center">
   <div class="max-w-7xl mx-auto">
 
     <div class="text-center mb-16 reveal">
-      <span class="eyebrow">— 03 / Cómo trabajamos</span>
+      <span class="eyebrow">— 02 / Cómo trabajamos</span>
       <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Tu subdivisión, paso a paso</h2>
       <p class="text-zinc2 text-[14px] max-w-xl mx-auto mt-4 leading-relaxed">
         Un proceso claro para que sepas exactamente qué esperar en cada etapa.
@@ -832,7 +750,7 @@ tailwind.config = {
 
       <!-- Left: text -->
       <div class="reveal">
-        <span class="eyebrow">— 04 / Por qué elegirnos</span>
+        <span class="eyebrow">— 03 / Por qué elegirnos</span>
         <h2 class="text-3xl md:text-[2.8rem] font-black text-snow mb-6 leading-tight">
           Conocemos el<br>territorio de Ñuble
         </h2>
@@ -898,7 +816,7 @@ tailwind.config = {
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
 
       <div class="reveal">
-        <span class="eyebrow">— 05 / Cobertura</span>
+        <span class="eyebrow">— 04 / Cobertura</span>
         <h2 class="text-[clamp(2.4rem,6vw,4.5rem)] font-black text-snow leading-[1.04]">
           Toda la Región<br>de <em class="not-italic text-gold">Ñuble</em>
         </h2>
@@ -1086,7 +1004,7 @@ tailwind.config = {
   <div class="max-w-4xl mx-auto">
 
     <div class="text-center mb-16 reveal">
-      <span class="eyebrow">— 06 / Preguntas frecuentes</span>
+      <span class="eyebrow">— 05 / Preguntas frecuentes</span>
       <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Lo que más nos preguntan</h2>
       <p class="text-zinc2 text-[14px] max-w-lg mx-auto mt-4 leading-relaxed">
         Resolvemos las dudas más comunes sobre subdivisión rural, parcelación y trámites SAG en Ñuble.
@@ -1199,7 +1117,7 @@ tailwind.config = {
     <!-- Header -->
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 reveal">
       <div>
-        <span class="eyebrow">— 07 / Blog</span>
+        <span class="eyebrow">— 06 / Blog</span>
         <h2 class="text-3xl md:text-[2.8rem] font-black text-snow leading-tight">Información útil para<br class="hidden md:block"> tu proyecto en Ñuble</h2>
       </div>
       <p class="text-zinc2 text-[14px] max-w-sm leading-relaxed lg:text-right lg:pb-1">
@@ -1335,7 +1253,7 @@ tailwind.config = {
     <!-- Header -->
     <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 lg:mb-9 reveal">
       <div>
-        <span class="eyebrow">— 08 / Contacto</span>
+        <span class="eyebrow">— 07 / Contacto</span>
         <h2 class="text-3xl md:text-[2.8rem] lg:hidden font-black text-snow leading-tight">Conversemos tu <br class="lg:hidden">proyecto en Ñuble</h2>
       </div>
       <div class="lg:hidden reveal" style="transition-delay:.1s">
@@ -1514,15 +1432,6 @@ tailwind.config = {
 <!-- ═══ FOOTER ═══ -->
 <div id="footer-placeholder"></div>
 
-
-<script>
-// El CTA de la sección Valores abre el asistente, que es donde vive el tarifario.
-// Si el widget no cargó, cae al formulario de contacto en vez de no hacer nada.
-document.getElementById("valores-cotizar-btn")?.addEventListener("click", function () {
-  if (window.TopoNubleChat) window.TopoNubleChat.open();
-  else window.location.hash = "#contacto";
-});
-</script>
 
 <!-- ═══ ASISTENTE IA FLOTANTE ═══ -->
 <!-- Reemplaza al botón flotante de WhatsApp: el asistente cotiza la subdivisión SAG
