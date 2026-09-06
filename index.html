@@ -233,6 +233,15 @@ tailwind.config = {
 
   /* NAV */
   .nav-link-active{color:#F5C500!important}
+  /* Contacto es un botón de fondo dorado sólido: si el scroll-spy solo le cambia
+     el color del texto, quedan letras doradas sobre fondo dorado. Al estar activo
+     se invierte —fondo transparente y contorno dorado— para que se lean. El
+     contorno va como box-shadow, no como border, para que el botón no cambie de
+     tamaño al activarse. */
+  .nav-link[data-nav="contacto"].nav-link-active{
+    background:transparent!important;
+    box-shadow:inset 0 0 0 1px #F5C500;
+  }
 
   /* SERVICE CARDS */
   .svc-card{position:relative;overflow:hidden;transition:background .25s,border-color .25s}
