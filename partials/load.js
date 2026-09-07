@@ -89,7 +89,7 @@
     // Nav activa por scroll (solo en la página raíz)
     if (!ACTIVE) {
       var navLinks   = document.querySelectorAll('.nav-link');
-      var sectionIds = ['inicio','servicios','valores','proceso','nosotros','cobertura','faq','blog','contacto'];
+      var sectionIds = ['inicio','servicios','proceso','nosotros','cobertura','faq','blog','contacto'];
       var sections   = sectionIds.map(function (id) { return document.getElementById(id); }).filter(Boolean);
 
       var setActiveNav = function (id) {

@@ -393,6 +393,10 @@ tailwind.config = {
                 <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.553 4.116 1.522 5.845L.057 23.43a.5.5 0 00.614.614l5.624-1.458A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.686-.5-5.24-1.374l-.376-.212-3.898 1.011 1.021-3.826-.228-.39A9.945 9.945 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
                 Evaluar mi terreno
               </a>
+              <button type="button" data-abrir-asistente aria-label="Cotizar la subdivisión con el asistente"
+                 class="inline-flex items-center justify-center gap-2 border border-white/15 hover:border-gold/40 hover:text-gold text-zinc2 text-[13px] font-semibold tracking-widest uppercase px-8 py-4 transition-all duration-200">
+                Cotizar al instante
+              </button>
               <a href="#servicios" aria-label="Ver servicios de topografía"
                  class="inline-flex items-center justify-center gap-2 border border-white/15 hover:border-gold/40 hover:text-gold text-zinc2 text-[13px] font-semibold tracking-widest uppercase px-8 py-4 transition-all duration-200">
                 Ver servicios
@@ -694,7 +698,6 @@ tailwind.config = {
 </section>
 
 
-<!-- ═══ VALORES ═══ -->
 <!-- ═══ PROCESO ═══ -->
 <section id="proceso" class="reveal-sec py-28 px-6 sgrid bg-ink2 flex flex-col justify-center">
   <div class="max-w-7xl mx-auto">
@@ -775,7 +778,7 @@ tailwind.config = {
         <p class="text-zinc2 leading-relaxed text-[15px] mb-8">
           Somos un equipo de topografía enfocado en subdivisión rural y parcelación de terrenos en la Región de Ñuble. Combinamos experiencia en terreno, levantamiento topográfico con GNSS y orientación según normativa vigente, para que tomes decisiones informadas y avances con mayor seguridad en tu trámite.
         </p>
-        <a href="https://wa.me/56966640562?text=Hola%2C+escribo+desde+TopoÑuble%2C+necesito+información" target="_blank" rel="noopener noreferrer" onclick="trackWhatsAppConversion()"
+        <a href="https://wa.me/56966640562?text=Hola%2C+escribo+desde+TopoÑuble%2C+necesito+información" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
           Hablar por WhatsApp →
         </a>
@@ -1053,7 +1056,7 @@ tailwind.config = {
         </button>
         <div class="faq-body overflow-hidden" style="height:0">
           <div class="px-6 pb-5 pt-1 border-t border-white/6">
-            <p class="text-zinc2 text-[14px] leading-relaxed">El presupuesto tiene dos partes: el <strong class="text-snow">servicio topográfico</strong>, que es nuestro cobro por el trabajo y se calcula según la cantidad de lotes resultantes —a más lotes, menor el valor por lote—, y el <strong class="text-snow">Tercero Autorizado del SAG</strong>, un profesional certificado que la normativa exige para aprobar la subdivisión y que se cobra aparte como valor fijo. El total depende además de la ubicación, la superficie, la accesibilidad y la documentación disponible. Puedes obtener el valor de tu caso <strong class="text-snow">al instante con nuestro asistente</strong>, o pedir una evaluación inicial sin costo.</p>
+            <p class="text-zinc2 text-[14px] leading-relaxed">El presupuesto tiene dos partes: el <strong class="text-snow">servicio topográfico</strong>, que es nuestro cobro por el trabajo y se calcula según la cantidad de lotes resultantes —a más lotes, menor el valor por lote—, y el <strong class="text-snow">Tercero Autorizado del SAG</strong>, un profesional certificado que la normativa exige para aprobar la subdivisión y que se cobra aparte como valor fijo. El total depende además de la ubicación, la superficie, la accesibilidad y la documentación disponible. Puedes obtener el valor de tu caso <button type="button" data-abrir-asistente class="text-gold font-semibold underline underline-offset-2 hover:text-gold2 transition-colors">al instante con nuestro asistente</button>, o pedir una evaluación inicial sin costo.</p>
           </div>
         </div>
       </div>
@@ -1067,7 +1070,7 @@ tailwind.config = {
         </button>
         <div class="faq-body overflow-hidden" style="height:0">
           <div class="px-6 pb-5 pt-1 border-t border-white/6">
-            <p class="text-zinc2 text-[14px] leading-relaxed">Sí. Nuestro <strong class="text-snow">asistente</strong>, en el botón de abajo a la derecha, calcula un presupuesto tentativo de subdivisión rural SAG en la misma conversación, con el desglose completo y descarga en Word. Ojo con el <strong class="text-snow">lote remanente</strong>: el resto del terreno original que queda después de sacar los lotes nuevos también cuenta como lote resultante. Para subdivisiones urbanas ante la DOM el asistente no entrega valores —dependen del plan regulador de cada comuna— y deriva el caso al profesional que las tramita.</p>
+            <p class="text-zinc2 text-[14px] leading-relaxed">Sí. Nuestro <button type="button" data-abrir-asistente class="text-gold font-semibold underline underline-offset-2 hover:text-gold2 transition-colors">asistente</button>, que también puedes abrir en el botón de abajo a la derecha, calcula un presupuesto tentativo de subdivisión rural SAG en la misma conversación, con el desglose completo y descarga en Word. Ojo con el <strong class="text-snow">lote remanente</strong>: el resto del terreno original que queda después de sacar los lotes nuevos también cuenta como lote resultante. Para subdivisiones urbanas ante la DOM el asistente no entrega valores —dependen del plan regulador de cada comuna— y deriva el caso al profesional que las tramita.</p>
           </div>
         </div>
       </div>
@@ -1132,9 +1135,9 @@ tailwind.config = {
 
     <div class="reveal mt-10 text-center" style="transition-delay:.3s">
       <p class="text-zinc2 text-[13px] mb-4">¿Tienes otra consulta sobre tu terreno?</p>
-      <a href="#contacto" class="inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
-        Cotizar →
-      </a>
+      <button type="button" data-abrir-asistente class="inline-flex items-center gap-2 bg-gold hover:bg-gold2 text-ink text-[12px] font-black tracking-widest uppercase px-6 py-3 transition-colors duration-200 active:scale-[0.98]">
+        Cotizar al instante →
+      </button>
     </div>
 
   </div>
@@ -1307,7 +1310,7 @@ tailwind.config = {
         <div class="border border-white/8 bg-ink p-5 lg:p-4">
           <p class="font-mono text-[9px] text-gold tracking-widest uppercase mb-4 lg:mb-3">Contacto directo</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-2.5">
-            <a href="https://api.whatsapp.com/send?phone=56966640562&text=Hola%2C+escribo+desde+TopoÑuble" target="_blank" rel="noopener noreferrer" id="contacto-directo-whatsapp" onclick="trackWhatsAppConversion()"
+            <a href="https://api.whatsapp.com/send?phone=56966640562&text=Hola%2C+escribo+desde+TopoÑuble" target="_blank" rel="noopener noreferrer" id="contacto-directo-whatsapp"
                class="group border border-white/8 bg-ink2 hover:border-gold/30 hover:bg-ink3 p-4 lg:p-3 transition-all flex flex-col gap-2.5 lg:gap-1.5 active:scale-[0.98]">
               <div class="flex items-center gap-2">
                 <svg class="w-4 h-4 text-[#25D366] flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
@@ -1567,10 +1570,6 @@ const trackEvent=(eventName,params={})=>{
   if(typeof window.gtag==='function') window.gtag('event',eventName,params);
 };
 
-function trackWhatsAppConversion(){
-  gtag('event','conversion',{'send_to':'AW-18107428909/KslRCLDVlaMcEK3gpbpD','value':1.0,'currency':'CLP'});
-}
-
 // Validación inline por campo
 const REQUIRED_FIELD_IDS=['nombre','telefono','email','servicio','ubicacion','mensaje'];
 const fieldErrorMessage=field=>{
@@ -1623,7 +1622,8 @@ form.addEventListener('submit',async e=>{
     let data=null;
     try{data=await r.json()}catch{}
     if(r.ok && data && data.status==='success'){
-      trackEvent('generate_lead',{event_category:'lead',event_label:'formulario_cotizacion',lead_type:'form_submission',form_id:'lead-form-toponuble',value:1,currency:'CLP'});
+      if(window.registrarLead) window.registrarLead('generate_lead',{seccion:'contacto',cta:'formulario_cotizacion',lead_type:'form_submission'});
+      else trackEvent('generate_lead',{event_category:'lead',event_label:'formulario_cotizacion',lead_type:'form_submission',form_id:'lead-form-toponuble',value:1,currency:'CLP'});
       setSubmitButtonSuccessState();
       form.reset();
       REQUIRED_FIELD_IDS.forEach(id=>{
@@ -1643,15 +1643,6 @@ form.addEventListener('submit',async e=>{
     setSubmitButtonErrorState();
     btnResetTimeout=setTimeout(()=>resetSubmitButtonState(),3000);
   }
-});
-
-const callButtons=['hero-cta-llamar'];
-callButtons.forEach(id=>{
-  const el=document.getElementById(id);
-  if(!el)return;
-  el.addEventListener('click',()=>{
-    trackEvent('click_call',{event_category:'contact',event_label:id,contact_method:'call'});
-  });
 });
 
 // Mapa Ñuble interactivo
@@ -1821,6 +1812,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 </script>
 <script>window.SITE_ROOT='';</script>
+<script src="partials/tracking.js" defer></script>
 <script src="partials/load.js"></script>
 </body>
 </html>
