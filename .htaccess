@@ -1,8 +1,20 @@
 RewriteEngine On
 
-# Redirigir HTTP → HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# Canonicalizar host y protocolo en una sola redirección (HTTPS + sin www).
+# Antes la regla de HTTPS conservaba el host tal cual (%{HTTP_HOST}) y no había
+# ninguna para www, así que https://www.toponuble.cl/ respondía 200: la home
+# vivía en dos dominios a la vez. El canonical y el sitemap ya apuntan al
+# dominio sin www, así que esa es la forma buena.
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://toponuble.cl/$1 [L,R=301]
+
+# La home vive en "/" y en ninguna otra URL.
+# Antes: /index.html redirigía a /index, que respondía 200 con canonical hacia
+# "/" — una tercera URL para la misma home, que Google reportaba como "página
+# alternativa con etiqueta canónica adecuada" en vez de consolidarla.
+RewriteCond %{THE_REQUEST} \s/index(\.html)?[\s?] [NC]
+RewriteRule ^ / [R=301,L]
 
 # Redirigir URLs con .html a URLs limpias (301)
 RewriteCond %{THE_REQUEST} \s(.+?)\.html[\s?] [NC]
