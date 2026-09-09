@@ -25,3 +25,22 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^ %{REQUEST_URI}.html [L]
+
+# Caché de estáticos. Antes no se enviaba ninguna cabecera de caché.
+#
+# Ojo con la distinción: el deploy es por FTP y NO renombra los archivos, así
+# que nada acá lleva huella en el nombre. Las imágenes y fuentes casi no cambian
+# (y cuando cambian, cambia también su nombre), así que aguantan un año. El CSS
+# y el JS sí cambian en cada deploy conservando el nombre: con un año de caché,
+# quien ya hubiera visitado el sitio se quedaba con el JS viejo y no vería
+# ningún cambio. Van con revalidación: el navegador pregunta y recibe un 304 si
+# no cambió, que cuesta casi lo mismo que no preguntar. Mismo bloque que
+# arriagadaconsultores.cl y laspilcas.cl.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(jpg|jpeg|png|webp|svg|woff2|JPG)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+  <FilesMatch "\.(css|js|html)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
