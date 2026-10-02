@@ -81,6 +81,19 @@
     registrar('chatbot_lead', { seccion: 'asistente', cta: tipo });
   });
 
+  // Apertura desde la píldora flotante: es del widget, no del sitio, y antes quedaba
+  // invisible. Va con gtag directo y no con registrar() porque abrir el chat no es un
+  // contacto y no debe contar como conversión de Ads (igual que los CTA de abajo).
+  document.addEventListener('chatbot:abierto', function () {
+    if (!gtagDisponible()) return;
+    window.gtag('event', 'asistente_abierto', {
+      sitio: SITIO,
+      pagina: location.pathname,
+      seccion: 'boton-flotante',
+      cta: 'pildora'
+    });
+  });
+
   // CTA del sitio que abren el asistente. Si el widget todavía no cargó, el CTA no
   // queda muerto: baja al formulario de contacto.
   document.addEventListener('click', function (e) {
