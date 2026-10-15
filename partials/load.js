@@ -81,7 +81,8 @@
     var mm = document.getElementById('mm');
     if (mb && mm) {
       mb.addEventListener('click', function () { mm.classList.toggle('hidden'); });
-      mm.querySelectorAll('a').forEach(function (a) {
+      // Cualquier enlace del nav (incluido el logo) cierra el menú
+      document.querySelectorAll('#nav a').forEach(function (a) {
         a.addEventListener('click', function () { mm.classList.add('hidden'); });
       });
     }

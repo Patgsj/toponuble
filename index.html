@@ -275,6 +275,22 @@ tailwind.config = {
   /* HERO CLIP */
   .hero-img-panel{clip-path:polygon(12% 0,100% 0,100% 100%,0% 100%)}
   @media(max-width:767px){.hero-img-panel{clip-path:none}}
+  .hero-ov{background:linear-gradient(to right,#0A0A0A 0%,rgba(10,10,10,.55) 50%,rgba(10,10,10,.2) 100%)}
+  /* Pantallas verticales (celular, tablet): la foto ocupa todo el fondo, oscurecida al centro para leer el texto */
+  @media(orientation:portrait) and (max-width:1279px){
+    .hero-img-panel{width:100%!important;clip-path:none}
+    .hero-ov{background:linear-gradient(to bottom,rgba(10,10,10,.55) 0%,rgba(10,10,10,.8) 28%,rgba(10,10,10,.8) 72%,rgba(10,10,10,.6) 100%)}
+  }
+  /* Flechas del carrusel: a los costados solo cuando sobra margen; si no, abajo junto a los puntos */
+  .hero-dots{bottom:2.6rem}
+  @media(max-width:1439px){
+    #hero-prev,#hero-next{top:auto;bottom:1.25rem;transform:none}
+    #hero-prev{left:calc(50% - 6.5rem)}
+    #hero-next{right:calc(50% - 6.5rem)}
+  }
+  @media(min-width:1440px){.hero-dots{bottom:2rem}}
+  /* Tablet horizontal / pantallas bajas: sin la fila de etiquetas para que el texto no choque con los controles */
+  @media(orientation:landscape) and (max-height:860px) and (max-width:1439px){.hero-content>.flex-wrap:last-child{display:none}}
 
   /* GOLD LINE DIVIDER */
   .gold-line{height:1px;background:linear-gradient(to right,transparent,rgba(245,197,0,.5),transparent)}
@@ -368,8 +384,7 @@ tailwind.config = {
         <div class="absolute inset-0 sgrid"></div>
         <div class="hero-img-panel absolute inset-y-0 right-0 w-full md:w-[58%] pointer-events-none">
           <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image:url('img/IMAGEN-DE-FONDO.webp')"></div>
-          <div class="absolute inset-0" style="background:linear-gradient(to right,#0A0A0A 0%,rgba(10,10,10,.55) 50%,rgba(10,10,10,.2) 100%)"></div>
-          <div class="absolute inset-0 md:hidden" style="background:rgba(10,10,10,.88)"></div>
+          <div class="hero-ov absolute inset-0"></div>
         </div>
         <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none" style="background:radial-gradient(ellipse at left,rgba(245,197,0,.06) 0%,transparent 65%)"></div>
         <div class="corner-deco corner-lg corner-tl text-gold/40"></div>
@@ -380,7 +395,7 @@ tailwind.config = {
               <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
               Región de Ñuble · Chile
             </div>
-            <h1 class="text-[2.2rem] sm:text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
+            <h1 class="text-[2.2rem] sm:text-[clamp(2.4rem,min(7vw,8.5vh),5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
               Subdivide tu<br>terreno rural<br><em class="not-italic text-gold">en Ñuble</em>
             </h1>
             <div class="w-12 h-[3px] bg-gold mb-6"></div>
@@ -422,8 +437,7 @@ tailwind.config = {
         <div class="absolute inset-0 sgrid"></div>
         <div class="hero-img-panel absolute inset-y-0 right-0 w-full md:w-[58%] pointer-events-none">
           <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image:url('img/topografo-gnss-1.webp')"></div>
-          <div class="absolute inset-0" style="background:linear-gradient(to right,#0A0A0A 0%,rgba(10,10,10,.55) 50%,rgba(10,10,10,.2) 100%)"></div>
-          <div class="absolute inset-0 md:hidden" style="background:rgba(10,10,10,.88)"></div>
+          <div class="hero-ov absolute inset-0"></div>
         </div>
         <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none" style="background:radial-gradient(ellipse at left,rgba(245,197,0,.06) 0%,transparent 65%)"></div>
         <div class="corner-deco corner-lg corner-tl text-gold/40"></div>
@@ -434,7 +448,7 @@ tailwind.config = {
               <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
               <span data-pub="2026-08-26T10:00:00"></span>
             </div>
-            <h2 class="text-[2.2rem] sm:text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
+            <h2 class="text-[2.2rem] sm:text-[clamp(2.4rem,min(7vw,8.5vh),5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
               Lo barato<br>sale caro<br><em class="not-italic text-gold">en topografía</em>
             </h2>
             <div class="w-12 h-[3px] bg-gold mb-6"></div>
@@ -466,8 +480,7 @@ tailwind.config = {
         <div class="absolute inset-0 sgrid"></div>
         <div class="hero-img-panel absolute inset-y-0 right-0 w-full md:w-[58%] pointer-events-none">
           <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image:url('img/SATELITE.webp')"></div>
-          <div class="absolute inset-0" style="background:linear-gradient(to right,#0A0A0A 0%,rgba(10,10,10,.55) 50%,rgba(10,10,10,.2) 100%)"></div>
-          <div class="absolute inset-0 md:hidden" style="background:rgba(10,10,10,.88)"></div>
+          <div class="hero-ov absolute inset-0"></div>
         </div>
         <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none" style="background:radial-gradient(ellipse at left,rgba(245,197,0,.06) 0%,transparent 65%)"></div>
         <div class="corner-deco corner-lg corner-tl text-gold/40"></div>
@@ -478,7 +491,7 @@ tailwind.config = {
               <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
               <span data-pub="2026-06-30T09:16:00-04:00"></span>
             </div>
-            <h2 class="text-[2.2rem] sm:text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
+            <h2 class="text-[2.2rem] sm:text-[clamp(2.4rem,min(7vw,8.5vh),5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
               GPS de mano<br>vs GNSS<br><em class="not-italic text-gold">¿cuál es la diferencia?</em>
             </h2>
             <div class="w-12 h-[3px] bg-gold mb-6"></div>
@@ -510,8 +523,7 @@ tailwind.config = {
         <div class="absolute inset-0 sgrid"></div>
         <div class="hero-img-panel absolute inset-y-0 right-0 w-full md:w-[58%] pointer-events-none">
           <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80')"></div>
-          <div class="absolute inset-0" style="background:linear-gradient(to right,#0A0A0A 0%,rgba(10,10,10,.55) 50%,rgba(10,10,10,.2) 100%)"></div>
-          <div class="absolute inset-0 md:hidden" style="background:rgba(10,10,10,.88)"></div>
+          <div class="hero-ov absolute inset-0"></div>
         </div>
         <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] pointer-events-none" style="background:radial-gradient(ellipse at left,rgba(245,197,0,.06) 0%,transparent 65%)"></div>
         <div class="corner-deco corner-lg corner-tl text-gold/40"></div>
@@ -522,7 +534,7 @@ tailwind.config = {
               <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
               <span data-pub="2026-06-29T19:49:00"></span>
             </div>
-            <h2 class="text-[2.2rem] sm:text-[clamp(2.8rem,7vw,5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
+            <h2 class="text-[2.2rem] sm:text-[clamp(2.4rem,min(7vw,8.5vh),5rem)] font-black leading-[1.1] sm:leading-[1.04] tracking-tight mb-5 text-snow">
               El profesional<br>más idóneo para<br><em class="not-italic text-gold">el plano SAG</em>
             </h2>
             <div class="w-12 h-[3px] bg-gold mb-6"></div>
@@ -563,7 +575,7 @@ tailwind.config = {
     <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
   </button>
   <!-- Dots centrados abajo -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
+  <div class="hero-dots absolute left-1/2 -translate-x-1/2 z-20 flex items-center gap-2">
     <button class="hero-dot h-px transition-all duration-300" style="width:2rem;background:#F5C500" data-hero-idx="0" aria-label="Slide 1"></button>
     <button class="hero-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.3)" data-hero-idx="1" aria-label="Slide 2"></button>
     <button class="hero-dot h-px transition-all duration-300" style="width:0.5rem;background:rgba(255,255,255,.3)" data-hero-idx="2" aria-label="Slide 3"></button>
