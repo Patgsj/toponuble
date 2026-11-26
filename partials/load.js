@@ -1,7 +1,7 @@
 (function () {
   var ROOT      = window.SITE_ROOT || '';
-  var LOGO_HREF = ROOT ? ROOT + 'index.html' : '#inicio';
-  var NAV_HREF  = ROOT ? ROOT + 'index.html' : '';
+  var LOGO_HREF = ROOT ? ROOT : '#inicio';
+  var NAV_HREF  = ROOT;
   var ASSETS    = ROOT;
   var ACTIVE    = document.body.dataset.activeNav || '';
 

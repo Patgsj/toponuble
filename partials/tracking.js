@@ -114,7 +114,7 @@
         });
       }
     } else {
-      window.location.href = (window.SITE_ROOT || '') + 'index.html#contacto';
+      window.location.href = (window.SITE_ROOT || '') + '#contacto';
     }
   });
 }());
