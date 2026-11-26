@@ -39,6 +39,32 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
+    // Botón flotante del asistente: nunca baja sobre el pie de página.
+    // Mientras el pie no se ve, queda en su lugar; cuando aparece, sube y se
+    // detiene justo encima de su borde superior. Usa la propiedad `translate`
+    // para no pisar el `transform` que el widget pueda usar.
+    var GAP = 16;
+    var ajustarBoton = function () {
+      var boton = document.querySelector('.tn-chat-anchor');
+      var pie = document.querySelector('footer');
+      if (!boton || !pie) return;
+      boton.style.translate = '';
+      var base = boton.getBoundingClientRect().bottom;
+      var limite = pie.getBoundingClientRect().top - GAP;
+      var sobra = base - limite;
+      boton.style.translate = sobra > 0 ? '0 ' + (-sobra) + 'px' : '';
+    };
+    var pendiente = false;
+    var pedirAjuste = function () {
+      if (pendiente) return;
+      pendiente = true;
+      requestAnimationFrame(function () { pendiente = false; ajustarBoton(); });
+    };
+    window.addEventListener('scroll', pedirAjuste, { passive: true });
+    window.addEventListener('resize', pedirAjuste);
+    window.addEventListener('load', pedirAjuste);
+    pedirAjuste();
+
     // Menú móvil
     var mb = document.getElementById('mb');
     var mm = document.getElementById('mm');

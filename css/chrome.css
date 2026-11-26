@@ -34,22 +34,37 @@
 }
 @media (min-width: 64.01rem) { .nav__menu { display: none; } }
 
-/* footer: colophon block */
-.foot { background: var(--color-paper); border-top: 1px solid var(--color-rule); padding-block: var(--space-3xl) var(--space-xl); font-family: var(--font-body); color: var(--color-ink-2); }
+/* footer: tres columnas (marca, secciones, contacto) y la línea legal a la izquierda,
+   lejos de la esquina donde flota el botón del asistente */
+.foot { position: relative; background: var(--color-paper-2); border-top: 2px solid var(--color-accent); padding-block: var(--space-3xl) var(--space-3xl); font-family: var(--font-body); color: var(--color-ink-2); }
 .foot__inner { max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); row-gap: var(--space-2xl); }
-.foot__logo { grid-column: 1 / span 4; align-self: start; border-radius: var(--radius-card); }
-.foot__logo img { height: 40px; width: auto; }
+.foot__brand { grid-column: 1 / span 5; }
+.foot__logo { display: inline-block; border-radius: var(--radius-card); }
+.foot__logo img { height: 44px; width: auto; }
 .foot__logo:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
-.foot__colophon { grid-column: 6 / span 7; margin: 0; font-size: var(--text-lg); line-height: 1.55; color: var(--color-ink-2); max-width: 52ch; }
-.foot a { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-rule-2); text-underline-offset: 0.2em; transition: color var(--dur-short) var(--ease-out), text-decoration-color var(--dur-short) var(--ease-out); }
-.foot a:hover { color: var(--color-accent); text-decoration-color: var(--color-accent); }
+.foot__about { margin: var(--space-lg) 0 0; max-width: 40ch; font-size: var(--text-md); line-height: 1.6; color: var(--color-ink-2); }
+.foot__place { margin: var(--space-sm) 0 0; font-size: var(--text-sm); color: var(--color-muted); }
+.foot__col--nav { grid-column: 7 / span 2; }
+.foot__col--contact { grid-column: 10 / span 3; }
+.foot__title { margin: 0 0 var(--space-md); font: 600 var(--text-sm)/1.4 var(--font-body); letter-spacing: 0; color: var(--color-ink); max-width: none; }
+.foot__list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-xs); }
+.foot__contact { margin: 0; display: grid; gap: var(--space-md); }
+.foot__contact dt { font-size: var(--text-sm); color: var(--color-muted); }
+.foot__contact dd { margin: 0; }
+.foot a { color: var(--color-ink-2); text-decoration: none; transition: color var(--dur-short) var(--ease-out); }
+.foot__contact a { color: var(--color-ink); font-weight: 600; }
+.foot a:hover { color: var(--color-accent); }
 .foot a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
-.foot__links { grid-column: 6 / span 7; list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-lg); font-size: var(--text-md); }
-.foot__links a { text-decoration: none; color: var(--color-ink-2); }
-.foot__legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-sm); padding-top: var(--space-lg); border-top: 1px solid var(--color-rule); font-size: var(--text-sm); color: var(--color-muted); }
+.foot__legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-rule-2); font-size: var(--text-sm); color: var(--color-muted); }
 .foot__legal p { margin: 0; }
+.foot__legal a { color: var(--color-ink-2); text-decoration: underline; text-decoration-color: var(--color-rule-2); text-underline-offset: 0.2em; }
 @media (max-width: 60rem) {
-  .foot__logo, .foot__colophon, .foot__links { grid-column: 1 / -1; }
-  .foot__colophon { font-size: var(--text-md); }
+  .foot__brand { grid-column: 1 / -1; }
+  .foot__col--nav, .foot__col--contact { grid-column: span 6; }
+}
+@media (max-width: 40rem) {
+  .foot__col--nav, .foot__col--contact { grid-column: 1 / -1; }
+  .foot__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (prefers-reduced-motion: reduce) { .nav-link, .nav__toggle, .nav__bar, .foot a { transition: none; } }
+/* Hallmark · footer: three columns (brand, sections, direct contact) and a legal line, named on purpose: the one-page site has seven sections and three ways to reach Patricio, no social row */
